@@ -10891,8 +10891,6 @@ if text == "تاك للمطلقات" or text == "المطلقات" then
   end
   return send(msg_chat_id,msg_id,mutlqa_list,"md",true) 
 end
-
-
 -- kit defullt
 if text == "كت السورس" then
 if Redis:get(Revor.."kit_defullt:") == "true" then
@@ -11217,6 +11215,7 @@ return send(msg_chat_id,msg_id,"❍ تم استرداد "..#d_kit.." سؤال ب
 end
 if Redis:get(Revor.."kit_defullt:") == "false" then
     return send(msg_chat_id,msg_id,"❍ تم استيرادها من قبل","md",false, false, false, false, reply_markup)
+end
 end
 --kit add
 if text == "اضف كت" then
