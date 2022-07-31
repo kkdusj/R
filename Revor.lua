@@ -11218,7 +11218,6 @@ end
 if Redis:get(Revor.."kit_defullt:") == "false" then
     return send(msg_chat_id,msg_id,"❍ تم استيرادها من قبل","md",false, false, false, false, reply_markup)
 end
-end
 --kit add
 if text == "اضف كت" then
     if not msg.Dev then
