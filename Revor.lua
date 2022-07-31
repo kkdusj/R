@@ -15965,28 +15965,6 @@ return send(msg_chat_id,msg_id, [[*
  [ٓٓٓ⁨⧫ 𝗦َ𝗢ٰ𝗨ِِ𝖱ٰ𝗖ٌ𝗘 ✘ ٍٓ𝙆َ𝙄ٖ𝙉ِ𝙂ٓ ⧫] 
  *]],"md",false, false, false, false, reply_markup)
  
-elseif text == 'كينج' or text == 'مطور السورس' then
-photo = "https://t.me/dev_kingo0o"
-local Name = 'ᴘʀᴏɢʀᴀᴍᴍᴇʀ • dev_kingo0o  • \n ᴛᴏ ᴄᴏᴍᴍụɴɪᴄᴀᴛᴇ ᴛᴏɢᴇᴛʜᴇʀ, \nғᴏʟʟᴏᴡ ᴛʜᴇ ʙụᴛᴛᴏɴѕ ʟᴏᴡᴇʀ 𝅘𝅥𝅯 '
-keyboard = {} 
-keyboard.inline_keyboard = {
-{
-{text = '◈ ℻ᗪEᐯ • 𝐾𝐼𝑁𝐺 ℻ ◈', url = "https://t.me/dev_kingo0o"}
-},
-}
-local msgg = msg_id/2097152/0.5
-https.request("https://api.telegram.org/bot"..Token.."/sendphoto?chat_id=" .. msg_chat_id .. "&photo="..photo.."&caption=".. URL.escape(Name).."&reply_to_message_id="..msgg.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
- elseif text == 'المصنع' or text == 'مصنع' then
-photo = "https://t.me/U_S_E_D3/115"
-local Name = 'آقـوي مـصـنع بــوتآت في آلتليجـرآم سـرعهةة لآ توصـف مـمـيزآت يومـيه آدخــل جــرب بــنفسـك.. ♡'
-keyboard = {} 
-keyboard.inline_keyboard = {
-{
-{text = 'ঌ • آصـنع بــوتك مـن هنآ ঌ', url = "https://t.me/kingo0oO_Bot"}
-},
-}
-local msgg = msg_id/2097152/0.5
-https.request("https://api.telegram.org/bot"..Token.."/sendphoto?chat_id=" .. msg_chat_id .. "&photo="..photo.."&caption=".. URL.escape(Name).."&reply_to_message_id="..msgg.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
 elseif text == 'الاوامر' then
 if not msg.Admin then
 return send(msg_chat_id,msg_id,'\n*❍ هذا الامر يخص  '..Controller_Num(7)..' * ',"md",true)  
