@@ -15967,7 +15967,7 @@ return send(msg_chat_id,msg_id, [[*
  
 elseif text == 'كينج' or text == 'مطور السورس' then
 photo = "https://t.me/dev_kingo0o"
-local Name = 'ᴘʀᴏɢʀᴀᴍᴍᴇʀ • @dev_kingo0o  • \n ᴛᴏ ᴄᴏᴍᴍụɴɪᴄᴀᴛᴇ ᴛᴏɢᴇᴛʜᴇʀ, \nғᴏʟʟᴏᴡ ᴛʜᴇ ʙụᴛᴛᴏɴѕ ʟᴏᴡᴇʀ 𝅘𝅥𝅯 '
+local Name = 'ᴘʀᴏɢʀᴀᴍᴍᴇʀ • dev_kingo0o  • \n ᴛᴏ ᴄᴏᴍᴍụɴɪᴄᴀᴛᴇ ᴛᴏɢᴇᴛʜᴇʀ, \nғᴏʟʟᴏᴡ ᴛʜᴇ ʙụᴛᴛᴏɴѕ ʟᴏᴡᴇʀ 𝅘𝅥𝅯 '
 keyboard = {} 
 keyboard.inline_keyboard = {
 {
