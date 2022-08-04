@@ -16915,27 +16915,6 @@ keyboard.inline_keyboard = {
 }
 local msgg = msg_id/2097152/0.5
 https.request("https://api.telegram.org/bot"..Token.."/sendvideo?chat_id=" .. msg_chat_id .. "&video="..video.."&caption=".. URL.escape(T).."&reply_to_message_id="..msgg.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
-if text == 'كينج' or text =='صاحب السورس' or text == 'مطور السورس' or text == 'المبرمج' then
-video = "https://t.me/kinggoo71/385"
-local T =[[
-•━═━═━═━ًًٍٍٰ𝗸ٍٍَ𝗶ٍٍّّ𝗡ٍٍََ𝗴   ═━═━═━•
-⌔ [ٓ كـكــــيـنجـج صــآحـب آلغـــداريــن˼⁩]
-
-⌔ [:-# @dev_kingo0o :-$]
-
-⌔ [:-#ᎥᎷ_ᏦᎥΝᏀ_ᎬᏞ_3ᎠᎪᎡ:-$]
-
-⌔ [بقص آلمـآضي من آيآمي , هبقآ فـ آح ـلأمك لمـةه تنآمي “]
-•━═━═━═━ًًٍٍٰ𝗸ٍٍَ𝗶ٍٍّّ𝗡ٍٍََ𝗴   ═━═━═━•
-]]
-keyboard = {} 
-keyboard.inline_keyboard = {
-{
-{text = '◈ ℻كـكــــيـنجـج صــآحـب آلغـــداريــن ℻ ◈', url = "https://t.me/dev_kingo0o"}
-}
-}
-local msgg = msg_id/2097152/0.5
-https.request("https://api.telegram.org/bot"..Token.."/sendvideo?chat_id=" .. msg_chat_id .. "&video="..video.."&caption=".. URL.escape(T).."&reply_to_message_id="..msgg.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
  elseif text == 'المصنع' or text == 'مصنع' then
 photo = "https://t.me/U_S_E_D3/115"
 local Name = 'آقـوي مـصـنع بــوتآت في آلتليجـرآم سـرعهةة لآ توصـف مـمـيزآت يومـيه آدخــل جــرب بــنفسـك.. ♡'
