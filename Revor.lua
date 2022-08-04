@@ -16915,58 +16915,6 @@ keyboard.inline_keyboard = {
 }
 local msgg = msg_id/2097152/0.5
 https.request("https://api.telegram.org/bot"..Token.."/sendvideo?chat_id=" .. msg_chat_id .. "&video="..video.."&caption=".. URL.escape(T).."&reply_to_message_id="..msgg.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
-elseif text == 'بنك' then
-if otlop(msg) == false then
-local chinfo = Redis:get("ch:admin:3am")
-local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = 'اضغط للاشتراك', url = chinfo}, },}}
-return send(msg.chat_id,msg.id,'*\n⌔ عليك الاشتراك في قناة البوت لاستخذام الاوامر*',"md",false, false, false, false, reply_markup)
-end
-if ChannelJoin(msg) == false then
-local chinfo = Redis:get(Revor  .."ch:admin")
-local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = 'اضغط للاشتراك', url = chinfo}, },}}
-return send(msg.chat_id,msg.id,'*\n⌔ عليك الاشتراك في قناة البوت لاستخذام الاوامر*',"md",false, false, false, false, reply_markup)
-end
-local reply_markup = LuaTele.replyMarkup{
-type = 'inline',
-data = {
-{
-{text = '◜ ✶ ✘ 𝐾𝐼𝑁𝐺 • 𝑆𝑂𝐔𝑅𝐶𝐸 ✘ ✶◞', url = "https://t.me/VC_NE"}, 
-},
-}
-}
-return send(msg_chat_id,msg_id, [[*
-✜ اوامر البنك
-
-⌯ انشاء حساب بنكي  ↢ تعمل حساب وتقدر تحول فلوس 
-
-⌯ مسح حساب بنكي  ↢ تلغي حسابك البنكي
-
-⌯ تحويل ↢ تطلب رقم حساب الشخص وتحول له فلوس
-
-⌯ حسابي  ↢ يطلع لك رقم حسابك 
-
-⌯ فلوسي ↢ يعلمك كم فلوسك
-⌯ كنز ↢ البحث عن كنزك
-
-⌯ راتبي ↢ يعطيك راتبك كل ٢٠ دقيقة
-
-⌯ بخشيش ↢ يعطيك بخشيش كل ١٠ دقايق
-
-⌯ زرف ↢ تزرف فلوس اشخاص كل ١٠ دقايق
-
-⌯ استثمار ↢ تستثمر بالمبلغ اللي تبيه مع نسبة ربح مضمونه من ١٪؜ الى ١٥٪؜
-
-⌯ حظ ↢ تلعبها بأي مبلغ ياتكسب يا تخسر
-
-⌯ مضاربه ↢ تضارب بأي مبلغ انت عاوزو والنسبة من ٩٠٪؜ الى -٩٠٪؜ انت وحظك
-
-⌯ توب الفلوس ↢ يطلع توب اكتر ناس معهم فلوس في كل الجروبات
-
-⌯ توب الحراميه ↢ يطلع لك اكتر ناس سرقو 😂
-⌯ كنز او الكنز ↢ عمليه البحث عن كنزك
- [ٓٓٓ⁨⧫ 𝗦َ𝗢ٰ𝗨ِِ𝖱ٰ𝗖ٌ𝗘 ✘ ٍٓ𝙆َ𝙄ٖ𝙉ِ𝙂ٓ ⧫] 
- *]],"md",false, false, false, false, reply_markup)
- 
 if text == 'كينج' or text =='صاحب السورس' or text == 'مطور السورس' or text == 'المبرمج' then
 video = "https://t.me/kinggoo71/385"
 local T =[[
@@ -16984,7 +16932,7 @@ keyboard = {}
 keyboard.inline_keyboard = {
 {
 {text = '◈ ℻كـكــــيـنجـج صــآحـب آلغـــداريــن ℻ ◈', url = "https://t.me/dev_kingo0o"}
-},
+}
 }
 local msgg = msg_id/2097152/0.5
 https.request("https://api.telegram.org/bot"..Token.."/sendvideo?chat_id=" .. msg_chat_id .. "&video="..video.."&caption=".. URL.escape(T).."&reply_to_message_id="..msgg.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
