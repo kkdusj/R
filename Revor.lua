@@ -16063,7 +16063,8 @@ keyboard.inline_keyboard = {
 }
 local msgg = msg_id/2097152/0.5
 https.request("https://api.telegram.org/bot"..Token.."/sendvideo?chat_id=" .. msg_chat_id .. "&video="..video.."&caption=".. URL.escape(T).."&reply_to_message_id="..msgg.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
- elseif text == 'المصنع' or text == 'مصنع' then
+
+elseif text == 'المصنع' or text == 'مصنع' then
 photo = "https://t.me/U_S_E_D3/115"
 local Name = 'آقـوي مـصـنع بــوتآت في آلتليجـرآم سـرعهةة لآ توصـف مـمـيزآت يومـيه آدخــل جــرب بــنفسـك.. ♡'
 keyboard = {} 
@@ -16076,7 +16077,7 @@ local msgg = msg_id/2097152/0.5
 https.request("https://api.telegram.org/bot"..Token.."/sendphoto?chat_id=" .. msg_chat_id .. "&photo="..photo.."&caption=".. URL.escape(Name).."&reply_to_message_id="..msgg.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
 
 elseif text == 'بوت حذف' or text == 'خذف حسابي' or text == 'بوت الحذف' then
-photo = "https://t.me/Raqss_bot"
+photo = "https://t.me/LC6BOT"
 local Name = 'بــوت حــذف حــســابــات '
 keyboard = {} 
 keyboard.inline_keyboard = {
@@ -22110,7 +22111,7 @@ end
 elseif Text and Text:match('(%d+)/SilentGroupGroup') then
 local UserId = Text:match('(%d+)/SilentGroupGroup')
 if tonumber(IdUser) == tonumber(UserId) then
-Redis:del(Revor.."SilentGroup:Group"..ChatId) 
+Redis:del(Revorom.."SilentGroup:Group"..ChatId) 
 edit(ChatId,Msg_id,"۞ تم مسح المكتومين", 'md', false)
 end
 end
