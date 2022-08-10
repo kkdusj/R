@@ -18091,7 +18091,7 @@ send(msg_chat_id,msg_id,Reply_Status(Info_User,'⌔ تم ارسال رسالتك
 end
 end
 end 
-end --UserBot
+end -- UserBot
 end -- File_Bot_Run
 
 function CallBackLua(data)
