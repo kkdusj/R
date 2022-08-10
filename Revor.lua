@@ -3186,7 +3186,7 @@ local Message_Reply = LuaTele.getMessage(msg.chat_id, msg.reply_to_message_id)
 local bel = LuaTele.getUser(Message_Reply.sender.user_id)
 local UserId = Message_Reply.sender.user_id
 local black s = Controller(msg_chat_id,UserId)
-local news = '🕵️‍♂️ رتبته هي : '..black s..' '
+local news = '🕵️‍♂️ رتبته هي : '..msg.Name_Controller
 local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {
 {{text =news,url = "https://t.me/"..bel.username..""}, },}}
 return LuaTele.sendText(msg_chat_id, msg_id, news, 'md', false, false, false, false, reply_markup)
