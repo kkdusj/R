@@ -14871,30 +14871,333 @@ end
 end 
 
 if text == 'كنز' or text == 'الكنز' then
-if Redis:sismember(Revor .."booob",msg.sender.user_id) then
-if Redis:ttl(Revor .."iiihoo" .. msg.sender.user_id) >= 5130 then
+if Redis:sismember(Revor.."booob",msg.sender.user_id) then
+if Redis:ttl(Revor.."iiihoo" .. msg.sender.user_id) >= 5130 then
 return LuaTele.sendText(msg.chat_id,msg.id,"⇜ كنزك  بينزل بعد ( 10 دقائق )","md",true)
-elseif Redis:ttl(Revor .."iiihoo" .. msg.sender.user_id) >= 5100 then
+elseif Redis:ttl(Revor.."iiihoo" .. msg.sender.user_id) >= 5100 then
 return LuaTele.sendText(msg.chat_id,msg.id,"⇜ كنزك  بينزل بعد ( 9 دقائق )","md",true)
-elseif Redis:ttl(Revor .."iiihoo" .. msg.sender.user_id) >= 4130 then
+elseif Redis:ttl(Revor.."iiihoo" .. msg.sender.user_id) >= 4130 then
 return LuaTele.sendText(msg.chat_id,msg.id,"⇜ كنزك  بينزل بعد ( 8 دقائق )","md",true)
-elseif Redis:ttl(Revor .."iiihoo" .. msg.sender.user_id) >= 420 then
+elseif Redis:ttl(Revor.."iiihoo" .. msg.sender.user_id) >= 420 then
 return LuaTele.sendText(msg.chat_id,msg.id,"⇜ كنزك  بينزل بعد ( 7 دقائق )","md",true)
-elseif Redis:ttl(Revor .."iiihoo" .. msg.sender.user_id) >= 360 then
+elseif Redis:ttl(Revor.."iiihoo" .. msg.sender.user_id) >= 360 then
 return LuaTele.sendText(msg.chat_id,msg.id,"⇜ كنزك  بينزل بعد ( 6 دقائق )","md",true)
-elseif Redis:ttl(Revor .."iiihoo" .. msg.sender.user_id) >= 300 then
+elseif Redis:ttl(Revor.."iiihoo" .. msg.sender.user_id) >= 300 then
 return LuaTele.sendText(msg.chat_id,msg.id,"⇜ كنزك  بينزل بعد ( 5 دقائق )","md",true)
-elseif Redis:ttl(Revor .."iiihoo" .. msg.sender.user_id) >= 2100 then
+elseif Redis:ttl(Revor.."iiihoo" .. msg.sender.user_id) >= 2100 then
 return LuaTele.sendText(msg.chat_id,msg.id,"⇜ كنزك  بينزل بعد ( 4 دقائق )","md",true)
-elseif Redis:ttl(Revor .."iiihoo" .. msg.sender.user_id) >= 1130 then
+elseif Redis:ttl(Revor.."iiihoo" .. msg.sender.user_id) >= 1130 then
 return LuaTele.sendText(msg.chat_id,msg.id,"⇜ كنزك  بينزل بعد ( 3 دقائق )","md",true)
-elseif Redis:ttl(Revor .."iiihoo" .. msg.sender.user_id) >= 120 then
+elseif Redis:ttl(Revor.."iiihoo" .. msg.sender.user_id) >= 120 then
 return LuaTele.sendText(msg.chat_id,msg.id,"⇜ كنزك  بينزل بعد ( 2 دقيقة )","md",true)
-elseif Redis:ttl(Revor .."iiihoo" .. msg.sender.user_id) >= 60 then
+elseif Redis:ttl(Revor.."iiihoo" .. msg.sender.user_id) >= 60 then
 return LuaTele.sendText(msg.chat_id,msg.id,"⇜ كنزك  بينزل بعد ( 1 دقيقة )","md",true)
 end
-local Textinggt = {".sender.user_id , 230)
-local ballancee = Redis:get(Revor .."boob(name,"حسن حسني","https://t.me/HC6HH/28")
+local Textinggt = {"ذهب ✨", "فضه 💰", "ورث 💰", "ياقوت ✨", "مرجان ✨🏻‍⚖️", "سبيكة ذهب خالص 💸", "عمله نادره 🔮", "اثار ⚱️🏻‍♀️", "فلوس 💴💸🏻‍♀️", "عمله قيمه💸🏻‍♀️", "كنز مفقود💸", "مجوهرات 💰", "عمله من العصر الفرعوني 🗿", "عمله من الدوله القديمه 🗿🏻‍🌾", "عمله بيتكوين 💶🏻‍♂️", "ممرض 👨🏻‍⚕️", "عمله فضيه نادره‍♂️", "عمله ذهبيه خالصه🏻‍♂️", "كنز علي بابا المفقود 💰🏻‍♂️", "بطاقه ائتمان💰🏻‍🔧", "دولار امريكي 💸??‍🦳", "دولار كندي 💸", "ين يباني 💸", "جنيه بريطاني 💸🏻‍⚕️", "دنانير عراقيه 💸️", "ريال سعودي 💴️", "درهم اماراتي 💴", "فرنك جيبوتي 💲", "اموال مفقوده 💲", "كنز خاص 💲", "صواع ملك مفقود ⚱️🏻", "تاج خاص بملك 👑", "تاج خاص بملك 👑", "اثار تحت المنزل", "جثة فرعون قديمه🏻‍♂️", "تابوت ملك مصري ⚰️", "تاج ملكه مصريه 👑🏻‍⚕️", "مخطوطه لكنز ", "مقبره فرعونيه 💎⚱️⚰️🏻‍♂️", "تمثال رمسيس ⚰️🏻", "كنز كينج المفقود 💲", "كنز اطلانطس المفقود 💲", "زئبق احمر 🌡️🏻‍💻", "ياقوت ومرجان 💰🏻", "عمله من العصر الفاطمي 💶", "مخطوطة كنز 📜", "بلوره قديمه 🔮", "كنز تائه 🏛️", "عملات من العصر المملوكي 💲", "كنز نابليون 💲💲", "كنز وخلاص 😂💲💲", "ممتلكات قديمه 💸",}
+local Descriptioont = Textinggt[math.random(#Textinggt)]
+local ban = LuaTele.getUser(msg.sender.user_id)
+if ban.first_name then
+neews = "["..ban.first_name.."](tg://user?id="..ban.id..")"
+else
+neews = " لا يوجد "
+end
+if Descriptioont == "ذهب ✨" then
+Redis:incrby(Revor.."boob"..msg.sender.user_id , 150)
+local ballancee = Redis:get(Revor.."boob"..msg.sender.user_id) or 0
+LuaTele.sendText(msg.chat_id,msg.id,"اشعار ايداع "..neews.."\nتم استبداله بمبلغ وقدره : 25 جنيه 💵\nكنزك هـو : ذهب ✨\nنوع العملية : البحث عن كنز\nرصيدك دلوقتي : "..ballancee.." جنيه 💵","md",true)
+Redis:setex(Revor.."iiihoo" .. msg.sender.user_id,600, true)
+elseif Descriptioont == "فضه 💰" then
+Redis:incrby(Revor.."boob"..msg.sender.user_id , 75)
+local ballancee = Redis:get(Revor.."boob"..msg.sender.user_id) or 0
+LuaTele.sendText(msg.chat_id,msg.id,"اشعار ايداع "..neews.."\nتم استبداله بمبلغ وقدره : 75 جنيه 💵\nكنزك هـو : فضه 💰\nنوع العملية : البحث عن كنز\nرصيدك دلوقتي : "..ballancee.." جنيه 💵","md",true)
+Redis:setex(Revor.."iiihoo" .. msg.sender.user_id,600, true)
+elseif Descriptioont == "ورث 💰" then
+Redis:incrby(Revor.."boob"..msg.sender.user_id , 75)
+local ballancee = Redis:get(Revor.."boob"..msg.sender.user_id) or 0
+LuaTele.sendText(msg.chat_id,msg.id,"اشعار ايداع "..neews.."\nتم استبداله بمبلغ وقدره : 75 جنيه 💵\nكنزك هـو : ورث 💰\nنوع العملية : البحث عن كنز\nرصيدك دلوقتي : "..ballancee.." جنيه 💵","md",true)
+Redis:setex(Revor.."iiihoo" .. msg.sender.user_id,600, true)
+elseif Descriptioont == "ياقوت ✨" then
+Redis:incrby(Revor.."boob"..msg.sender.user_id , 150)
+local ballancee = Redis:get(Revor.."boob"..msg.sender.user_id) or 0
+LuaTele.sendText(msg.chat_id,msg.id,"اشعار ايداع "..neews.."\nتم استبداله بمبلغ وقدره : 150 جنيه 💵\nكنزك هـو : ياقوت ✨\nنوع العملية : البحث عن كنز\nرصيدك دلوقتي : "..ballancee.." جنيه 💵","md",true)
+Redis:setex(Revor.."iiihoo" .. msg.sender.user_id,600, true)
+elseif Descriptioont == "مرجان ✨" then
+Redis:incrby(Revor.."boob"..msg.sender.user_id , 1150)
+local ballancee = Redis:get(Revor.."boob"..msg.sender.user_id) or 0
+LuaTele.sendText(msg.chat_id,msg.id,"اشعار ايداع "..neews.."\nتم استبداله بمبلغ وقدره : 1150 جنيه 💵\nكنزك هـو : مرجان ✨\nنوع العملية : البحث عن كنز\nرصيدك دلوقتي : "..ballancee.." جنيه 💵","md",true)
+Redis:setex(Revor.."iiihoo" .. msg.sender.user_id,600, true)
+elseif Descriptioont == "سبيكة ذهب خالص 💸" then
+Redis:incrby(Revor.."boob"..msg.sender.user_id , 15)
+local ballancee = Redis:get(Revor.."boob"..msg.sender.user_id) or 0
+LuaTele.sendText(msg.chat_id,msg.id,"اشعار ايداع "..neews.."\nتم استبداله بمبلغ وقدره : 10 جنيه 💵\nكنزك هـو : سبيكة ذهب خالص 💸\nنوع العملية : البحث عن كنز\nرصيدك دلوقتي : "..ballancee.." جنيه 💵","md",true)
+Redis:setex(Revor.."iiihoo" .. msg.sender.user_id,600, true)
+elseif Descriptioont == "عمله نادره 🔮" then
+Redis:incrby(Revor.."boob"..msg.sender.user_id , 30)
+local ballancee = Redis:get(Revor.."boob"..msg.sender.user_id) or 0
+LuaTele.sendText(msg.chat_id,msg.id,"اشعار ايداع "..neews.."\nتم استبداله بمبلغ وقدره : 30 جنيه 💵\nكنزك هـو : عمله نادره 🔮\nنوع العملية : البحث عن كنز\nرصيدك دلوقتي : "..ballancee.." جنيه 💵","md",true)
+Redis:setex(Revor.."iiihoo" .. msg.sender.user_id,600, true)
+elseif Descriptioont == "اثار ⚱️" then
+Redis:incrby(Revor.."boob"..msg.sender.user_id , 35)
+local ballancee = Redis:get(Revor.."boob"..msg.sender.user_id) or 0
+LuaTele.sendText(msg.chat_id,msg.id,"اشعار ايداع "..neews.."\nتم استبداله بمبلغ وقدره : 35 جنيه 💵\nكنزك هـو : اثار ⚱️\nنوع العملية : البحث عن كنز\nرصيدك دلوقتي : "..ballancee.." جنيه 💵","md",true)
+Redis:setex(Revor.."iiihoo" .. msg.sender.user_id,600, true)
+elseif Descriptioont == "فلوس 💴💸" then
+Redis:incrby(Revor.."boob"..msg.sender.user_id , 25)
+local ballancee = Redis:get(Revor.."boob"..msg.sender.user_id) or 0
+LuaTele.sendText(msg.chat_id,msg.id,"اشعار ايداع "..neews.."\nتم استبداله بمبلغ وقدره : 25 جنيه 💵\nكنزك هـو : فلوس 💴💸\nنوع العملية : البحث عن كنز\nرصيدك دلوقتي : "..ballancee.." جنيه 💵","md",true)
+Redis:setex(Revor.."iiihoo" .. msg.sender.user_id,600, true)
+elseif Descriptioont == "عمله قيمه💸" then
+Redis:incrby(Revor.."boob"..msg.sender.user_id , 35)
+local ballancee = Redis:get(Revor.."boob"..msg.sender.user_id) or 0
+LuaTele.sendText(msg.chat_id,msg.id,"اشعار ايداع "..neews.."\nتم استبداله بمبلغ وقدره : 35 جنيه 💵\nكنزك هـو : عمله قيمه💸\nنوع العملية : البحث عن كنز\nرصيدك دلوقتي : "..ballancee.." جنيه 💵","md",true)
+Redis:setex(Revor.."iiihoo" .. msg.sender.user_id,600, true)
+elseif Descriptioont == "كنز مفقود💸" then
+Redis:incrby(Revor.."boob"..msg.sender.user_id , 300)
+local ballancee = Redis:get(Revor.."boob"..msg.sender.user_id) or 0
+LuaTele.sendText(msg.chat_id,msg.id,"اشعار ايداع "..neews.."\nتم استبداله بمبلغ وقدره : 300 جنيه 💵\nكنزك هـو : كنز مفقود💸\nنوع العملية : البحث عن كنز\nرصيدك دلوقتي : "..ballancee.." جنيه 💵","md",true)
+Redis:setex(Revor.."iiihoo" .. msg.sender.user_id,600, true)
+elseif Descriptioont == "مجوهرات 💰" then
+Redis:incrby(Revor.."boob"..msg.sender.user_id , 65)
+local ballancee = Redis:get(Revor.."boob"..msg.sender.user_id) or 0
+LuaTele.sendText(msg.chat_id,msg.id,"اشعار ايداع "..neews.."\nتم استبداله بمبلغ وقدره : 65 جنيه 💵\nكنزك هـو : مجوهرات 💰\nنوع العملية : البحث عن كنز\nرصيدك دلوقتي : "..ballancee.." جنيه 💵","md",true)
+Redis:setex(Revor.."iiihoo" .. msg.sender.user_id,600, true)
+elseif Descriptioont == "عمله من العصر الفرعوني 🗿" then
+Redis:incrby(Revor.."boob"..msg.sender.user_id , 15)
+local ballancee = Redis:get(Revor.."boob"..msg.sender.user_id) or 0
+LuaTele.sendText(msg.chat_id,msg.id,"اشعار ايداع "..neews.."\nتم استبداله بمبلغ وقدره : 15 جنيه 💵\nكنزك هـو : عمله من العصر الفرعوني 🗿\nنوع العملية : البحث عن كنز\nرصيدك دلوقتي : "..ballancee.." جنيه 💵","md",true)
+Redis:setex(Revor.."iiihoo" .. msg.sender.user_id,600, true)
+elseif Descriptioont == "عمله من الدوله القديمه 🗿" then
+Redis:incrby(Revor.."boob"..msg.sender.user_id , 27)
+local ballancee = Redis:get(Revor.."boob"..msg.sender.user_id) or 0
+LuaTele.sendText(msg.chat_id,msg.id,"اشعار ايداع "..neews.."\nتم استبداله بمبلغ وقدره : 27 جنيه 💵\nكنزك هـو : عمله من الدوله القديمه 🗿\nنوع العملية : البحث عن كنز\nرصيدك دلوقتي : "..ballancee.." جنيه 💵","md",true)
+Redis:setex(Revor.."iiihoo" .. msg.sender.user_id,600, true)
+elseif Descriptioont == "عمله بيتكوين 💶" then
+Redis:incrby(Revor.."boob"..msg.sender.user_id , 150)
+local ballancee = Redis:get(Revor.."boob"..msg.sender.user_id) or 0
+LuaTele.sendText(msg.chat_id,msg.id,"اشعار ايداع "..neews.."\nتم استبداله بمبلغ وقدره : 150 جنيه 💵\nكنزك هـو : عمله بيتكوين 💶\nنوع العملية : البحث عن كنز\nرصيدك دلوقتي : "..ballancee.." جنيه 💵","md",true)
+Redis:setex(Revor.."iiihoo" .. msg.sender.user_id,600, true)
+elseif Descriptioont == "عمله ذهبيه نادره" then
+Redis:incrby(Revor.."boob"..msg.sender.user_id , 160)
+local ballancee = Redis:get(Revor.."boob"..msg.sender.user_id) or 0
+LuaTele.sendText(msg.chat_id,msg.id,"اشعار ايداع "..neews.."\nتم استبداله بمبلغ وقدره : 160 جنيه 💵\nكنزك هـو : ممرض 👨\nنوع العملية : البحث عن كنز\nرصيدك دلوقتي : "..ballancee.." جنيه 💵","md",true)
+Redis:setex(Revor.."iiihoo" .. msg.sender.user_id,600, true)
+elseif Descriptioont == "عمله فضيه نادره" then
+Redis:incrby(Revor.."boob"..msg.sender.user_id , 200)
+local ballancee = Redis:get(Revor.."boob"..msg.sender.user_id) or 0
+LuaTele.sendText(msg.chat_id,msg.id,"اشعار ايداع "..neews.."\nتم استبداله بمبلغ وقدره : 200 جنيه 💵\nكنزك هـو : عمله فضيه نادره\nنوع العملية : البحث عن كنز\nرصيدك دلوقتي : "..ballancee.." جنيه 💵","md",true)
+Redis:setex(Revor.."iiihoo" .. msg.sender.user_id,600, true)
+elseif Descriptioont == "عمله ذهبيه خالصه" then
+Redis:incrby(Revor.."boob"..msg.sender.user_id , 59)
+local ballancee = Redis:get(Revor.."boob"..msg.sender.user_id) or 0
+LuaTele.sendText(msg.chat_id,msg.id,"اشعار ايداع "..neews.."\nتم استبداله بمبلغ وقدره : 59 جنيه 💵\nكنزك هـو : عمله ذهبيه خالصه\nنوع العملية : البحث عن كنز\nرصيدك دلوقتي : "..ballancee.." جنيه 💵","md",true)
+Redis:setex(Revor.."iiihoo" .. msg.sender.user_id,600, true)
+elseif Descriptioont == "كنز علي بابا المفقود 💰" then
+Redis:incrby(Revor.."boob"..msg.sender.user_id , 130)
+local ballancee = Redis:get(Revor.."boob"..msg.sender.user_id) or 0
+LuaTele.sendText(msg.chat_id,msg.id,"اشعار ايداع "..neews.."\nتم استبداله بمبلغ وقدره : 130 جنيه 💵\nكنزك هـو : كنز علي بابا المفقود 💰\nنوع العملية : البحث عن كنز\nرصيدك دلوقتي : "..ballancee.." جنيه ??","md",true)
+Redis:setex(Revor.."iiihoo" .. msg.sender.user_id,600, true)
+elseif Descriptioont == "بطاقه ائتمان💰" then
+Redis:incrby(Revor.."boob"..msg.sender.user_id , 200)
+local ballancee = Redis:get(Revor.."boob"..msg.sender.user_id) or 0
+LuaTele.sendText(msg.chat_id,msg.id,"اشعار ايداع "..neews.."\nتم استبداله بمبلغ وقدره : 200 جنيه 💵\nكنزك هـو : بطاقه ائتمان💰\nنوع العملية : البحث عن كنز\nرصيدك دلوقتي : "..ballancee.." جنيه 💵","md",true)
+Redis:setex(Revor.."iiihoo" .. msg.sender.user_id,600, true)
+elseif Descriptioont == "دولار امريكي 💸" then
+Redis:incrby(Revor.."boob"..msg.sender.user_id , 4150)
+local ballancee = Redis:get(Revor.."boob"..msg.sender.user_id) or 0
+LuaTele.sendText(msg.chat_id,msg.id,"اشعار ايداع "..neews.."\nتم استبداله بمبلغ وقدره : 4150 جنيه 💵\nكنزك هـو : دولار امريكي 💸\nنوع العملية : البحث عن كنز\nرصيدك دلوقتي : "..ballancee.." جنيه 💵","md",true)
+Redis:setex(Revor.."iiihoo" .. msg.sender.user_id,600, true)
+elseif Descriptioont == "دولار كندي 💸" then
+Redis:incrby(Revor.."boob"..msg.sender.user_id , 200)
+local ballancee = Redis:get(Revor.."boob"..msg.sender.user_id) or 0
+LuaTele.sendText(msg.chat_id,msg.id,"اشعار ايداع "..neews.."\nتم استبداله بمبلغ وقدره : 200 جنيه 💵\nكنزك هـو : دولار كندي 💸\nنوع العملية : البحث عن كنز\nرصيدك دلوقتي : "..ballancee.." جنيه 💵","md",true)
+Redis:setex(Revor.."iiihoo" .. msg.sender.user_id,600, true)
+elseif Descriptioont == "ين يباني 💸" then
+Redis:incrby(Revor.."boob"..msg.sender.user_id , 2150)
+local ballancee = Redis:get(Revor.."boob"..msg.sender.user_id) or 0
+LuaTele.sendText(msg.chat_id,msg.id,"اشعار ايداع "..neews.."\nتم استبداله بمبلغ وقدره : 2150 جنيه 💵\nكنزك هـو : ين يباني 💸\nنوع العملية : البحث عن كنز\nرصيدك دلوقتي : "..ballancee.." جنيه 💵","md",true)
+Redis:setex(Revor.."iiihoo" .. msg.sender.user_id,600, true)
+elseif Descriptioont == "جنيه بريطاني 💸" then
+Redis:incrby(Revor.."boob"..msg.sender.user_id , 2150)
+local ballancee = Redis:get(Revor.."boob"..msg.sender.user_id) or 0
+LuaTele.sendText(msg.chat_id,msg.id,"اشعار ايداع "..neews.."\nتم استبداله بمبلغ وقدره : 2150 جنيه 💵\nكنزك هـو : جنيه بريطاني 💸\nنوع العملية : البحث عن كنز\nرصيدك دلوقتي : "..ballancee.." جنيه 💵","md",true)
+Redis:setex(Revor.."iiihoo" .. msg.sender.user_id,600, true)
+elseif Descriptioont == "دنانير عراقيه 💸" then
+Redis:incrby(Revor.."boob"..msg.sender.user_id , 150)
+local ballancee = Redis:get(Revor.."boob"..msg.sender.user_id) or 0
+LuaTele.sendText(msg.chat_id,msg.id,"اشعار ايداع "..neews.."\nتم استبداله بمبلغ وقدره : 150 جنيه 💵\nكنزك هـو : دنانير عراقيه 💸\nنوع العملية : البحث عن كنز\nرصيدك دلوقتي : "..ballancee.." جنيه 💵","md",true)
+Redis:setex(Revor.."iiihoo" .. msg.sender.user_id,600, true)
+elseif Descriptioont == "ريال سعودي 💴" then
+Redis:incrby(Revor.."boob"..msg.sender.user_id , 100)
+local ballancee = Redis:get(Revor.."boob"..msg.sender.user_id) or 0
+LuaTele.sendText(msg.chat_id,msg.id,"اشعار ايداع "..neews.."\nتم استبداله بمبلغ وقدره : 100 جنيه 💵\nكنزك هـو : ريال سعودي 💴\nنوع العملية : البحث عن كنز\nرصيدك دلوقتي : "..ballancee.." جنيه 💵","md",true)
+Redis:setex(Revor.."iiihoo" .. msg.sender.user_id,600, true)
+elseif Descriptioont == "درهم اماراتي 💴" then
+Redis:incrby(Revor.."boob"..msg.sender.user_id , 150)
+local ballancee = Redis:get(Revor.."boob"..msg.sender.user_id) or 0
+LuaTele.sendText(msg.chat_id,msg.id,"اشعار ايداع "..neews.."\nتم استبداله بمبلغ وقدره : 150 جنيه 💵\nكنزك هـو : درهم اماراتي 💴\nنوع العملية : البحث عن كنز\nرصيدك دلوقتي : "..ballancee.." جنيه 💵","md",true)
+Redis:setex(Revor.."iiihoo" .. msg.sender.user_id,600, true)
+elseif Descriptioont == "فرنك جيبوتي 💲" then
+Redis:incrby(Revor.."boob"..msg.sender.user_id , 200)
+local ballancee = Redis:get(Revor.."boob"..msg.sender.user_id) or 0
+LuaTele.sendText(msg.chat_id,msg.id,"اشعار ايداع "..neews.."\nتم استبداله بمبلغ وقدره : 200 جنيه 💵\nكنزك هـو : فرنك جيبوتي 💲\nنوع العملية : البحث عن كنز\nرصيدك دلوقتي : "..ballancee.." جنيه 💵","md",true)
+Redis:setex(Revor.."iiihoo" .. msg.sender.user_id,600, true)
+elseif Descriptioont == "اموال مفقوده 💲" then
+Redis:incrby(Revor.."boob"..msg.sender.user_id , 30)
+local ballancee = Redis:get(Revor.."boob"..msg.sender.user_id) or 0
+LuaTele.sendText(msg.chat_id,msg.id,"اشعار ايداع "..neews.."\nتم استبداله بمبلغ وقدره : 30 جنيه 💵\nكنزك هـو : اموال مفقوده 💲\nنوع العملية : البحث عن كنز\nرصيدك دلوقتي : "..ballancee.." جنيه 💵","md",true)
+Redis:setex(Revor.."iiihoo" .. msg.sender.user_id,600, true)
+elseif Descriptioont == "كنز خاص 💲" then
+Redis:incrby(Revor.."boob"..msg.sender.user_id , 230)
+local ballancee = Redis:get(Revor.."boob"..msg.sender.user_id) or 0
+LuaTele.sendText(msg.chat_id,msg.id,"اشعار ايداع "..neews.."\nتم استبداله بمبلغ وقدره : 230 جنيه 💵\nكنزك هـو : كنز خاص 💲\nنوع العملية : البحث عن كنز\nرصيدك دلوقتي : "..ballancee.." جنيه 💵","md",true)
+Redis:setex(Revor.."iiihoo" .. msg.sender.user_id,600, true)
+elseif Descriptioont == "صواع ملك مفقود ⚱️" then
+Redis:incrby(Revor.."boob"..msg.sender.user_id , 160)
+local ballancee = Redis:get(Revor.."boob"..msg.sender.user_id) or 0
+LuaTele.sendText(msg.chat_id,msg.id,"اشعار ايداع "..neews.."\nتم استبداله بمبلغ وقدره : 160 جنيه 💵\nكنزك هـو : صواع ملك مفقود ⚱️\nنوع العملية : البحث عن كنز\nرصيدك دلوقتي : "..ballancee.." جنيه 💵","md",true)
+Redis:setex(Revor.."iiihoo" .. msg.sender.user_id,600, true)
+elseif Descriptioont == "تاج خاص بملك 👑" then
+Redis:incrby(Revor.."boob"..msg.sender.user_id , 1500)
+local ballancee = Redis:get(Revor.."boob"..msg.sender.user_id) or 0
+LuaTele.sendText(msg.chat_id,msg.id,"اشعار ايداع "..neews.."\nتم استبداله بمبلغ وقدره : 1500 جنيه 💵\nكنزك هـو : تاج خاص بملك 👑\nنوع العملية : البحث عن كنز\nرصيدك دلوقتي : "..ballancee.." جنيه 💵","md",true)
+Redis:setex(Revor.."iiihoo" .. msg.sender.user_id,600, true)
+elseif Descriptioont == "تاج خاص بملك 👑" then
+Redis:incrby(Revor.."boob"..msg.sender.user_id , 20)
+local ballancee = Redis:get(Revor.."boob"..msg.sender.user_id) or 0
+LuaTele.sendText(msg.chat_id,msg.id,"اشعار ايداع "..neews.."\nتم استبداله بمبلغ وقدره : 20 جنيه 💵\nكنزك هـو : تاج خاص بملك 👑\nنوع العملية : البحث عن كنز\nرصيدك دلوقتي : "..ballancee.." جنيه 💵","md",true)
+Redis:setex(Revor.."iiihoo" .. msg.sender.user_id,600, true)
+elseif Descriptioont == "اثار تحت المنزل" then
+Redis:incrby(Revor.."boob"..msg.sender.user_id , 100)
+local ballancee = Redis:get(Revor.."boob"..msg.sender.user_id) or 0
+LuaTele.sendText(msg.chat_id,msg.id,"اشعار ايداع "..neews.."\nتم استبداله بمبلغ وقدره : 100 جنيه 💵\nكنزك هـو : اثار تحت المنزل\nنوع العملية : البحث عن كنز\nرصيدك دلوقتي : "..ballancee.." جنيه 💵","md",true)
+Redis:setex(Revor.."iiihoo" .. msg.sender.user_id,600, true)
+elseif Descriptioont == "جثة فرعون قديمه" then
+Redis:incrby(Revor.."boob"..msg.sender.user_id , 90)
+local ballancee = Redis:get(Revor.."boob"..msg.sender.user_id) or 0
+LuaTele.sendText(msg.chat_id,msg.id,"اشعار ايداع "..neews.."\nتم استبداله بمبلغ وقدره : 90 جنيه 💵\nكنزك هـو : جثة فرعون قديمه\nنوع العملية : البحث عن كنز\nرصيدك دلوقتي : "..ballancee.." جنيه 💵","md",true)
+Redis:setex(Revor.."iiihoo" .. msg.sender.user_id,600, true)
+elseif Descriptioont == "تابوت ملك مصري ⚰️" then
+Redis:incrby(Revor.."boob"..msg.sender.user_id , 160)
+local ballancee = Redis:get(Revor.."boob"..msg.sender.user_id) or 0
+LuaTele.sendText(msg.chat_id,msg.id,"اشعار ايداع "..neews.."\nتم استبداله بمبلغ وقدره : 160 جنيه 💵\nكنزك هـو : تابوت ملك مصري ⚰️\nنوع العملية : البحث عن كنز\nرصيدك دلوقتي : "..ballancee.." جنيه 💵","md",true)
+Redis:setex(Revor.."iiihoo" .. msg.sender.user_id,600, true)
+elseif Descriptioont == "تاج ملكه مصريه 👑" then
+Redis:incrby(Revor.."boob"..msg.sender.user_id , 160)
+local ballancee = Redis:get(Revor.."boob"..msg.sender.user_id) or 0
+LuaTele.sendText(msg.chat_id,msg.id,"اشعار ايداع "..neews.."\nتم استبداله بمبلغ وقدره : 160 جنيه 💵\nكنزك هـو : تاج ملكه مصريه 👑\nنوع العملية : البحث عن كنز\nرصيدك دلوقتي : "..ballancee.." جنيه 💵","md",true)
+Redis:setex(Revor.."iiihoo" .. msg.sender.user_id,600, true)
+elseif Descriptioont == "مخطوطه لكنز " then
+Redis:incrby(Revor.."boob"..msg.sender.user_id , 1200)
+local ballancee = Redis:get(Revor.."boob"..msg.sender.user_id) or 0
+LuaTele.sendText(msg.chat_id,msg.id,"اشعار ايداع "..neews.."\nتم استبداله بمبلغ وقدره : 1200 جنيه 💵\nكنزك هـو : مخطوطه لكنز \nنوع العملية : البحث عن كنز\nرصيدك دلوقتي : "..ballancee.." جنيه ??","md",true)
+Redis:setex(Revor.."iiihoo" .. msg.sender.user_id,600, true)
+elseif Descriptioont == "مقبره فرعونيه 💎⚱️⚰️" then
+Redis:incrby(Revor.."boob"..msg.sender.user_id , 100)
+local ballancee = Redis:get(Revor.."boob"..msg.sender.user_id) or 0
+LuaTele.sendText(msg.chat_id,msg.id,"اشعار ايداع "..neews.."\nتم استبداله بمبلغ وقدره : 100 جنيه 💵\nكنزك هـو : مقبره فرعونيه 💎⚱️⚰️\nنوع العملية : البحث عن كنز\nرصيدك دلوقتي : "..ballancee.." جنيه 💵","md",true)
+Redis:setex(Revor.."iiihoo" .. msg.sender.user_id,600, true)
+elseif Descriptioont == "تمثال رمسيس ⚰️" then
+Redis:incrby(Revor.."boob"..msg.sender.user_id , 190)
+local ballancee = Redis:get(Revor.."boob"..msg.sender.user_id) or 0
+LuaTele.sendText(msg.chat_id,msg.id,"اشعار ايداع "..neews.."\nتم استبداله بمبلغ وقدره : 190 جنيه 💵\nكنزك هـو : تمثال رمسيس ⚰️\nنوع العملية : البحث عن كنز\nرصيدك دلوقتي : "..ballancee.." جنيه 💵","md",true)
+Redis:setex(Revor.."iiihoo" .. msg.sender.user_id,600, true)
+elseif Descriptioont == "كنز كينج المفقود 💲" then
+Redis:incrby(Revor.."boob"..msg.sender.user_id , 150)
+local ballancee = Redis:get(Revor.."boob"..msg.sender.user_id) or 0
+LuaTele.sendText(msg.chat_id,msg.id,"اشعار ايداع "..neews.."\nتم استبداله بمبلغ وقدره : 150 جنيه 💵\nكنزك هـو : كنز كينج المفقود 💲\nنوع العملية : البحث عن كنز\nرصيدك دلوقتي : "..ballancee.." جنيه 💵","md",true)
+Redis:setex(Revor.."iiihoo" .. msg.sender.user_id,600, true)
+elseif Descriptioont == "كنز اطلانطس المفقود 💲" then
+Redis:incrby(Revor.."boob"..msg.sender.user_id , 200)
+local ballancee = Redis:get(Revor.."boob"..msg.sender.user_id) or 0
+LuaTele.sendText(msg.chat_id,msg.id,"اشعار ايداع "..neews.."\nتم استبداله بمبلغ وقدره : 200 جنيه 💵\nكنزك هـو : كنز اطلانطس المفقود 💲\nنوع العملية : البحث عن كنز\nرصيدك دلوقتي : "..ballancee.." جنيه 💵","md",true)
+Redis:setex(Revor.."iiihoo" .. msg.sender.user_id,600, true)
+elseif Descriptioont == "زئبق احمر 🌡️" then
+Redis:incrby(Revor.."boob"..msg.sender.user_id , 1130)
+local ballancee = Redis:get(Revor.."boob"..msg.sender.user_id) or 0
+LuaTele.sendText(msg.chat_id,msg.id,"اشعار ايداع "..neews.."\nتم استبداله بمبلغ وقدره : 150 جنيه 💵\nكنزك هـو : زئبق احمر 🌡️\nنوع العملية : البحث عن كنز\nرصيدك دلوقتي : "..ballancee.." جنيه 💵","md",true)
+Redis:setex(Revor.."iiihoo" .. msg.sender.user_id,600, true)
+elseif Descriptioont == "ياقوت ومرجان 💰" then
+Redis:incrby(Revor.."boob"..msg.sender.user_id , 300)
+local ballancee = Redis:get(Revor.."boob"..msg.sender.user_id) or 0
+LuaTele.sendText(msg.chat_id,msg.id,"اشعار ايداع "..neews.."\nتم استبداله بمبلغ وقدره : 300 جنيه 💵\nكنزك هـو : ياقوت ومرجان 💰\nنوع العملية : البحث عن كنز\nرصيدك دلوقتي : "..ballancee.." جنيه 💵","md",true)
+Redis:setex(Revor.."iiihoo" .. msg.sender.user_id,600, true)
+elseif Descriptioont == "عمله من العصر الفاطمي 💶" then
+Redis:incrby(Revor.."boob"..msg.sender.user_id , 90)
+local ballancee = Redis:get(Revor.."boob"..msg.sender.user_id) or 0
+LuaTele.sendText(msg.chat_id,msg.id,"اشعار ايداع "..neews.."\nتم استبداله بمبلغ وقدره : 90 جنيه 💵\nكنزك هـو : عمله من العصر الفاطمي 💶\nنوع العملية : البحث عن كنز\nرصيدك دلوقتي : "..ballancee.." جنيه 💵","md",true)
+Redis:setex(Revor.."iiihoo" .. msg.sender.user_id,600, true)
+elseif Descriptioont == "مخطوطة كنز 📜" then
+Redis:incrby(Revor.."boob"..msg.sender.user_id , 160)
+local ballancee = Redis:get(Revor.."boob"..msg.sender.user_id) or 0
+LuaTele.sendText(msg.chat_id,msg.id,"اشعار ايداع "..neews.."\nتم استبداله بمبلغ وقدره : 160 جنيه 💵\nكنزك هـو : مخطوطة كنز 📜\nنوع العملية : البحث عن كنز\nرصيدك دلوقتي : "..ballancee.." جنيه 💵","md",true)
+Redis:setex(Revor.."iiihoo" .. msg.sender.user_id,600, true)
+elseif Descriptioont == "بلوره قديمه 🔮" then
+Redis:incrby(Revor.."boob"..msg.sender.user_id , 100)
+local ballancee = Redis:get(Revor.."boob"..msg.sender.user_id) or 0
+LuaTele.sendText(msg.chat_id,msg.id,"اشعار ايداع "..neews.."\nتم استبداله بمبلغ وقدره : 100 جنيه 💵\nكنزك هـو : بلوره قديمه 🔮\nنوع العملية : البحث عن كنز\nرصيدك دلوقتي : "..ballancee.." جنيه 💵","md",true)
+Redis:setex(Revor.."iiihoo" .. msg.sender.user_id,600, true)
+elseif Descriptioont == "كنز تائه 🏛️" then
+Redis:incrby(Revor.."boob"..msg.sender.user_id , 200)
+local ballancee = Redis:get(Revor.."boob"..msg.sender.user_id) or 0
+LuaTele.sendText(msg.chat_id,msg.id,"اشعار ايداع "..neews.."\nتم استبداله بمبلغ وقدره : 200 جنيه 💵\nكنزك هـو : كنز تائه 🏛️\nنوع العملية : البحث عن كنز\nرصيدك دلوقتي : "..ballancee.." جنيه 💵","md",true)
+Redis:setex(Revor.."iiihoo" .. msg.sender.user_id,600, true)
+elseif Descriptioont == "عملات من العصر المملوكي 💲" then
+Redis:incrby(Revor.."boob"..msg.sender.user_id , 200)
+local ballancee = Redis:get(Revor.."boob"..msg.sender.user_id) or 0
+LuaTele.sendText(msg.chat_id,msg.id,"اشعار ايداع "..neews.."\nتم استبداله بمبلغ وقدره : 200 جنيه 💵\nكنزك هـو : عملات من العصر المملوكي 💲\nنوع العملية : البحث عن كنز\nرصيدك دلوقتي : "..ballancee.." جنيه 💵","md",true)
+Redis:setex(Revor.."iiihoo" .. msg.sender.user_id,600, true)
+elseif Descriptioont == "كنز نابليون 💲💲" then
+Redis:incrby(Revor.."boob"..msg.sender.user_id , 150)
+local ballancee = Redis:get(Revor.."boob"..msg.sender.user_id) or 0
+LuaTele.sendText(msg.chat_id,msg.id,"اشعار ايداع "..neews.."\nتم استبداله بمبلغ وقدره : 150 جنيه 💵\nكنزك هـو : كنز نابليون 💲💲\nنوع العملية : البحث عن كنز\nرصيدك دلوقتي : "..ballancee.." جنيه 💵","md",true)
+Redis:setex(Revor.."iiihoo" .. msg.sender.user_id,600, true)
+elseif Descriptioont == "كنز وخلاص 😂💲💲" then
+Redis:incrby(Revor.."boob"..msg.sender.user_id , 100)
+local ballancee = Redis:get(Revor.."boob"..msg.sender.user_id) or 0
+LuaTele.sendText(msg.chat_id,msg.id,"اشعار ايداع "..neews.."\nتم استبداله بمبلغ وقدره : 100 جنيه ??\nكنزك هـو : كنز وخلاص 😂💲💲\nنوع العملية : البحث عن كنز\nرصيدك دلوقتي : "..ballancee.." جنيه 💵","md",true)
+Redis:setex(Revor.."iiihoo" .. msg.sender.user_id,600, true)
+elseif Descriptioont == "ممتلكات قديمه 💸" then
+Redis:incrby(Revor.."boob"..msg.sender.user_id , 130)
+local ballancee = Redis:get(Revor.."boob"..msg.sender.user_id) or 0
+LuaTele.sendText(msg.chat_id,msg.id,"اشعار ايداع "..neews.."\nتم استبداله بمبلغ وقدره : 130 جنيه 💵\nكنزك هـو : ممتلكات قديمه 💸\nنوع العملية : البحث عن كنز\nرصيدك دلوقتي : "..ballancee.." جنيه 💵","md",true)
+Redis:setex(Revor.."iiihoo" .. msg.sender.user_id,600, true)
+end
+else
+LuaTele.sendText(msg.chat_id,msg.id, "⇜ معندكش حساب بنكي ارسل ↢ ( `انشاء حساب بنكي` )","md",true)
+end
+end
+
+if text == "بوب" or text == "مشاهير" then
+KlamSpeed = {"شوان","سام","ايد شيرين","جاستين","اريانا","سام سميث","ايد","جاستين","معزه","ميسي","صلاح","محمد صلاح","احمد عز","كريستيانو","كريستيانو رونالدو","رامز جلال","امير كراره","ويجز","بابلو","تامر حسني","ابيو","شيرين","نانسي عجرم","محمد رمضان","احمد حلمي","محمد هنيدي","حسن حسني","حماقي","احمد مكي"};
+name = KlamSpeed[math.random(#KlamSpeed)]
+Redis:set(black .."mshaher"..msg.chat_id,name)
+name = string.gsub(name,"شوان","https://t.me/HC6HH/8")
+name = string.gsub(name,"سام","https://t.me/HC6HH/7")
+name = string.gsub(name,"سام سميث","https://t.me/HC6HH/7")
+name = string.gsub(name,"ايد شيرين","https://t.me/HC6HH/6")
+name = string.gsub(name,"ايد","https://t.me/HC6HH/6")
+name = string.gsub(name,"جاستين","https://t.me/HC6HH/4")
+name = string.gsub(name,"جاستين بيبر","https://t.me/HC6HH/4")
+name = string.gsub(name,"اريانا","https://t.me/HC6HH/5")
+name = string.gsub(name,"ميسي","https://t.me/HC6HH/10")
+name = string.gsub(name,"معزه","https://t.me/HC6HH/10")
+name = string.gsub(name,"صلاح","https://t.me/HC6HH/9")
+name = string.gsub(name,"محمد صلاح","https://t.me/HC6HH/9")
+name = string.gsub(name,"احمد عز","https://t.me/HC6HH/12")
+name = string.gsub(name,"كريم عبدالعزيز","https://t.me/HC6HH/11")
+name = string.gsub(name,"كريستيانو رونالدو","https://t.me/HC6HH/13")
+name = string.gsub(name,"كريستيانو","https://t.me/HC6HH/13")
+name = string.gsub(name,"امير كراره","https://t.me/HC6HH/14")
+name = string.gsub(name,"رامز جلال","https://t.me/HC6HH/15")
+name = string.gsub(name,"ويجز","https://t.me/HC6HH/16")
+name = string.gsub(name,"بابلو","https://t.me/HC6HH/17")
+name = string.gsub(name,"ابيو","https://t.me/HC6HH/20")
+name = string.gsub(name,"شيرين","https://t.me/HC6HH/21")
+name = string.gsub(name,"نانسي عجرم","https://t.me/HC6HH/22")
+name = string.gsub(name,"محمد رمضان","https://t.me/HC6HH/25")
+name = string.gsub(name,"احمد حلمي","https://t.me/HC6HH/26")
+name = string.gsub(name,"محمد هنيدي","https://t.me/HC6HH/27")
+name = string.gsub(name,"حسن حسني","https://t.me/HC6HH/28")
 name = string.gsub(name,"احمد مكي","https://t.me/HC6HH/29")
 name = string.gsub(name,"تامر حسني","https://t.me/HC6HH/30")
 name = string.gsub(name,"حماقي","https://t.me/HC6HH/31")
