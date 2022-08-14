@@ -5762,33 +5762,76 @@ return LuaTele.sendText(msg_chat_id,msg_id, [[*
 *]],"md",false, false, false, false, reply_markup)
 end
 json
-if text == "زخرفه" or text == "زخرف"  then
-if msg.can_be_deleted_for_all_users == false then
-return LuaTele.sendText(msg_chat_id,msg_id,"\n*●  عذرآ البوت ليس ادمن في الجروب يرجى ترقيته وتفعيل الصلاحيات له *","md",true)  
-end
-local reply_markup = LuaTele.replyMarkup{
-type = 'inline',
-data = {
-{
-{text = '🧤 •《| الزخرفه |》• 🧤',  data ='/leftz@'},
-},
-}
-}
-return LuaTele.sendText(msg.chat_id,msg.id,'*\n🚨╎اليك قسم زخرفه السورس •~`\n🚨╎اضغط زر الزخرفه بالأسفل👇•~`\n🚨╎وأرسل الجمله المراد زخرفتها •~`*',"md",false, false, false, false, reply_markup)
-end
 
----زخرفة ----
-if Redis:get(Revor .."zhrfa"..msg.sender.user_id) == "sendzh" then
-zh = https.request('https://apiabs.ml/zrf.php?abs='..URL.escape(text)..'')
-zx = JSON.decode(zh)
-t = "\n ● قائمه الزخرفه \n ▁ ▂ ▉ ▄ ▅ ▆ ▇ ▅ ▆ ▇ █ ▉ ▂ ▁\n"
-i = 0
-for k,v in pairs(zx.ok) do
-i = i + 1
-t = t..i.."- `"..v.."` \n"
+if text == "زخرفه" then
+  local reply_markup = LuaTele.replyMarkup{
+    type = 'inline',
+    data = {
+    {
+    {text = '𝙀𝙉𝙂 ▴ زخࢪفھـۃ انجليزي', data = msg.sender.user_id..'/zeng'},
+    },
+    {
+      {text = 'AR ▴ زخࢪفھـۃ عربي', data = msg.sender.user_id..'/zar'},
+      },
+    }
+    }
+  return send(msg_chat_id,msg_id, "مرحبا بك في زخرفه كينج","md",false,false,false,false,reply_markup)
 end
-LuaTele.sendText(msg_chat_id,msg_id,t,"md",true) 
-Redis:del(Revor .."zhrfa"..msg.sender.user_id) 
+-- z eng
+if text and text:match("%a") and Redis:get(Revor..msg_chat_id..msg.sender.user_id.."zkrf:") == "zeng" then
+  Redis:del(Revor..msg_chat_id..msg.sender.user_id.."zkrf:")
+  Redis:set(Revor..msg_chat_id..msg.sender.user_id.."zkrf:text", text)
+  local api = https.request("https://api-jack.ml/api19.php?text="..URL.escape(text))
+  local zkrf = JSON.decode(api)
+  local reply_markup = LuaTele.replyMarkup{
+    type = 'inline',
+    data = {
+      {{text = zkrf['anubis']['1'] , data = msg.sender.user_id..'/a1'}},
+      {{text = zkrf['anubis']['2'] , data = msg.sender.user_id..'/a2'}},
+      {{text = zkrf['anubis']['3'] , data = msg.sender.user_id..'/a3'}},
+      {{text = zkrf['anubis']['4'] , data = msg.sender.user_id..'/a4'}},
+      {{text = zkrf['anubis']['5'] , data = msg.sender.user_id..'/a5'}},
+      {{text = zkrf['anubis']['6'] , data = msg.sender.user_id..'/a6'}},
+      {{text = zkrf['anubis']['7'] , data = msg.sender.user_id..'/a7'}},
+      {{text = zkrf['anubis']['8'] , data = msg.sender.user_id..'/a8'}},
+      {{text = zkrf['anubis']['9'] , data = msg.sender.user_id..'/a9'}},
+      {{text = zkrf['anubis']['10'] , data = msg.sender.user_id..'/a10'}},
+      {{text = zkrf['anubis']['11'] , data = msg.sender.user_id..'/a11'}},
+      {{text = zkrf['anubis']['12'] , data = msg.sender.user_id..'/a12'}},
+      {{text = zkrf['anubis']['13'] , data = msg.sender.user_id..'/a13'}},
+      {{text = zkrf['anubis']['14'] , data = msg.sender.user_id..'/a14'}},
+      {{text = zkrf['anubis']['15'] , data = msg.sender.user_id..'/a15'}},
+      {{text = zkrf['anubis']['16'] , data = msg.sender.user_id..'/a16'}},
+      {{text = zkrf['anubis']['17'] , data = msg.sender.user_id..'/a17'}},
+      {{text = zkrf['anubis']['18'] , data = msg.sender.user_id..'/a18'}},
+      {{text = zkrf['anubis']['19'] , data = msg.sender.user_id..'/a19'}},
+    }
+    }
+    return send(msg_chat_id,msg_id, "★ اختࢪ الزخࢪفھـۃ التي تࢪيدها\n ▽","html",false,false,false,false,reply_markup)
+end
+-- z ar 
+if text and not text:match("%a") and Redis:get(Revor..msg_chat_id..msg.sender.user_id.."zkrf:") == "zar" then
+  Redis:del(Revor..msg_chat_id..msg.sender.user_id.."zkrf:")
+  Redis:set(Revor..msg_chat_id..msg.sender.user_id.."zkrf:text", text)
+  local api = https.request("https://api-jack.ml/api19.php?text="..URL.escape(text))
+  local zkrf = JSON.decode(api)
+  local reply_markup = LuaTele.replyMarkup{
+    type = 'inline',
+    data = {
+      {{text = zkrf['anubis']['1'] , data = msg.sender.user_id..'/a1'}},
+      {{text = zkrf['anubis']['2'] , data = msg.sender.user_id..'/a2'}},
+      {{text = zkrf['anubis']['3'] , data = msg.sender.user_id..'/a3'}},
+      {{text = zkrf['anubis']['4'] , data = msg.sender.user_id..'/a4'}},
+      {{text = zkrf['anubis']['5'] , data = msg.sender.user_id..'/a5'}},
+      {{text = zkrf['anubis']['6'] , data = msg.sender.user_id..'/a6'}},
+      {{text = zkrf['anubis']['7'] , data = msg.sender.user_id..'/a7'}},
+      {{text = zkrf['anubis']['8'] , data = msg.sender.user_id..'/a8'}},
+      {{text = zkrf['anubis']['9'] , data = msg.sender.user_id..'/a9'}},
+      {{text = zkrf['anubis']['10'] , data = msg.sender.user_id..'/a10'}},
+      {{text = zkrf['anubis']['11'] , data = msg.sender.user_id..'/a11'}},
+    }
+    }
+    return send(msg_chat_id,msg_id, "★ اختࢪ الزخࢪفھـۃ التي تࢪيدها\n ▽","html",false,false,false,false,reply_markup)
 end
 
 
@@ -19323,15 +19366,104 @@ if tonumber(IdUser) == tonumber(UserId) then
 LuaTele.editMessageText(ChatId,Msg_id,"*♤ تم رفض الزواج من الزوجه*","md",true) 
 end
 end
-if Text == '/leftz@' then
-LuaTele.editMessageText(ChatId,Msg_id,"* ▉ {ارسل الجمله ● {عربي&انجليزي •~` ▉*","md",true) 
-Redis:set(Revor .."zhrfa"..IdUser,"sendzh") 
-end 
-if Text == '/leftz@' then
-LuaTele.editMessageText(ChatId,Msg_id,"* ▉ {ارسل الجمله ● {عربي&انجليزي •~` ▉*","md",true) 
-Redis:set(Revor .."zhrfa"..IdUser,"sendzh") 
-end 
-
+if Text and Text:match('(%d+)/zeng') then
+  local UserId = Text:match('(%d+)/zeng')
+  if tonumber(UserId) == tonumber(IdUser) then
+    Redis:set(Revor..ChatId..IdUser.."zkrf:", "zeng")
+    edit(ChatId, Msg_id, "▾ 𝙎𝙀𝙉𝘿 𝙐𝙍 𝙉𝘼𝙈𝙀 🎀..! \n \n✴ اࢪسل الاسم لتتم زخࢪفتھـۃ الان 🎀..!", "md",false)
+  end
+  end
+if Text and Text:match('(.*)/a(.*)') then
+    local anubis = {Text:match('(.*)/a(.*)')}
+    local UserId = anubis[1]
+    local z_num = anubis[2]
+    local z_text = Redis:get(Revor..ChatId..IdUser.."zkrf:text")
+    Redis:set(Revor..ChatId..IdUser.."zkrf:num", z_num)
+    if tonumber(UserId) == tonumber(IdUser) then
+      local api = https.request("https://api-jack.ml/api19.php?text="..URL.escape(z_text))
+      local zkrf = JSON.decode(api)
+      local zk = zkrf['anubis'][z_num]
+      local reply_markup = LuaTele.replyMarkup{
+        type = 'inline',
+        data = {
+        {{text = zk , data = IdUser.."/b1"}},
+        {{text = "𓂄𓆩 "..zk.." 𓆪𓂁", data = IdUser.."/b2"}},
+        {{text = "𓆩⸤"..zk.."⸥𓆪", data = IdUser.."/b3"}},
+        {{text = "𓆩"..zk.."𓆪", data = IdUser.."/b4"}},
+        {{text = "⌁ "..zk.." ’♥ " , data = IdUser.."/b5"}},
+        {{text = "ꔷ"..zk.." 🧸💕 ˝♥›." , data = IdUser.."/b6"}},
+        {{text = "➹"..zk.." 𓂄𓆩♥𓆪‌‌𓂁", data = IdUser.."/b7"}},
+        {{text = "★⃝➼"..zk.." ꗛ", data = IdUser.."/b8"}},
+        {{text =  "⋆⃟➼"..zk.." ꕸ", data = IdUser.."/b9"}},
+        {{text = "⸢"..zk.."⸥", data = IdUser.."/b10"}},
+        {{text = "ꞏ"..zk.." ｢♥｣", data = IdUser.."/b11"}},
+        {{text = "⋆"..zk.." ’🧸💕›", data = IdUser.."/b12"}},
+        {{text = " ᯓ 𓆩 ˹ "..zk.." ˼ 𓆪 𓆃", data = IdUser.."/b13"}},
+        {{text = "𓆩 "..zk.."ｌ➝ ˛⁽♥₎ 𓆪", data = IdUser.."/b14"}},
+        {{text = "𒅒• !! "..zk.."  ᵛ͢ᵎᵖ 𒅒", data = IdUser.."/b15"}},
+        {{text = "˚₊· ͟͟͞͞➳۞❬ "..zk.." ❭•°", data = IdUser.."/b16"}},
+        {{text = "زخࢪفـــھـۃ بالايمۅجي 🎀..!", data = IdUser.."/emo"}},
+        }
+        }
+      edit(ChatId, Msg_id, "▾\n★ لقد اختࢪت \n▷ "..zk, "md",true,false,reply_markup)
+    end
+    end
+if Text and Text:match('(.*)/b(.*)') then
+      local anubis = {Text:match('(.*)/b(.*)')}
+      local UserId = anubis[1]
+      local z_num = tonumber(anubis[2])
+      local z_text = Redis:get(Revor..ChatId..IdUser.."zkrf:text")
+      local z_save = Redis:get(Revor..ChatId..IdUser.."zkrf:num")
+      if tonumber(UserId) == tonumber(IdUser) then
+        local api = https.request("https://api-jack.ml/api19.php?text="..URL.escape(z_text))
+        local zkrf = JSON.decode(api)
+        local zk = zkrf['anubis'][z_save]
+        local zk_list = {
+          zk,
+          "𓂄𓆩"..zk.."𓆪𓂁",
+          "𓆩⸤"..zk.."⸥𓆪",
+          "𓆩"..zk.."𓆪",
+          "⌁ "..zk.." ’♥ ", 
+          "ꔷ"..zk.." 🧸💕 ˝♥›.", 
+          "➹"..zk.." 𓂄𓆩♥𓆪‌‌𓂁", 
+          "★⃝➼"..zk.." ꗛ", 
+          "⋆⃟➼"..zk.." ꕸ",
+          "⸢"..zk.."⸥",
+          "ꞏ"..zk.." ｢♥｣",
+          "⋆"..zk.." ’🧸💕›",
+          " ᯓ 𓆩 ˹ "..zk.." ˼ 𓆪 𓆃",
+          "𓆩 "..zk.."ｌ➝ ˛⁽♥₎ 𓆪",
+          "𒅒• !! "..zk.."  ᵛ͢ᵎᵖ 𒅒",
+          "˚₊· ͟͟͞͞➳۞❬ "..zk.." ❭•°",
+        }
+        edit(ChatId, Msg_id, "▾\n★ لقد اختࢪت \n▷ `"..zk_list[z_num].."`", "md",false)
+        Redis:del(Revor..ChatId..IdUser.."zkrf:text")
+        Redis:del(Revor..ChatId..IdUser.."zkrf:num")
+      end
+      end
+-- z  emo
+if Text and Text:match('(%d+)/emo') then
+  local UserId = Text:match('(%d+)/emo')
+  local z_text = Redis:get(Revor..ChatId..IdUser.."zkrf:text")
+  local z_save = Redis:get(Revor..ChatId..IdUser.."zkrf:num")
+  if tonumber(UserId) == tonumber(IdUser) then
+    local api = https.request("https://api-jack.ml/api19.php?text="..URL.escape(z_text))
+    local zkrf = JSON.decode(api)
+    local zk = zkrf['anubis'][z_save]
+    edit(ChatId, Msg_id, "★ تمت الزخࢪفھـۃ بنجاح\n\n▷ `"..zk.." ¦✨❤️` \n\n▷ `"..zk.." “̯ 🐼💗`\n\n▷ `"..zk.." 🦋“`\n\n▷ `"..zk.."ّ ۞̚͢₎ 🐣`\n\n▷ `"..zk.." ℡ ̇ ✨🐯⇣✦`\n\n▷ `"..zk.." 😴🌸✿⇣`\n\n▷ `"..zk.." •🙊💙`\n\n▷ `"..zk.." ۞┊⁽ ℡🦁🌸`\n\n▷ `"..zk.." •💚“`\n\n▷ `"..zk.." ⚡️♛ֆ₎`\n\n▷ `"..zk.." ⁞♩⁽💎🌩₎⇣✿`\n\n▷ `"..zk.." 〄💖‘`\n\nاضغط علي الزخࢪفھـۃ للنسخ 🎀..!", "md",false)
+    Redis:del(Revor..ChatId..IdUser.."zkrf:text")
+    Redis:del(Revor..ChatId..IdUser.."zkrf:num")
+  end
+  end
+-- zar call back
+if Text and Text:match('(%d+)/zar') then
+    local UserId = Text:match('(%d+)/zar')
+    if tonumber(UserId) == tonumber(IdUser) then
+      Redis:set(Revor..ChatId..IdUser.."zkrf:", "zar")
+      edit(ChatId, Msg_id, "▾ 𝙎𝙀𝙉𝘿 𝙐𝙍 𝙉𝘼𝙈𝙀 🎀..! \n \n✴ اࢪسل الاسم لتتم زخࢪفتھـۃ الان 🎀..!", "md",false)
+    end
+    end
+    
 if Text and Text:match('(%d+)/rank_tf') then
 local UserId = Text:match('(%d+)/rank_tf')
 if tonumber(IdUser) == tonumber(UserId) then
