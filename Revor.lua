@@ -5726,56 +5726,21 @@ end
 Redis:set(Revor .."Revor :Status:Del:Media"..msg.chat_id,true)
 LuaTele.sendText(msg_chat_id,msg_id,'  ✶ ┃ تم تفعيل المسح التلقائي للميديا')
 return false
-end 
-if text == "تعطيل اليوتيوب" then        
-if not msg.Managers then
-return LuaTele.sendText(msg_chat_id,msg_id,'\n*  ✶ ┃ هذا الامر يخص ⟦ '..Controller_Num(6)..' ⟧* ',"md",true)  
-end
-Redis:del(Revor .."Revor :Status:yt"..msg.chat_id)
- LuaTele.sendText(msg_chat_id,msg_id,'  ✶ ┃ تم تعطيل المسح اليوتيوب')
-return false
-end 
-if text == "تفعيل اليوتيوب" then        
-if not msg.Managers then
-return LuaTele.sendText(msg_chat_id,msg_id,'\n*  ✶ ┃ هذا الامر يخص ⟦ '..Controller_Num(6)..' ⟧* ',"md",true)  
-end
-Redis:set(Revor .."Revor :Status:yt"..msg.chat_id,true)
-LuaTele.sendText(msg_chat_id,msg_id,'  ✶ ┃ تم تفعيل اليوتيوب')
-return false
-end 
-if text and text:match('^بحث (.*)$') then
-local search = text:match('^بحث (.*)$')
-https.request("https://core1.tk/apies/youtube/script.php?token="..Token.."&chat="..msg_chat_id.."&text="..URL.escape(search))
 end
 
-if text == "يوتيوب" then
+if text == "زخرفه" then
 local reply_markup = LuaTele.replyMarkup{
 type = 'inline',
 data = {
 {
-{text = 'تحميل صوت', data = msg.sender.user_id..'/mp3'..msg_id}, {text = 'تحميل فيديو', data = msg.sender.user_id..'/mp4'..msg_id}, 
+{text = '𝙀𝙉𝙂 ▴ زخࢪفھـۃ انجليزي', data = msg.sender.user_id..'/zeng'},
+},
+{
+{text = 'AR ▴ زخࢪفھـۃ عربي', data = msg.sender.user_id..'/zar'},
 },
 }
 }
-return LuaTele.sendText(msg_chat_id,msg_id, [[*
-◍ اختر كيف تريد التحميل
-*]],"md",false, false, false, false, reply_markup)
-end
-json
-
-if text == "زخرفه" then
-  local reply_markup = LuaTele.replyMarkup{
-    type = 'inline',
-    data = {
-    {
-    {text = '𝙀𝙉𝙂 ▴ زخࢪفھـۃ انجليزي', data = msg.sender.user_id..'/zeng'},
-    },
-    {
-      {text = 'AR ▴ زخࢪفھـۃ عربي', data = msg.sender.user_id..'/zar'},
-      },
-    }
-    }
-  return send(msg_chat_id,msg_id, "مرحبا بك في زخرفه كينج","md",false,false,false,false,reply_markup)
+return send(msg_chat_id,msg_id, "مرحبا بك في زخرفه كينج","md",false,false,false,false,reply_markup)
 end
 -- z eng
 if text and text:match("%a") and Redis:get(Revor..msg_chat_id..msg.sender.user_id.."zkrf:") == "zeng" then
