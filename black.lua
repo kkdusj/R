@@ -1364,7 +1364,7 @@ keyboard.inline_keyboard = {
 {text = ' تفعيل ', callback_data = msg.sender.user_id..'/onlinebott'..msg_chat_id},
 },
 {
-{text = 'メ ⧫ 𝘴ꪮꪊ𝘳ᥴꫀ ✘ ٍٓ𝘬𝓲ꪀᧁ⧫ メ ', url = 't.me/VC_NE'},
+{text = 'メ ⧫ 𝘴ꪮꪊ𝘳ᥴꫀ ✘ ٍٓ𝘬𝓲ꪀᧁ ⧫ メ ', url = 't.me/VC_NE'},
 }
 }
 local rep = msg.id/2097152/0.5
@@ -4020,7 +4020,16 @@ local MsgId = msg.id/2097152/0.5
 local MSGID = string.gsub(MsgId,'.0','')
 https.request("https://api.telegram.org/bot"..Token..'/sendVoice?chat_id=' .. msg.chat_id .. '&voice=https://t.me/RemixDavid/'..Abs..'&caption=' .. URL.escape(Text).."&reply_to_message_id="..MsgId.."&parse_mode=markdown") 
 end
-
+if text == "شعر" then
+Abs = math.random(2,140); 
+local Text ='*✘︙تم اختيار الشعر لك فقط*'
+keyboard = {} 
+keyboard.inline_keyboard = {
+{{text = '⧫ メ ⧫ 𝘴ꪮꪊ𝘳ᥴꫀ ✘ ٍٓ𝘬𝓲ꪀᧁ ⧫ メ ️ ⧫',url="t.me/VC_NE"}},
+}
+local msg_id = msg.id/2097152/0.5
+https.request("https://api.telegram.org/bot"..Token..'/sendVoice?chat_id=' .. msg.chat_id .. '&voice=https://t.me/QQNNSX/'..Abs..'&caption=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard)) 
+end
 if text and text:match("^تنزيل (.*)$") and msg.reply_to_message_id ~= 0 then
 local TextMsg = text:match("^تنزيل (.*)$")
 local Message_Reply = LuaTele.getMessage(msg.chat_id, msg.reply_to_message_id)
@@ -4031,21 +4040,7 @@ end
 if UserInfo and UserInfo.type and UserInfo.type.luatele == "userTypeBot" then
 return send(msg_chat_id,msg_id,"\nメ عذرآ لا تستطيع استخدام الامر على البوت ","md",true)  
 end
-if UserName[1] == "مطور اساسي" then
-if not msg.ControllerBot then 
-return LuaTele.sendText(msg_chat_id,msg_id,'\n*• هاذا الامر يخص { '..Controller_Num(1)..' }* ',"md",true)  
-end
-if ChannelJoin(msg) == false then
-local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = 'اضغط للاشتراك', url = 't.me/'..Redis:get(black..'Channel:Join')}, },}}
-return LuaTele.sendText(msg.chat_id,msg.id,'*\n• عليك الاشتراك في قناة البوت لاستخذام الاوامر*',"md",false, false, false, false, reply_markup)
-end
-if not Redis:sismember(black.."DevelopersQ:Groups",bana.id) then
-return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(bana.id,"• تم تنزيله مطور اساسي مسبقا ").Reply,"md",true)  
-else
-Redis:srem(black.."DevelopersQ:Groups",bana.id) 
-return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(bana.id,"• تم تنزيله مطور اساسي").Reply,"md",true)  
-end
-end
+
 if TextMsg == 'مطور ثانوي' then
 if not msg.ControllerBot then 
 return send(msg_chat_id,msg_id,'\n*メ هذا الامر يخص  '..Controller_Num(1)..' * ',"md",true)  
@@ -4265,21 +4260,6 @@ end
 if UserInfo and UserInfo.type and UserInfo.type.luatele == "userTypeBot" then
 return send(msg_chat_id,msg_id,"\nメ عذرآ لا تستطيع استخدام الامر على البوت ","md",true)  
 end
-if UserName[1] == "مطور اساسي" then
-if not msg.ControllerBot then 
-return LuaTele.sendText(msg_chat_id,msg_id,'\n*• هاذا الامر يخص { '..Controller_Num(1)..' }* ',"md",true)  
-end
-if ChannelJoin(msg) == false then
-local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = 'اضغط للاشتراك', url = 't.me/'..Redis:get(black..'Channel:Join')}, },}}
-return LuaTele.sendText(msg.chat_id,msg.id,'*\n• عليك الاشتراك في قناة البوت لاستخذام الاوامر*',"md",false, false, false, false, reply_markup)
-end
-if not Redis:sismember(black.."DevelopersQ:Groups",bana.id) then
-return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(bana.id,"• تم تنزيله مطور اساسي مسبقا ").Reply,"md",true)  
-else
-Redis:srem(black.."DevelopersQ:Groups",bana.id) 
-return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(bana.id,"• تم تنزيله مطور اساسي").Reply,"md",true)  
-end
-end
 if UserId[1] == 'مطور ثانوي' then
 if not msg.ControllerBot then 
 return send(msg_chat_id,msg_id,'\n*メ هذا الامر يخص  '..Controller_Num(1)..' * ',"md",true)  
@@ -4415,21 +4395,6 @@ return send(msg_chat_id,msg_id,"\nメ عذرآ لا تستطيع استخدام 
 end
 if UserName and UserName[2]:match('(%S+)[Bb][Oo][Tt]') then
 return send(msg_chat_id,msg_id,"\nメ عذرآ لا تستطيع استخدام معرف البوت ","md",true)  
-end
-if UserName[1] == "مطور اساسي" then
-if not msg.ControllerBot then 
-return LuaTele.sendText(msg_chat_id,msg_id,'\n*• هاذا الامر يخص { '..Controller_Num(1)..' }* ',"md",true)  
-end
-if ChannelJoin(msg) == false then
-local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = 'اضغط للاشتراك', url = 't.me/'..Redis:get(black..'Channel:Join')}, },}}
-return LuaTele.sendText(msg.chat_id,msg.id,'*\n• عليك الاشتراك في قناة البوت لاستخذام الاوامر*',"md",false, false, false, false, reply_markup)
-end
-if Redis:sismember(black.."DevelopersQ:Groups",bana.id) then
-return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(bana.id,"• تم ترقيته مطور اساسي مسبقا ").Reply,"md",true)  
-else
-Redis:sadd(black.."DevelopersQ:Groups",bana.id) 
-return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(bana.id,"• تم ترقيته مطور اساسي").Reply,"md",true)  
-end
 end
 if UserName[1] == "مطور ثانوي" then
 if not msg.ControllerBot then 
@@ -9382,6 +9347,9 @@ data = {
 {text = 'اتعطيل الايدي', data = msg.sender.user_id..'/'.. 'unmute_Id'},{text = 'اتفعيل الايدي', data = msg.sender.user_id..'/'.. 'mute_Id'},
 },
 {
+{text = 'تعطيل منع التصفيه', data = msg.sender_id.user_id..'/'.. 'unmute_kicknum'},{text = 'تفعيل منع التصفيه', data = msg.sender_id.user_id..'/'.. 'mute_kicknum'},
+},
+{ 
 {text = 'تعطيل الايدي بالصوره', data = msg.sender.user_id..'/'.. 'unmute_IdPhoto'},{text = 'تفعيل الايدي بالصوره', data = msg.sender.user_id..'/'.. 'mute_IdPhoto'},
 },
 {
@@ -9466,7 +9434,7 @@ local reply_markup = LuaTele.replyMarkup{
 type = 'inline',
 data = {
 {
-{text = 'メ ⧫ 𝘴ꪮꪊ𝘳ᥴꫀ ✘ ٍٓ𝘬𝓲ꪀᧁ⧫ メ ', url = 't.me/VC_NE'}, 
+{text = 'メ ⧫ 𝘴ꪮꪊ𝘳ᥴꫀ ✘ ٍٓ𝘬𝓲ꪀᧁ ⧫ メ ', url = 't.me/VC_NE'}, 
 },
 }
 }
@@ -12327,7 +12295,7 @@ data = {
 return send(msg_chat_id,msg_id,"[🖤 KIᑎG 🖤](tg://user?id=1400467850)","md",true, false, false, true, reply_markup)
 end
 
-if text == 'باردةةزاااو' then
+if text == 'بارلو' then
 local reply_markup = LuaTele.replyMarkup{
 type = 'inline',
 data = {
@@ -12337,65 +12305,6 @@ data = {
 }
 }
 return send(msg_chat_id,msg_id,"[ 🖤 𝐵𝐴𝑅L𝑂 🖤](tg://user?id=1001132193)","md",true, false, false, true, reply_markup)
-end
-
-if text == 'روليت' then
-if Redis:get(black.."Status:Games"..msg.chat_id) then
-Redis:del(black..":Number_Add:"..msg.chat_id..msg.sender_id.user_id) 
-Redis:del(black..':List_Rolet:'..msg.chat_id)  
-Redis:setex(black..":Start_Rolet:"..msg.chat_id..msg.sender_id.user_id,3600,true)  
-return send(msg.chat_id,msg.id, '*• * حسننا لنلعب , ارسل عدد اللاعبين للروليت .',"md")
-end
-end
-if text == 'نعم' and Redis:get(black..":Witting_StartGame:"..msg.chat_id..msg.sender_id.user_id) then
-local list = Redis:smembers(black..':List_Rolet:'..msg.chat_id) 
-if #list == 1 then 
-return send(msg.chat_id,msg.id,"• لم يكتمل العدد الكلي للاعبين .!؟" )
-elseif #list == 0 then 
-return send(msg.chat_id,msg.id,"• عذرا لم تقوم باضافه اي لاعب .؟!" )
-end 
-local UserName = list[math.random(#list)]
-local data = bot.searchPublicChat(UserName)
-Redis:incrby(black.."Num:Add:Games"..msg.chat_id..msg.sender_id.user_id, 5)  
-Redis:del(black..':List_Rolet:'..msg.chat_id) 
-Redis:del(black..":Witting_StartGame:"..msg.chat_id..msg.sender_id.user_id)
-return send(msg.chat_id,msg.id,'• تم اختيار الشخص الاتي\n• صاحب الحظ {'..UserName..'}\n• ربحت معنا 5 نقاط' )
-end
-if text == 'الاعبين' then
-local list = Redis:smembers(black..':List_Rolet:'..msg.chat_id) 
-local Text = '\n*ـــــــــــــــــــــــــــــــــــــــــــــــــــــــــ*\n' 
-if #list == 0 then 
-return send(msg.chat_id,msg.id, '*• * لا يوجد لاعبين هنا ' )
-end 
-for k, v in pairs(list) do 
-Text = Text..k.."• » [" ..v.."] »\n"  
-end 
-return Text
-end
-if text and text:match("^(%d+)$") and Redis:get(black..":Start_Rolet:"..msg.chat_id..msg.sender_id.user_id) then  --// استقبال اللعبه الدمبله
-if text == "1" then
-Text = "*• * لا استطيع بدء اللعبه بلاعب واحد فقط\n"
-else
-Redis:set(black..":Number_Add:"..msg.chat_id..msg.sender_id.user_id,text)  
-Text = '• تم بدء تسجيل اللسته \n• يرجى ارسال المعرفات \n• الفائز يحصل على (5) مجوهره\n• عدد الاعبين المطلوبه { *'..text..'* } لاعب \n 🏹'
-end
-Redis:del(black..":Start_Rolet:"..msg.chat_id..msg.sender_id.user_id)  
-return send(msg.chat_id,msg.id,Text)    
-end
-if text and text:match('^(@[%a%d_]+)$') and Redis:get(black..":Number_Add:"..msg.chat_id..msg.sender_id.user_id) then    --// استقبال الاسماء
-if Redis:sismember(black..':List_Rolet:'..msg.chat_id,text) then
-return send(msg.chat_id,msg.id,'*• * المعرف {['..text..']} موجود اساسا' ,"md")
-end
-Redis:sadd(black..':List_Rolet:'..msg.chat_id,text)
-local CountAdd = Redis:get(black..":Number_Add:"..msg.chat_id..msg.sender_id.user_id)
-local CountAll = Redis:scard(black..':List_Rolet:'..msg.chat_id)
-local CountUser = CountAdd - CountAll
-if tonumber(CountAll) == tonumber(CountAdd) then 
-Redis:del(black..":Number_Add:"..msg.chat_id..msg.sender_id.user_id) 
-Redis:setex(black..":Witting_StartGame:"..msg.chat_id..msg.sender_id.user_id,1400,true)  
-return send(msg.chat_id,msg.id,"*• *تم ادخال المعرف { ["..text.."] } \n• **وتم اكتمال العدد الكلي \n• هل انت مستعد ؟ اجب بـ {* نعم *}","md")
-end 
-return send(msg.chat_id,msg.id,"*• * تم ادخال المعرف { ["..text.."] } \n• تبقى { *"..CountUser.."* } لاعبين ليكتمل العدد\n• ارسل المعرف التالي ",'md')
 end
 
 if text == "تفعيل صورتي" or text == "تفعيل الصوره" then
@@ -12647,7 +12556,7 @@ local reply_markup = LuaTele.replyMarkup{
 type = 'inline',
 data = {
 {{text = 'ترجمه الي العربية', data = msg.sender.user_id..'toar'},{text = 'ترجمه الي الانجليزية', data = msg.sender.user_id..'toen'}},
-{{text = ' メ ⧫ 𝘴ꪮꪊ𝘳ᥴꫀ ✘ ٍٓ𝘬𝓲ꪀᧁ⧫ メ ', url = "https://t.me/VC_NE"}},
+{{text = ' メ ⧫ 𝘴ꪮꪊ𝘳ᥴꫀ ✘ ٍٓ𝘬𝓲ꪀᧁ ⧫ メ ', url = "https://t.me/VC_NE"}},
 }
 }
 return send(msg_chat_id,msg_id, [[*
@@ -14742,7 +14651,7 @@ local reply_markup = LuaTele.replyMarkup{
 type = 'inline',
 data = {
 {
-{text = 'メ ⧫ 𝘴ꪮꪊ𝘳ᥴꫀ ✘ ٍٓ𝘬𝓲ꪀᧁ⧫ メ ', url = 't.me/VC_NE'}, 
+{text = 'メ ⧫ 𝘴ꪮꪊ𝘳ᥴꫀ ✘ ٍٓ𝘬𝓲ꪀᧁ ⧫ メ ', url = 't.me/VC_NE'}, 
 },
 }
 }
@@ -14753,7 +14662,7 @@ local reply_markup = LuaTele.replyMarkup{
 type = 'inline',
 data = {
 {
-{text = 'メ ⧫ 𝘴ꪮꪊ𝘳ᥴꫀ ✘ ٍٓ𝘬𝓲ꪀᧁ⧫ メ ', url = 't.me/VC_NE'}, 
+{text = 'メ ⧫ 𝘴ꪮꪊ𝘳ᥴꫀ ✘ ٍٓ𝘬𝓲ꪀᧁ ⧫ メ ', url = 't.me/VC_NE'}, 
 },
 }
 }
@@ -14764,7 +14673,7 @@ local reply_markup = LuaTele.replyMarkup{
 type = 'inline',
 data = {
 {
-{text = 'メ ⧫ 𝘴ꪮꪊ𝘳ᥴꫀ ✘ ٍٓ𝘬𝓲ꪀᧁ⧫ メ ', url = 't.me/VC_NE'}, 
+{text = 'メ ⧫ 𝘴ꪮꪊ𝘳ᥴꫀ ✘ ٍٓ𝘬𝓲ꪀᧁ ⧫ メ ', url = 't.me/VC_NE'}, 
 },
 }
 }
@@ -14775,7 +14684,7 @@ local reply_markup = LuaTele.replyMarkup{
 type = 'inline',
 data = {
 {
-{text = 'メ ⧫ 𝘴ꪮꪊ𝘳ᥴꫀ ✘ ٍٓ𝘬𝓲ꪀᧁ⧫ メ ', url = 't.me/VC_NE'}, 
+{text = 'メ ⧫ 𝘴ꪮꪊ𝘳ᥴꫀ ✘ ٍٓ𝘬𝓲ꪀᧁ ⧫ メ ', url = 't.me/VC_NE'}, 
 },
 }
 }
@@ -14786,7 +14695,7 @@ local reply_markup = LuaTele.replyMarkup{
 type = 'inline',
 data = {
 {
-{text = 'メ ⧫ 𝘴ꪮꪊ𝘳ᥴꫀ ✘ ٍٓ𝘬𝓲ꪀᧁ⧫ メ ', url = 't.me/VC_NE'}, 
+{text = 'メ ⧫ 𝘴ꪮꪊ𝘳ᥴꫀ ✘ ٍٓ𝘬𝓲ꪀᧁ ⧫ メ ', url = 't.me/VC_NE'}, 
 },
 }
 }
@@ -14797,7 +14706,7 @@ local reply_markup = LuaTele.replyMarkup{
 type = 'inline',
 data = {
 {
-{text = 'メ ⧫ 𝘴ꪮꪊ𝘳ᥴꫀ ✘ ٍٓ𝘬𝓲ꪀᧁ⧫ メ ', url = 't.me/VC_NE'}, 
+{text = 'メ ⧫ 𝘴ꪮꪊ𝘳ᥴꫀ ✘ ٍٓ𝘬𝓲ꪀᧁ ⧫ メ ', url = 't.me/VC_NE'}, 
 },
 }
 }
@@ -14808,7 +14717,7 @@ local reply_markup = LuaTele.replyMarkup{
 type = 'inline',
 data = {
 {
-{text = 'メ ⧫ 𝘴ꪮꪊ𝘳ᥴꫀ ✘ ٍٓ𝘬𝓲ꪀᧁ⧫ メ ', url = 't.me/VC_NE'}, 
+{text = 'メ ⧫ 𝘴ꪮꪊ𝘳ᥴꫀ ✘ ٍٓ𝘬𝓲ꪀᧁ ⧫ メ ', url = 't.me/VC_NE'}, 
 },
 }
 }
@@ -14830,7 +14739,7 @@ local reply_markup = LuaTele.replyMarkup{
 type = 'inline',
 data = {
 {
-{text = 'メ ⧫ 𝘴ꪮꪊ𝘳ᥴꫀ ✘ ٍٓ𝘬𝓲ꪀᧁ⧫ メ ', url = 't.me/VC_NE'}, 
+{text = 'メ ⧫ 𝘴ꪮꪊ𝘳ᥴꫀ ✘ ٍٓ𝘬𝓲ꪀᧁ ⧫ メ ', url = 't.me/VC_NE'}, 
 },
 }
 }
@@ -14841,7 +14750,7 @@ local reply_markup = LuaTele.replyMarkup{
 type = 'inline',
 data = {
 {
-{text = 'メ ⧫ 𝘴ꪮꪊ𝘳ᥴꫀ ✘ ٍٓ𝘬𝓲ꪀᧁ⧫ メ ', url = 't.me/VC_NE'}, 
+{text = 'メ ⧫ 𝘴ꪮꪊ𝘳ᥴꫀ ✘ ٍٓ𝘬𝓲ꪀᧁ ⧫ メ ', url = 't.me/VC_NE'}, 
 },
 }
 }
@@ -14852,7 +14761,7 @@ local reply_markup = LuaTele.replyMarkup{
 type = 'inline',
 data = {
 {
-{text = 'メ ⧫ 𝘴ꪮꪊ𝘳ᥴꫀ ✘ ٍٓ𝘬𝓲ꪀᧁ⧫ メ ', url = 't.me/VC_NE'}, 
+{text = 'メ ⧫ 𝘴ꪮꪊ𝘳ᥴꫀ ✘ ٍٓ𝘬𝓲ꪀᧁ ⧫ メ ', url = 't.me/VC_NE'}, 
 },
 }
 }
@@ -14863,7 +14772,7 @@ local reply_markup = LuaTele.replyMarkup{
 type = 'inline',
 data = {
 {
-{text = 'メ ⧫ 𝘴ꪮꪊ𝘳ᥴꫀ ✘ ٍٓ𝘬𝓲ꪀᧁ⧫ メ ', url = 't.me/VC_NE'}, 
+{text = 'メ ⧫ 𝘴ꪮꪊ𝘳ᥴꫀ ✘ ٍٓ𝘬𝓲ꪀᧁ ⧫ メ ', url = 't.me/VC_NE'}, 
 },
 }
 }
@@ -14874,7 +14783,7 @@ local reply_markup = LuaTele.replyMarkup{
 type = 'inline',
 data = {
 {
-{text = 'メ ⧫ 𝘴ꪮꪊ𝘳ᥴꫀ ✘ ٍٓ𝘬𝓲ꪀᧁ⧫ メ ', url = 't.me/VC_NE'}, 
+{text = 'メ ⧫ 𝘴ꪮꪊ𝘳ᥴꫀ ✘ ٍٓ𝘬𝓲ꪀᧁ ⧫ メ ', url = 't.me/VC_NE'}, 
 },
 }
 }
@@ -14885,7 +14794,7 @@ local reply_markup = LuaTele.replyMarkup{
 type = 'inline',
 data = {
 {
-{text = 'メ ⧫ 𝘴ꪮꪊ𝘳ᥴꫀ ✘ ٍٓ𝘬𝓲ꪀᧁ⧫ メ ', url = 't.me/VC_NE'}, 
+{text = 'メ ⧫ 𝘴ꪮꪊ𝘳ᥴꫀ ✘ ٍٓ𝘬𝓲ꪀᧁ ⧫ メ ', url = 't.me/VC_NE'}, 
 },
 }
 }
@@ -14896,7 +14805,7 @@ local reply_markup = LuaTele.replyMarkup{
 type = 'inline',
 data = {
 {
-{text = 'メ ⧫ 𝘴ꪮꪊ𝘳ᥴꫀ ✘ ٍٓ𝘬𝓲ꪀᧁ⧫ メ ', url = 't.me/VC_NE'}, 
+{text = 'メ ⧫ 𝘴ꪮꪊ𝘳ᥴꫀ ✘ ٍٓ𝘬𝓲ꪀᧁ ⧫ メ ', url = 't.me/VC_NE'}, 
 },
 }
 }
@@ -14907,7 +14816,7 @@ local reply_markup = LuaTele.replyMarkup{
 type = 'inline',
 data = {
 {
-{text = 'メ ⧫ 𝘴ꪮꪊ𝘳ᥴꫀ ✘ ٍٓ𝘬𝓲ꪀᧁ⧫ メ ', url = 't.me/VC_NE'}, 
+{text = 'メ ⧫ 𝘴ꪮꪊ𝘳ᥴꫀ ✘ ٍٓ𝘬𝓲ꪀᧁ ⧫ メ ', url = 't.me/VC_NE'}, 
 },
 }
 }
@@ -14919,7 +14828,7 @@ local reply_markup = LuaTele.replyMarkup{
 type = 'inline',
 data = {
 {
-{text = 'メ ⧫ 𝘴ꪮꪊ𝘳ᥴꫀ ✘ ٍٓ𝘬𝓲ꪀᧁ⧫ メ ', url = 't.me/VC_NE'}, 
+{text = 'メ ⧫ 𝘴ꪮꪊ𝘳ᥴꫀ ✘ ٍٓ𝘬𝓲ꪀᧁ ⧫ メ ', url = 't.me/VC_NE'}, 
 },
 }
 }
@@ -14930,7 +14839,7 @@ local reply_markup = LuaTele.replyMarkup{
 type = 'inline',
 data = {
 {
-{text = 'メ ⧫ 𝘴ꪮꪊ𝘳ᥴꫀ ✘ ٍٓ𝘬𝓲ꪀᧁ⧫ メ ', url = 't.me/VC_NE'}, 
+{text = 'メ ⧫ 𝘴ꪮꪊ𝘳ᥴꫀ ✘ ٍٓ𝘬𝓲ꪀᧁ ⧫ メ ', url = 't.me/VC_NE'}, 
 },
 }
 }
@@ -14941,7 +14850,7 @@ local reply_markup = LuaTele.replyMarkup{
 type = 'inline',
 data = {
 {
-{text = 'メ ⧫ 𝘴ꪮꪊ𝘳ᥴꫀ ✘ ٍٓ𝘬𝓲ꪀᧁ⧫ メ ', url = 't.me/VC_NE'}, 
+{text = 'メ ⧫ 𝘴ꪮꪊ𝘳ᥴꫀ ✘ ٍٓ𝘬𝓲ꪀᧁ ⧫ メ ', url = 't.me/VC_NE'}, 
 },
 }
 }
@@ -14952,7 +14861,7 @@ local reply_markup = LuaTele.replyMarkup{
 type = 'inline',
 data = {
 {
-{text = 'メ ⧫ 𝘴ꪮꪊ𝘳ᥴꫀ ✘ ٍٓ𝘬𝓲ꪀᧁ⧫ メ ', url = 't.me/VC_NE'}, 
+{text = 'メ ⧫ 𝘴ꪮꪊ𝘳ᥴꫀ ✘ ٍٓ𝘬𝓲ꪀᧁ ⧫ メ ', url = 't.me/VC_NE'}, 
 },
 }
 }
@@ -14963,7 +14872,7 @@ local reply_markup = LuaTele.replyMarkup{
 type = 'inline',
 data = {
 {
-{text = 'メ ⧫ 𝘴ꪮꪊ𝘳ᥴꫀ ✘ ٍٓ𝘬𝓲ꪀᧁ⧫ メ ', url = 't.me/VC_NE'}, 
+{text = 'メ ⧫ 𝘴ꪮꪊ𝘳ᥴꫀ ✘ ٍٓ𝘬𝓲ꪀᧁ ⧫ メ ', url = 't.me/VC_NE'}, 
 },
 }
 }
@@ -14974,7 +14883,7 @@ local reply_markup = LuaTele.replyMarkup{
 type = 'inline',
 data = {
 {
-{text = 'メ ⧫ 𝘴ꪮꪊ𝘳ᥴꫀ ✘ ٍٓ𝘬𝓲ꪀᧁ⧫ メ ', url = 't.me/VC_NE'}, 
+{text = 'メ ⧫ 𝘴ꪮꪊ𝘳ᥴꫀ ✘ ٍٓ𝘬𝓲ꪀᧁ ⧫ メ ', url = 't.me/VC_NE'}, 
 },
 }
 }
@@ -14985,7 +14894,7 @@ local reply_markup = LuaTele.replyMarkup{
 type = 'inline',
 data = {
 {
-{text = 'メ ⧫ 𝘴ꪮꪊ𝘳ᥴꫀ ✘ ٍٓ𝘬𝓲ꪀᧁ⧫ メ ', url = 't.me/VC_NE'}, 
+{text = 'メ ⧫ 𝘴ꪮꪊ𝘳ᥴꫀ ✘ ٍٓ𝘬𝓲ꪀᧁ ⧫ メ ', url = 't.me/VC_NE'}, 
 },
 }
 }
@@ -14996,7 +14905,7 @@ local reply_markup = LuaTele.replyMarkup{
 type = 'inline',
 data = {
 {
-{text = 'メ ⧫ 𝘴ꪮꪊ𝘳ᥴꫀ ✘ ٍٓ𝘬𝓲ꪀᧁ⧫ メ ', url = 't.me/VC_NE'}, 
+{text = 'メ ⧫ 𝘴ꪮꪊ𝘳ᥴꫀ ✘ ٍٓ𝘬𝓲ꪀᧁ ⧫ メ ', url = 't.me/VC_NE'}, 
 },
 }
 }
@@ -15007,7 +14916,7 @@ local reply_markup = LuaTele.replyMarkup{
 type = 'inline',
 data = {
 {
-{text = 'メ ⧫ 𝘴ꪮꪊ𝘳ᥴꫀ ✘ ٍٓ𝘬𝓲ꪀᧁ⧫ メ ', url = 't.me/VC_NE'}, 
+{text = 'メ ⧫ 𝘴ꪮꪊ𝘳ᥴꫀ ✘ ٍٓ𝘬𝓲ꪀᧁ ⧫ メ ', url = 't.me/VC_NE'}, 
 },
 }
 }
@@ -15018,7 +14927,7 @@ local reply_markup = LuaTele.replyMarkup{
 type = 'inline',
 data = {
 {
-{text = 'メ ⧫ 𝘴ꪮꪊ𝘳ᥴꫀ ✘ ٍٓ𝘬𝓲ꪀᧁ⧫ メ ', url = 't.me/VC_NE'}, 
+{text = 'メ ⧫ 𝘴ꪮꪊ𝘳ᥴꫀ ✘ ٍٓ𝘬𝓲ꪀᧁ ⧫ メ ', url = 't.me/VC_NE'}, 
 },
 }
 }
@@ -15029,7 +14938,7 @@ local reply_markup = LuaTele.replyMarkup{
 type = 'inline',
 data = {
 {
-{text = 'メ ⧫ 𝘴ꪮꪊ𝘳ᥴꫀ ✘ ٍٓ𝘬𝓲ꪀᧁ⧫ メ ', url = 't.me/VC_NE'}, 
+{text = 'メ ⧫ 𝘴ꪮꪊ𝘳ᥴꫀ ✘ ٍٓ𝘬𝓲ꪀᧁ ⧫ メ ', url = 't.me/VC_NE'}, 
 },
 }
 }
@@ -15040,7 +14949,7 @@ local reply_markup = LuaTele.replyMarkup{
 type = 'inline',
 data = {
 {
-{text = 'メ ⧫ 𝘴ꪮꪊ𝘳ᥴꫀ ✘ ٍٓ𝘬𝓲ꪀᧁ⧫ メ ', url = 't.me/VC_NE'}, 
+{text = 'メ ⧫ 𝘴ꪮꪊ𝘳ᥴꫀ ✘ ٍٓ𝘬𝓲ꪀᧁ ⧫ メ ', url = 't.me/VC_NE'}, 
 },
 }
 }
@@ -15051,7 +14960,7 @@ local reply_markup = LuaTele.replyMarkup{
 type = 'inline',
 data = {
 {
-{text = 'メ ⧫ 𝘴ꪮꪊ𝘳ᥴꫀ ✘ ٍٓ𝘬𝓲ꪀᧁ⧫ メ ', url = 't.me/VC_NE'}, 
+{text = 'メ ⧫ 𝘴ꪮꪊ𝘳ᥴꫀ ✘ ٍٓ𝘬𝓲ꪀᧁ ⧫ メ ', url = 't.me/VC_NE'}, 
 },
 }
 }
@@ -15073,7 +14982,7 @@ local reply_markup = LuaTele.replyMarkup{
 type = 'inline',
 data = {
 {
-{text = 'メ ⧫ 𝘴ꪮꪊ𝘳ᥴꫀ ✘ ٍٓ𝘬𝓲ꪀᧁ⧫ メ ', url = 't.me/VC_NE'}, 
+{text = 'メ ⧫ 𝘴ꪮꪊ𝘳ᥴꫀ ✘ ٍٓ𝘬𝓲ꪀᧁ ⧫ メ ', url = 't.me/VC_NE'}, 
 },
 }
 }
@@ -15084,7 +14993,7 @@ local reply_markup = LuaTele.replyMarkup{
 type = 'inline',
 data = {
 {
-{text = 'メ ⧫ 𝘴ꪮꪊ𝘳ᥴꫀ ✘ ٍٓ𝘬𝓲ꪀᧁ⧫ メ ', url = 't.me/VC_NE'}, 
+{text = 'メ ⧫ 𝘴ꪮꪊ𝘳ᥴꫀ ✘ ٍٓ𝘬𝓲ꪀᧁ ⧫ メ ', url = 't.me/VC_NE'}, 
 },
 }
 }
@@ -15095,7 +15004,7 @@ local reply_markup = LuaTele.replyMarkup{
 type = 'inline',
 data = {
 {
-{text = 'メ ⧫ 𝘴ꪮꪊ𝘳ᥴꫀ ✘ ٍٓ𝘬𝓲ꪀᧁ⧫ メ ', url = 't.me/VC_NE'}, 
+{text = 'メ ⧫ 𝘴ꪮꪊ𝘳ᥴꫀ ✘ ٍٓ𝘬𝓲ꪀᧁ ⧫ メ ', url = 't.me/VC_NE'}, 
 },
 }
 }
@@ -15106,7 +15015,7 @@ local reply_markup = LuaTele.replyMarkup{
 type = 'inline',
 data = {
 {
-{text = 'メ ⧫ 𝘴ꪮꪊ𝘳ᥴꫀ ✘ ٍٓ𝘬𝓲ꪀᧁ⧫ メ ', url = 't.me/VC_NE'}, 
+{text = 'メ ⧫ 𝘴ꪮꪊ𝘳ᥴꫀ ✘ ٍٓ𝘬𝓲ꪀᧁ ⧫ メ ', url = 't.me/VC_NE'}, 
 },
 }
 }
@@ -15128,7 +15037,7 @@ local reply_markup = LuaTele.replyMarkup{
 type = 'inline',
 data = {
 {
-{text = 'メ ⧫ 𝘴ꪮꪊ𝘳ᥴꫀ ✘ ٍٓ𝘬𝓲ꪀᧁ⧫ メ ', url = 't.me/VC_NE'}, 
+{text = 'メ ⧫ 𝘴ꪮꪊ𝘳ᥴꫀ ✘ ٍٓ𝘬𝓲ꪀᧁ ⧫ メ ', url = 't.me/VC_NE'}, 
 },
 }
 }
@@ -15139,7 +15048,7 @@ local reply_markup = LuaTele.replyMarkup{
 type = 'inline',
 data = {
 {
-{text = 'メ ⧫ 𝘴ꪮꪊ𝘳ᥴꫀ ✘ ٍٓ𝘬𝓲ꪀᧁ⧫ メ ', url = 't.me/VC_NE'}, 
+{text = 'メ ⧫ 𝘴ꪮꪊ𝘳ᥴꫀ ✘ ٍٓ𝘬𝓲ꪀᧁ ⧫ メ ', url = 't.me/VC_NE'}, 
 },
 }
 }
@@ -15150,7 +15059,7 @@ local reply_markup = LuaTele.replyMarkup{
 type = 'inline',
 data = {
 {
-{text = 'メ ⧫ 𝘴ꪮꪊ𝘳ᥴꫀ ✘ ٍٓ𝘬𝓲ꪀᧁ⧫ メ ', url = 't.me/VC_NE'}, 
+{text = 'メ ⧫ 𝘴ꪮꪊ𝘳ᥴꫀ ✘ ٍٓ𝘬𝓲ꪀᧁ ⧫ メ ', url = 't.me/VC_NE'}, 
 },
 }
 }
@@ -15161,7 +15070,7 @@ local reply_markup = LuaTele.replyMarkup{
 type = 'inline',
 data = {
 {
-{text = 'メ ⧫ 𝘴ꪮꪊ𝘳ᥴꫀ ✘ ٍٓ𝘬𝓲ꪀᧁ⧫ メ ', url = 't.me/VC_NE'}, 
+{text = 'メ ⧫ 𝘴ꪮꪊ𝘳ᥴꫀ ✘ ٍٓ𝘬𝓲ꪀᧁ ⧫ メ ', url = 't.me/VC_NE'}, 
 },
 }
 }
@@ -15172,7 +15081,7 @@ local reply_markup = LuaTele.replyMarkup{
 type = 'inline',
 data = {
 {
-{text = 'メ ⧫ 𝘴ꪮꪊ𝘳ᥴꫀ ✘ ٍٓ𝘬𝓲ꪀᧁ⧫ メ ', url = 't.me/VC_NE'}, 
+{text = 'メ ⧫ 𝘴ꪮꪊ𝘳ᥴꫀ ✘ ٍٓ𝘬𝓲ꪀᧁ ⧫ メ ', url = 't.me/VC_NE'}, 
 },
 }
 }
@@ -15183,7 +15092,7 @@ local reply_markup = LuaTele.replyMarkup{
 type = 'inline',
 data = {
 {
-{text = 'メ ⧫ 𝘴ꪮꪊ𝘳ᥴꫀ ✘ ٍٓ𝘬𝓲ꪀᧁ⧫ メ ', url = 't.me/VC_NE'}, 
+{text = 'メ ⧫ 𝘴ꪮꪊ𝘳ᥴꫀ ✘ ٍٓ𝘬𝓲ꪀᧁ ⧫ メ ', url = 't.me/VC_NE'}, 
 },
 }
 }
@@ -15194,7 +15103,7 @@ local reply_markup = LuaTele.replyMarkup{
 type = 'inline',
 data = {
 {
-{text = 'メ ⧫ 𝘴ꪮꪊ𝘳ᥴꫀ ✘ ٍٓ𝘬𝓲ꪀᧁ⧫ メ ', url = 't.me/VC_NE'}, 
+{text = 'メ ⧫ 𝘴ꪮꪊ𝘳ᥴꫀ ✘ ٍٓ𝘬𝓲ꪀᧁ ⧫ メ ', url = 't.me/VC_NE'}, 
 },
 }
 }
@@ -15205,7 +15114,7 @@ local reply_markup = LuaTele.replyMarkup{
 type = 'inline',
 data = {
 {
-{text = 'メ ⧫ 𝘴ꪮꪊ𝘳ᥴꫀ ✘ ٍٓ𝘬𝓲ꪀᧁ⧫ メ ', url = 't.me/VC_NE'}, 
+{text = 'メ ⧫ 𝘴ꪮꪊ𝘳ᥴꫀ ✘ ٍٓ𝘬𝓲ꪀᧁ ⧫ メ ', url = 't.me/VC_NE'}, 
 },
 }
 }
@@ -15216,7 +15125,7 @@ local reply_markup = LuaTele.replyMarkup{
 type = 'inline',
 data = {
 {
-{text = 'メ ⧫ 𝘴ꪮꪊ𝘳ᥴꫀ ✘ ٍٓ𝘬𝓲ꪀᧁ⧫ メ ', url = 't.me/VC_NE'}, 
+{text = 'メ ⧫ 𝘴ꪮꪊ𝘳ᥴꫀ ✘ ٍٓ𝘬𝓲ꪀᧁ ⧫ メ ', url = 't.me/VC_NE'}, 
 },
 }
 }
@@ -15227,7 +15136,7 @@ local reply_markup = LuaTele.replyMarkup{
 type = 'inline',
 data = {
 {
-{text = 'メ ⧫ 𝘴ꪮꪊ𝘳ᥴꫀ ✘ ٍٓ𝘬𝓲ꪀᧁ⧫ メ ', url = 't.me/VC_NE'}, 
+{text = 'メ ⧫ 𝘴ꪮꪊ𝘳ᥴꫀ ✘ ٍٓ𝘬𝓲ꪀᧁ ⧫ メ ', url = 't.me/VC_NE'}, 
 },
 }
 }
@@ -15806,15 +15715,15 @@ end
 if text == 'السورس' or text == 'سورس' or text == 'يا سورس' or text == 'source' then
 video = "https://t.me/U_S_E_D3/116"
 local T =[[
-•━═━═━═━ًًٍٍٰ𝘬𝓲ꪀᧁ   ═━═━═━•
-⌔ [ٓ⁨𝘴ꪮꪊ𝘳ᥴꫀ ًٰ𝘬𝓲ꪀᧁ˼⁩](t.me/VC_NE)
+•━═━═━═━ًًٍٍٰ𝗸ٍٍَ𝗶ٍٍّّ𝗡ٍٍََ𝗴   ═━═━═━•
+⌔ [ٓ⁨𝘴ꪮꪊ𝘳ᥴꫀ ًٰ𝙆𝙄ٍَ𝙉ٍ𝙂˼⁩](t.me/VC_NE)
 ⌔ [ًًٍٍٓ𝗗ََِِ𝗲ِِ𝘃ََِِ𝗲ٍٍََ𝗟ُُ𝗼ًًٍٍ𝗣ََِِ𝗲ًًٍٍ𝗥ٍّّ𝘀](t.me/TR_E2S_ON_MY_MOoN)
-⌔ [ًٓ𝘬𝓲ꪀᧁ](t.me/dev_kingo0o)
+⌔ [ًٓ𝙆𝙄ٍَ𝙉ٍ𝙂](t.me/dev_kingo0o)
 ⌔ [َٓٓٓ𝙃ٍ𝙀ٓ𝙍ُِ𝙊](t.me/H_E_R_O_V_I_P_0)
 ⌔ [ٍّّّ𝘀ّّ𝗮ٍّّ𝘀ّّ𝗮](t.me/UUUOLC)
 ⌔ [َِٓ𝙁َِ𝙇َِ𝘦َِ𝙏َِ𝙘َِ𝙃َِ𝘦َِ𝘳](t.me/DEV_HeROo)
-•━═━═━═━ًًٍٍٰ𝘬𝓲ꪀᧁ   ═━═━═━•
- [ٓٓٓ⁨𝘴ꪮꪊ𝘳ᥴꫀ ًٰٰ𝘬𝓲ꪀᧁ˼⁩](t.me/VC_NE)
+•━═━═━═━ًًٍٍٰ𝗸ٍٍَ𝗶ٍٍّّ𝗡ٍٍََ𝗴   ═━═━═━•
+ [ٓٓٓ⁨𝘴ꪮꪊ𝘳ᥴꫀ ًٰٰ𝙆𝙄ٍَ𝙉ٍ𝙂˼⁩](t.me/VC_NE)
 ]]
 keyboard = {} 
 keyboard.inline_keyboard = {
@@ -15876,7 +15785,7 @@ data = {
 {text = 'اوامر القفل', data = msg.sender.user_id..'/NoNextSeting'}, {text = 'اوامر التعطيل', data = msg.sender.user_id..'/listallAddorrem'}, 
 },
 {
-{text = 'メ ⧫ 𝘴ꪮꪊ𝘳ᥴꫀ ✘ ٍٓ𝘬𝓲ꪀᧁ⧫ メ ', url = 't.me/VC_NE'}, 
+{text = 'メ ⧫ 𝘴ꪮꪊ𝘳ᥴꫀ ✘ ٍٓ𝘬𝓲ꪀᧁ ⧫ メ ', url = 't.me/VC_NE'}, 
 },
 }
 }
@@ -15906,7 +15815,7 @@ data = {
 {text = ' قائمه الاوامر ', data = msg.sender.user_id..'/helpall'},
 },
 {
-{text = 'メ ⧫ 𝘴ꪮꪊ𝘳ᥴꫀ ✘ ٍٓ𝘬𝓲ꪀᧁ⧫ メ ', url = 't.me/VC_NE'}, 
+{text = 'メ ⧫ 𝘴ꪮꪊ𝘳ᥴꫀ ✘ ٍٓ𝘬𝓲ꪀᧁ ⧫ メ ', url = 't.me/VC_NE'}, 
 },
 }
 }
@@ -15927,7 +15836,7 @@ data = {
 {text = ' قائمه الاوامر ', data = msg.sender.user_id..'/helpall'},
 },
 {
-{text = 'メ ⧫ 𝘴ꪮꪊ𝘳ᥴꫀ ✘ ٍٓ𝘬𝓲ꪀᧁ⧫ メ ', url = 't.me/VC_NE'}, 
+{text = 'メ ⧫ 𝘴ꪮꪊ𝘳ᥴꫀ ✘ ٍٓ𝘬𝓲ꪀᧁ ⧫ メ ', url = 't.me/VC_NE'}, 
 },
 }
 }
@@ -15948,7 +15857,7 @@ data = {
 {text = ' قائمه الاوامر ', data = msg.sender.user_id..'/helpall'},
 },
 {
-{text = 'メ ⧫ 𝘴ꪮꪊ𝘳ᥴꫀ ✘ ٍٓ𝘬𝓲ꪀᧁ⧫ メ ', url = 't.me/VC_NE'}, 
+{text = 'メ ⧫ 𝘴ꪮꪊ𝘳ᥴꫀ ✘ ٍٓ𝘬𝓲ꪀᧁ ⧫ メ ', url = 't.me/VC_NE'}, 
 },
 }
 }
@@ -15969,7 +15878,7 @@ data = {
 {text = ' قائمه الاوامر ', data = msg.sender.user_id..'/helpall'},
 },
 {
-{text = 'メ ⧫ 𝘴ꪮꪊ𝘳ᥴꫀ ✘ ٍٓ𝘬𝓲ꪀᧁ⧫ メ ', url = 't.me/VC_NE'}, 
+{text = 'メ ⧫ 𝘴ꪮꪊ𝘳ᥴꫀ ✘ ٍٓ𝘬𝓲ꪀᧁ ⧫ メ ', url = 't.me/VC_NE'}, 
 },
 }
 }
@@ -15990,7 +15899,7 @@ data = {
 {text = ' قائمه الاوامر ', data = msg.sender.user_id..'/helpall'},
 },
 {
-{text = 'メ ⧫ 𝘴ꪮꪊ𝘳ᥴꫀ ✘ ٍٓ𝘬𝓲ꪀᧁ⧫ メ ', url = 't.me/VC_NE'}, 
+{text = 'メ ⧫ 𝘴ꪮꪊ𝘳ᥴꫀ ✘ ٍٓ𝘬𝓲ꪀᧁ ⧫ メ ', url = 't.me/VC_NE'}, 
 },
 }
 }
@@ -16011,7 +15920,7 @@ data = {
 {text = ' قائمه الاوامر ', data = msg.sender.user_id..'/helpall'},
 },
 {
-{text = 'メ ⧫ 𝗦َ??ٰ𝗨ِِ𝖱ٰ𝗖ٌ𝗘 ✘ ٍٓ𝘬𝓲ꪀᧁ⧫ メ ', url = 't.me/VC_NE'}, 
+{text = 'メ ⧫ 𝘴ꪮꪊ𝘳ᥴꫀ ✘ ٍٓ𝘬𝓲ꪀᧁ ⧫ メ ', url = 't.me/VC_NE'}, 
 },
 }
 }
@@ -16032,7 +15941,7 @@ data = {
 {text = ' قائمه الاوامر ', data = msg.sender.user_id..'/helpall'},
 },
 {
-{text = 'メ ⧫ 𝘴ꪮꪊ𝘳ᥴꫀ ✘ ٍٓ𝘬𝓲ꪀᧁ⧫ メ ', url = 't.me/VC_NE'}, 
+{text = 'メ ⧫ 𝘴ꪮꪊ𝘳ᥴꫀ ✘ ٍٓ𝘬𝓲ꪀᧁ ⧫ メ ', url = 't.me/VC_NE'}, 
 },
 }
 }
@@ -17033,11 +16942,6 @@ local chinfo = Redis:get(black.."ch:admin")
 local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = 'اضغط للاشتراك', url = chinfo}, },}}
 return send(msg.chat_id,msg.id,'*\nメ عليك الاشتراك في قناة البوت لاستخذام الاوامر*',"md",false, false, false, false, reply_markup)
 end
-Redis:set(black.."Get:Reides:Commands:Group"..msg_chat_id..":"..'مع', 'معاني')
-Redis:set(black.."Get:Reides:Commands:Group"..msg_chat_id..":"..'حز', 'حزوره')
-Redis:set(black.."Get:Reides:Commands:Group"..msg_chat_id..":"..'ك', 'كتم')
-Redis:set(black.."Get:Reides:Commands:Group"..msg_chat_id..":"..'الغ', 'الغاء كتم')
-Redis:set(black.."Get:Reides:Commands:Group"..msg_chat_id..":"..'رف', 'رفع القيود')
 Redis:set(black.."Get:Reides:Commands:Group"..msg_chat_id..":"..'تعط','تعطيل الايدي بالصوره')
 Redis:set(black.."Get:Reides:Commands:Group"..msg_chat_id..":"..'تفع','تفعيل الايدي بالصوره')
 Redis:set(black.."Get:Reides:Commands:Group"..msg_chat_id..":"..'ا','ايدي')
@@ -17059,12 +16963,7 @@ Redis:set(black.."Get:Reides:Commands:Group"..msg_chat_id..":"..'غ', 'غنيل�
 return send(msg_chat_id,msg_id,[[*
 メ تم ترتيب الاوامر بالشكل التالي メ
 - ايدي - ا メ
-- معاني - مع メ
 - مميز - م メ
-- حزوره - ح メ
-- كتم - ك メ
-- الغاء كتم - الغ メ
-- رفع القيود - رف メ
 - ادمن - اد メ
 - مدير - مد メ 
 - منشى - من メ
@@ -17081,8 +16980,6 @@ return send(msg_chat_id,msg_id,[[*
 - تثبيت - تث メ
 - تاك للكل - تاك メ
 - غنيلي - غ メ
-*]],"md")
-end
 *]],"md")
 end
 if text == "تفعيل سمسمي" then
@@ -17262,7 +17159,7 @@ data = {
 {text = '➕ اضفني لمجموعتك', url = 't.me/'..UserBot..'?startgroup=new'}, 
 },
 {
-{text = 'メ ⧫ 𝘴ꪮꪊ𝘳ᥴꫀ ✘ ٍٓ𝘬𝓲ꪀᧁ⧫ メ ', url = 't.me/VC_NE'}, 
+{text = 'メ ⧫ 𝘴ꪮꪊ𝘳ᥴꫀ ✘ ٍٓ𝘬𝓲ꪀᧁ ⧫ メ ', url = 't.me/VC_NE'}, 
 },
 }
 }
@@ -17275,7 +17172,7 @@ data = {
 {text = '➕ اضفني لمجموعتك', url = 't.me/'..UserBot..'?startgroup=new'}, 
 },
 {
-{text = 'メ ⧫ 𝘴ꪮꪊ𝘳ᥴꫀ ✘ ٍٓ𝘬𝓲ꪀᧁ⧫ メ ', url = 't.me/VC_NE'}, 
+{text = 'メ ⧫ 𝘴ꪮꪊ𝘳ᥴꫀ ✘ ٍٓ𝘬𝓲ꪀᧁ ⧫ メ ', url = 't.me/VC_NE'}, 
 },
 }
 }
@@ -17285,7 +17182,7 @@ else
 local reply_markup = LuaTele.replyMarkup{type = 'keyboard',resize = true,is_personal = true,
 data = {
 {
-{text = 'مطور السورس メ',type = 'text'},{text = 'メ ⧫ 𝘴ꪮꪊ𝘳ᥴꫀ ✘ ٍٓ𝘬𝓲ꪀᧁ⧫ メ ',type = 'text'},
+{text = 'مطور السورس メ',type = 'text'},{text = 'メ ⧫ 𝘴ꪮꪊ𝘳ᥴꫀ ✘ ٍٓ𝘬𝓲ꪀᧁ ⧫ メ ',type = 'text'},
 },
 {
 {text = 'تعيين قناه السورس メ',type = 'text'},{text = 'تعيين مطور السورس メ',type = 'text'},
@@ -17362,6 +17259,44 @@ data = {
 }
 }
 return send(msg_chat_id,msg_id,'メاهلا بك عزيزي المطور ', 'md', false, false, false, false, reply_markup)
+end
+end
+if text == "تعطيل منع التصفيه" then
+if ChannelJoinch(msg) == false then
+local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(black..'Chat:Channel:Join:Name'..msg.chat_id), url = 't.me/'..Redis:get(black..'Chat:Channel:Join'..msg.chat_id)}, },}}
+return send(msg.chat_id,msg.id,'*\n عليك الاشتراك في قناة البوت لأستخدام الاوامر*',"md",false, false, false, false, reply_markup)
+end
+if ChannelJoin(msg) == false then
+local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(black..'Channel:Join:Name'), url = 't.me/'..Redis:get(black..'Channel:Join')}, },}}
+return send(msg.chat_id,msg.id,'*\n عليك الاشتراك في قناة البوت لأستخدام الاوامر*',"md",false, false, false, false, reply_markup)
+end
+if not msg.SuperCreator then
+return send(msg_chat_id,msg_id,'\n*هذا الامر يخص { '..Controller_Num(4)..' }* ',"md",true)  
+end
+if Redis:get(black..'spammkick'..msg.chat_id)  then
+return send(msg_chat_id,msg_id,'تم تعطيل منع التصفيه مسبقا\n ✓',"md")
+else
+Redis:set(black.."spammkick"..msg.chat_id,"true")
+return send(msg_chat_id,msg_id,'تم تعطيل منع التصفيه\n ✓',"md")
+end
+end
+if text == "تفعيل منع التصفيه" then
+if ChannelJoinch(msg) == false then
+local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(black..'Chat:Channel:Join:Name'..msg.chat_id), url = 't.me/'..Redis:get(black..'Chat:Channel:Join'..msg.chat_id)}, },}}
+return send(msg.chat_id,msg.id,'*\n عليك الاشتراك في قناة البوت لأستخدام الاوامر*',"md",false, false, false, false, reply_markup)
+end
+if ChannelJoin(msg) == false then
+local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(black..'Channel:Join:Name'), url = 't.me/'..Redis:get(black..'Channel:Join')}, },}}
+return send(msg.chat_id,msg.id,'*\n عليك الاشتراك في قناة البوت لأستخدام الاوامر*',"md",false, false, false, false, reply_markup)
+end
+if not msg.SuperCreator then
+return send(msg_chat_id,msg_id,'\n*هذا الامر يخص { '..Controller_Num(4)..' }* ',"md",true)  
+end
+if not Redis:get(black..'spammkick'..msg.chat_id)  then
+return send(msg_chat_id,msg_id,'تم تفعيل منع التصفيه مسبقا\n ✓',"md")
+else
+Redis:del(black.."spammkick"..msg.chat_id)
+return send(msg_chat_id,msg_id,'تم تفعيل منع التصفيه\n ✓',"md")
 end
 end
 if text == "تفعيل البوت بصوره メ" then
@@ -17467,16 +17402,16 @@ data = {
 }
 return send(msg_chat_id,msg_id,"مطور سورس كينج ↻ @"..chdevolper.."","html",true, false, false, true, reply_markup)
 end
-if text == 'メ ⧫ 𝘴ꪮꪊ𝘳ᥴꫀ ✘ ٍٓ𝘬𝓲ꪀᧁ⧫ メ ' then
+if text == 'メ ⧫ 𝘴ꪮꪊ𝘳ᥴꫀ ✘ ٍٓ𝘬𝓲ꪀᧁ ⧫ メ ' then
 local reply_markup = LuaTele.replyMarkup{
 type = 'inline',
 data = {
 {
-{text = 'メ ⧫ 𝘴ꪮꪊ𝘳ᥴꫀ ✘ ٍٓ𝘬𝓲ꪀᧁ⧫ メ ', url = 't.me/VC_NE'}, 
+{text = 'メ ⧫ 𝘴ꪮꪊ𝘳ᥴꫀ ✘ ٍٓ𝘬𝓲ꪀᧁ ⧫ メ ', url = 't.me/VC_NE'}, 
 },
 }
 }
-return send(msg_chat_id,msg_id,"メ ⧫ 𝘴ꪮꪊ𝘳ᥴꫀ ✘ ٍٓ𝘬𝓲ꪀᧁ⧫ メ  ↻ @"..chsource.."","html",true, false, false, true, reply_markup)
+return send(msg_chat_id,msg_id,"メ ⧫ 𝘴ꪮꪊ𝘳ᥴꫀ ✘ ٍٓ𝘬𝓲ꪀᧁ ⧫ メ  ↻ @"..chsource.."","html",true, false, false, true, reply_markup)
 end
 if text == 'حذف كليشه ستارت メ' then 
 if not msg.Devss then 
@@ -17869,7 +17804,7 @@ if text:match("^@(.*)$") then
 local ch = text:match("^@(.*)$")
 Redis:set(black.."chsource",ch)
 Redis:del(black.."set:chs"..msg.sender.user_id)
-send(msg_chat_id,msg_id,'تم حفظ معرف メ ⧫ 𝘴ꪮꪊ𝘳ᥴꫀ ✘ ٍٓ𝘬𝓲ꪀᧁ⧫ メ  ',"md",true)  
+send(msg_chat_id,msg_id,'تم حفظ معرف メ ⧫ 𝘴ꪮꪊ𝘳ᥴꫀ ✘ ٍٓ𝘬𝓲ꪀᧁ ⧫ メ  ',"md",true)  
 dofile('black.lua')  
 else
 send(msg_chat_id,msg_id,'المعرف خطأ ',"md",true)  
@@ -18697,7 +18632,7 @@ if Text and Text:match('(.*)/a(.*)') then
         {{text = "⋆"..zk.." ’🧸💕›", data = IdUser.."/b12"}},
         {{text = " ᯓ 𓆩 ˹ "..zk.." ˼ 𓆪 𓆃", data = IdUser.."/b13"}},
         {{text = "𓆩 "..zk.."ｌ➝ ˛⁽♥₎ 𓆪", data = IdUser.."/b14"}},
-        {{text = "??• !! "..zk.."  ᵛ͢ᵎᵖ 𒅒", data = IdUser.."/b15"}},
+        {{text = "𒅒• !! "..zk.."  ᵛ͢ᵎᵖ 𒅒", data = IdUser.."/b15"}},
         {{text = "˚₊· ͟͟͞͞➳❥❬ "..zk.." ❭•°", data = IdUser.."/b16"}},
         {{text = "زخࢪفـــھـۃ بالايمۅجي 🎀..!", data = IdUser.."/emo"}},
         }
@@ -18787,7 +18722,7 @@ local reply_markup = LuaTele.replyMarkup{
 type = 'inline',
 data = {
 {
-{text = 'メ ⧫ 𝘴ꪮꪊ𝘳ᥴꫀ ✘ ٍٓ𝘬𝓲ꪀᧁ⧫ メ ', url = 't.me/VC_NE'}, 
+{text = 'メ ⧫ 𝘴ꪮꪊ𝘳ᥴꫀ ✘ ٍٓ𝘬𝓲ꪀᧁ ⧫ メ ', url = 't.me/VC_NE'}, 
 },
 }
 }
@@ -18811,7 +18746,7 @@ if Text and Text:match('(%d+)/cancelkit') then
     type = 'inline',
     data = {
     {
-    {text = 'メ ⧫ 𝘴ꪮꪊ𝘳ᥴꫀ ✘ ٍٓ𝘬𝓲ꪀᧁ⧫ メ ', url = 't.me/VC_NE'}, 
+    {text = 'メ ⧫ 𝘴ꪮꪊ𝘳ᥴꫀ ✘ ٍٓ𝘬𝓲ꪀᧁ ⧫ メ ', url = 't.me/VC_NE'}, 
     },
     }
     }
@@ -18826,7 +18761,7 @@ if Text and Text:match('(%d+)/cancelkit') then
         type = 'inline',
         data = {
         {
-        {text = 'メ ⧫ 𝘴ꪮꪊ𝘳ᥴꫀ ✘ ٍٓ𝘬𝓲ꪀᧁ⧫ メ ', url = 't.me/VC_NE'}, 
+        {text = 'メ ⧫ 𝘴ꪮꪊ𝘳ᥴꫀ ✘ ٍٓ𝘬𝓲ꪀᧁ ⧫ メ ', url = 't.me/VC_NE'}, 
         },
         }
         }
@@ -18916,7 +18851,7 @@ local reply_markup = LuaTele.replyMarkup{
 type = 'inline',
 data = {
 {
-{text = 'メ ⧫ 𝘴ꪮꪊ𝘳ᥴꫀ ✘ ٍٓ𝘬𝓲ꪀᧁ⧫ メ ', url = 't.me/VC_NE'}, 
+{text = 'メ ⧫ 𝘴ꪮꪊ𝘳ᥴꫀ ✘ ٍٓ𝘬𝓲ꪀᧁ ⧫ メ ', url = 't.me/VC_NE'}, 
 },
 }
 }
@@ -18934,7 +18869,7 @@ local reply_markup = LuaTele.replyMarkup{
 type = 'inline',
 data = {
 {
-{text = 'メ ⧫ 𝘴ꪮꪊ𝘳ᥴꫀ ✘ ٍٓ𝘬𝓲ꪀᧁ⧫ メ ', url = 't.me/VC_NE'}, 
+{text = 'メ ⧫ 𝘴ꪮꪊ𝘳ᥴꫀ ✘ ٍٓ𝘬𝓲ꪀᧁ ⧫ メ ', url = 't.me/VC_NE'}, 
 },
 }
 }
@@ -19004,7 +18939,7 @@ data = {
 {text = 'الغاء كتم', data = IdUser..'unmute'..replyy}, 
 },
 {
-{text = 'メ ⧫ 𝘴ꪮꪊ𝘳ᥴꫀ ✘ ٍٓ𝘬𝓲ꪀᧁ⧫ メ ', url = 't.me/VC_NE'}, 
+{text = 'メ ⧫ 𝘴ꪮꪊ𝘳ᥴꫀ ✘ ٍٓ𝘬𝓲ꪀᧁ ⧫ メ ', url = 't.me/VC_NE'}, 
 },
 }
 }
@@ -19022,7 +18957,7 @@ local reply_markup = LuaTele.replyMarkup{
 type = 'inline',
 data = {
 {
-{text = 'メ ⧫ 𝘴ꪮꪊ𝘳ᥴꫀ ✘ ٍٓ𝘬𝓲ꪀᧁ⧫ メ ', url = 't.me/VC_NE'}, 
+{text = 'メ ⧫ 𝘴ꪮꪊ𝘳ᥴꫀ ✘ ٍٓ𝘬𝓲ꪀᧁ ⧫ メ ', url = 't.me/VC_NE'}, 
 },
 }
 }
@@ -19045,7 +18980,7 @@ data = {
 {text = 'الغاء حظر', data = IdUser..'unban'..replyy}, 
 },
 {
-{text = 'メ ⧫ 𝘴ꪮꪊ𝘳ᥴꫀ ✘ ٍٓ𝘬𝓲ꪀᧁ⧫ メ ', url = 't.me/VC_NE'}, 
+{text = 'メ ⧫ 𝘴ꪮꪊ𝘳ᥴꫀ ✘ ٍٓ𝘬𝓲ꪀᧁ ⧫ メ ', url = 't.me/VC_NE'}, 
 },
 }
 }
@@ -19064,7 +18999,7 @@ local reply_markup = LuaTele.replyMarkup{
 type = 'inline',
 data = {
 {
-{text = 'メ ⧫ 𝘴ꪮꪊ𝘳ᥴꫀ ✘ ٍٓ𝘬𝓲ꪀᧁ⧫ メ ', url = 't.me/VC_NE'}, 
+{text = 'メ ⧫ 𝘴ꪮꪊ𝘳ᥴꫀ ✘ ٍٓ𝘬𝓲ꪀᧁ ⧫ メ ', url = 't.me/VC_NE'}, 
 },
 }
 }
@@ -19085,7 +19020,7 @@ data = {
 {text = 'الغاء تقييد', data = IdUser..'unkid'..replyy}, 
 },
 {
-{text = 'メ ⧫ 𝘴ꪮꪊ𝘳ᥴꫀ ✘ ٍٓ𝘬𝓲ꪀᧁ⧫ メ ', url = 't.me/VC_NE'}, 
+{text = 'メ ⧫ 𝘴ꪮꪊ𝘳ᥴꫀ ✘ ٍٓ𝘬𝓲ꪀᧁ ⧫ メ ', url = 't.me/VC_NE'}, 
 },
 }
 }
@@ -19103,7 +19038,7 @@ local reply_markup = LuaTele.replyMarkup{
 type = 'inline',
 data = {
 {
-{text = 'メ ⧫ 𝘴ꪮꪊ𝘳ᥴꫀ ✘ ٍٓ𝘬𝓲ꪀᧁ⧫ メ ', url = 't.me/VC_NE'}, 
+{text = 'メ ⧫ 𝘴ꪮꪊ𝘳ᥴꫀ ✘ ٍٓ𝘬𝓲ꪀᧁ ⧫ メ ', url = 't.me/VC_NE'}, 
 },
 }
 }
@@ -19319,7 +19254,7 @@ data = {
 {text = 'القائمه الرئيسيه', data = IdUser..'/helpall'},
 },
 {
-{text = 'メ ⧫ 𝘴ꪮꪊ𝘳ᥴꫀ ✘ ٍٓ𝘬𝓲ꪀᧁ⧫ メ ', url = 't.me/VC_NE'}, 
+{text = 'メ ⧫ 𝘴ꪮꪊ𝘳ᥴꫀ ✘ ٍٓ𝘬𝓲ꪀᧁ ⧫ メ ', url = 't.me/VC_NE'}, 
 },
 }
 }
@@ -19378,7 +19313,7 @@ data = {
 {text = 'القائمه الرئيسيه', data = IdUser..'/helpall'},
 },
 {
-{text = 'メ ⧫ 𝘴ꪮꪊ𝘳ᥴꫀ ✘ ٍٓ𝘬𝓲ꪀᧁ⧫ メ ', url = 't.me/VC_NE'}, 
+{text = 'メ ⧫ 𝘴ꪮꪊ𝘳ᥴꫀ ✘ ٍٓ𝘬𝓲ꪀᧁ ⧫ メ ', url = 't.me/VC_NE'}, 
 },
 }
 }
@@ -19425,7 +19360,7 @@ local reply_markup = LuaTele.replyMarkup{
 type = 'inline',
 data = {
 {
-{text = 'メ ⧫ 𝘴ꪮꪊ𝘳ᥴꫀ ✘ ٍٓ𝘬𝓲ꪀᧁ⧫ メ ', url = 't.me/VC_NE'}, 
+{text = 'メ ⧫ 𝘴ꪮꪊ𝘳ᥴꫀ ✘ ٍٓ𝘬𝓲ꪀᧁ ⧫ メ ', url = 't.me/VC_NE'}, 
 },
 }
 }
@@ -19442,7 +19377,7 @@ local reply_markup = LuaTele.replyMarkup{
 type = 'inline',
 data = {
 {
-{text = 'メ ⧫ 𝘴ꪮꪊ𝘳ᥴꫀ ✘ ٍٓ𝘬𝓲ꪀᧁ⧫ メ ', url = 't.me/VC_NE'}, 
+{text = 'メ ⧫ 𝘴ꪮꪊ𝘳ᥴꫀ ✘ ٍٓ𝘬𝓲ꪀᧁ ⧫ メ ', url = 't.me/VC_NE'}, 
 },
 }
 }
@@ -19462,7 +19397,7 @@ data = {
 {text = 'عوده', data = IdUser..'/chback'},
 },
 {
-{text = 'メ ⧫ 𝘴ꪮꪊ𝘳ᥴꫀ ✘ ٍٓ𝘬𝓲ꪀᧁ⧫ メ ', url = 't.me/VC_NE'}, 
+{text = 'メ ⧫ 𝘴ꪮꪊ𝘳ᥴꫀ ✘ ٍٓ𝘬𝓲ꪀᧁ ⧫ メ ', url = 't.me/VC_NE'}, 
 },
 }
 }
@@ -19482,7 +19417,7 @@ data = {
 {text = 'عوده', data = IdUser..'/chback'},
 },
 {
-{text = 'メ ⧫ 𝘴ꪮꪊ𝘳ᥴꫀ ✘ ٍٓ𝘬𝓲ꪀᧁ⧫ メ ', url = 't.me/VC_NE'}, 
+{text = 'メ ⧫ 𝘴ꪮꪊ𝘳ᥴꫀ ✘ ٍٓ𝘬𝓲ꪀᧁ ⧫ メ ', url = 't.me/VC_NE'}, 
 },
 }
 }
@@ -19525,7 +19460,7 @@ data = {
 {text = 'القائمه الرئيسيه', data = IdUser..'/helpall'},
 },
 {
-{text = 'メ ⧫ 𝘴ꪮꪊ𝘳ᥴꫀ ✘ ٍٓ𝘬𝓲ꪀᧁ⧫ メ ', url = 't.me/VC_NE'}, 
+{text = 'メ ⧫ 𝘴ꪮꪊ𝘳ᥴꫀ ✘ ٍٓ𝘬𝓲ꪀᧁ ⧫ メ ', url = 't.me/VC_NE'}, 
 },
 }
 }
@@ -19579,7 +19514,7 @@ data = {
 {text = 'القائمه الرئيسيه', data = IdUser..'/helpall'},
 },
 {
-{text = 'メ ⧫ 𝘴ꪮꪊ𝘳ᥴꫀ ✘ ٍٓ𝘬𝓲ꪀᧁ⧫ メ ', url = 't.me/VC_NE'}, 
+{text = 'メ ⧫ 𝘴ꪮꪊ𝘳ᥴꫀ ✘ ٍٓ𝘬𝓲ꪀᧁ ⧫ メ ', url = 't.me/VC_NE'}, 
 },
 }
 }
@@ -19619,7 +19554,7 @@ data = {
 {text = 'القائمه الرئيسيه', data = IdUser..'/helpall'},
 },
 {
-{text = 'メ ⧫ 𝘴ꪮꪊ𝘳ᥴꫀ ✘ ٍٓ𝘬𝓲ꪀᧁ⧫ メ ', url = 't.me/VC_NE'}, 
+{text = 'メ ⧫ 𝘴ꪮꪊ𝘳ᥴꫀ ✘ ٍٓ𝘬𝓲ꪀᧁ ⧫ メ ', url = 't.me/VC_NE'}, 
 },
 }
 }
@@ -19671,7 +19606,7 @@ data = {
 {text = 'القائمه الرئيسيه', data = IdUser..'/helpall'},
 },
 {
-{text = 'メ ⧫ 𝘴ꪮꪊ𝘳ᥴꫀ ✘ ٍٓ𝘬𝓲ꪀᧁ⧫ メ ', url = 't.me/VC_NE'}, 
+{text = 'メ ⧫ 𝘴ꪮꪊ𝘳ᥴꫀ ✘ ٍٓ𝘬𝓲ꪀᧁ ⧫ メ ', url = 't.me/VC_NE'}, 
 },
 }
 }
@@ -19731,7 +19666,7 @@ data = {
 {text = 'القائمه الرئيسيه', data = IdUser..'/helpall'},
 },
 {
-{text = 'メ ⧫ 𝘴ꪮꪊ𝘳ᥴꫀ ✘ ٍٓ𝘬𝓲ꪀᧁ⧫ メ ', url = 't.me/VC_NE'}, 
+{text = 'メ ⧫ 𝘴ꪮꪊ𝘳ᥴꫀ ✘ ٍٓ𝘬𝓲ꪀᧁ ⧫ メ ', url = 't.me/VC_NE'}, 
 },
 }
 }
@@ -19771,7 +19706,7 @@ data = {
 {text = 'القائمه الرئيسيه', data = IdUser..'/helpall'},
 },
 {
-{text = 'メ ⧫ 𝘴ꪮꪊ𝘳ᥴꫀ ✘ ٍٓ𝘬𝓲ꪀᧁ⧫ メ ', url = 't.me/VC_NE'}, 
+{text = 'メ ⧫ 𝘴ꪮꪊ𝘳ᥴꫀ ✘ ٍٓ𝘬𝓲ꪀᧁ ⧫ メ ', url = 't.me/VC_NE'}, 
 },
 }
 }
@@ -19791,7 +19726,7 @@ data = {
 {text = 'القائمه الرئيسيه', data = IdUser..'/helpall'},
 },
 {
-{text = 'メ ⧫ 𝘴ꪮꪊ𝘳ᥴꫀ ✘ ٍٓ𝘬𝓲ꪀᧁ⧫ メ ', url = 't.me/VC_NE'}, 
+{text = 'メ ⧫ 𝘴ꪮꪊ𝘳ᥴꫀ ✘ ٍٓ𝘬𝓲ꪀᧁ ⧫ メ ', url = 't.me/VC_NE'}, 
 },
 }
 }
@@ -19842,7 +19777,7 @@ data = {
 {text = 'اوامر القفل', data = IdUser..'/NoNextSeting'}, {text = 'اوامر التعطيل', data = IdUser..'/listallAddorrem'}, 
 },
 {
-{text = 'メ ⧫ 𝘴ꪮꪊ𝘳ᥴꫀ ✘ ٍٓ𝘬𝓲ꪀᧁ⧫ メ ', url = 't.me/VC_NE'}, 
+{text = 'メ ⧫ 𝘴ꪮꪊ𝘳ᥴꫀ ✘ ٍٓ𝘬𝓲ꪀᧁ ⧫ メ ', url = 't.me/VC_NE'}, 
 },
 }
 }
@@ -20444,6 +20379,20 @@ if tonumber(IdUser) == tonumber(UserId) then
 Redis:del(black.."Status:IdPhoto"..ChatId) 
 local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = '- رجوع', data =UserId..'/'.. 'listallAddorrem'},},}}
 edit(ChatId,Msg_id,Reply_Status(IdUser,"メ تم تعطيل امر الايدي بالصوره").unLock, 'md', true, false, reply_markup)
+end
+elseif Text and Text:match('(%d+)/unmute_kicknum') and data.Creator then
+local UserId = Text:match('(%d+)/unmute_kicknum')
+if tonumber(IdUser) == tonumber(UserId) then
+Redis:set(black.."spammkick"..ChatId,true) 
+local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = '- رجوع', data =UserId..'/'.. 'listallAddorrem'},},}}
+edit(ChatId,Msg_id,Reply_Status(IdUser,"تم تعطيل امر منع التصفيه").unLock, 'md', true, false, reply_markup)
+end
+elseif Text and Text:match('(%d+)/unmute_seck') and data.Creator then
+local UserId = Text:match('(%d+)/unmute_seck')
+if tonumber(IdUser) == tonumber(UserId) then
+Redis:set(black.."kadmeat"..ChatId,true) 
+local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = '- رجوع', data =UserId..'/'.. 'listallAddorrem'},},}}
+edit(ChatId,Msg_id,Reply_Status(IdUser,"تم تعطيل امر الصيغ").unLock, 'md', true, false, reply_markup)
 end
 elseif Text and Text:match('(%d+)/unmute_ryple') then
 local UserId = Text:match('(%d+)/unmute_ryple')
