@@ -17156,13 +17156,13 @@ local reply_markup = LuaTele.replyMarkup{
 type = 'inline',
 data = {
 {
-{text = 'العاب السورس ™️', data = IdUser..'/normgm'}, {text = 'العاب متطورة 🎳', data = IdUser..'/degm'}, 
+{text = 'العاب السورس ™️', type = 'text'}, {text = 'العاب متطورة 🎳', type = 'text''}, 
 },
 {
 {text = 'مطورين السورس メ',type = 'text'},
 },
 { 
-{text = 'القائمه الرئيسيه', data = IdUser..'/helpall'},
+{text = 'القائمه الرئيسيه', type = 'text'},
 },
 {
 {text = 'メ ⧫ 𝘴ꪮꪊ𝘳ᥴꫀ ✘ ٍٓ𝘬𝓲ꪀᧁ ⧫ メ ', url = 't.me/VC_NE'}, 
