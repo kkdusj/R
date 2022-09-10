@@ -15241,7 +15241,7 @@ data = {
 {text = '0', data = msg.sender.user_id..'calc&0'},{text = '.', data = msg.sender.user_id..'calc&.'},{text = '+', data = msg.sender.user_id..'calc&+'},{text = '=', data = msg.sender.user_id..'equal'},
 },
 {
-{text = 'مطور السورس', url = 'https://t.me/TR_E2S_ON_MY_MOoN'},
+{text = 'مطورين السورس', url = 'https://t.me/TR_E2S_ON_MY_MOoN'},
 },
 }
 }
@@ -17145,18 +17145,24 @@ Redis:sadd(black..'Num:User:Pv',msg.sender.user_id)
 if not msg.Devss then
 local photo = LuaTele.getUserProfilePhotos(black)
 if not Redis:get(black.."Start:Bot") then
-local CmdStart = '*\nメ أهلآ بك في بوت '..(Redis:get(black.."Name:Bot") or "كينج")..
-'\nメ اختصاص البوت حماية المجموعات'..
-'\nメ لتفعيل البوت عليك اتباع مايلي ...'..
-'\nメ اضف البوت الى مجموعتك'..
-'\nメ ارفعه ادمن مشرف'..
-'\nメ ارسل كلمة { تفعيل } ليتم تفعيل الجروب'..
-'\nメ مطور البوت ↻ {'..UserSudo..'}*'
+local CmdStart = '*\n ✧ أهلا بك في بوت '..(Redis:get(KING.."Name:Bot") or "كينج")..
+'\n ✧ اختصاص البوت حماية المجموعات'..
+'\n ✧ لتفعيل البوت عليك اتباع مايلي'..
+'\n ✧ اضف البوت الى مجموعتك'..
+'\n ✧ ارفعه ادمن مشرف'..
+'\n ✧ ارسل كلمة تفعيل ليتم تفعيل المجموعه'..
+'\n ✧ مطور البوت -›〘 @'..UserSudo..' 〙*'
 local reply_markup = LuaTele.replyMarkup{
 type = 'inline',
 data = {
 {
-{text = '➕ اضفني لمجموعتك', url = 't.me/'..UserBot..'?startgroup=new'}, 
+{text = 'العاب السورس ™️', data = IdUser..'/normgm'}, {text = 'العاب متطورة 🎳', data = IdUser..'/degm'}, 
+},
+{
+{text = 'مطورين السورس メ',type = 'text'},
+},
+{ 
+{text = 'القائمه الرئيسيه', data = IdUser..'/helpall'},
 },
 {
 {text = 'メ ⧫ 𝘴ꪮꪊ𝘳ᥴꫀ ✘ ٍٓ𝘬𝓲ꪀᧁ ⧫ メ ', url = 't.me/VC_NE'}, 
@@ -17182,7 +17188,7 @@ else
 local reply_markup = LuaTele.replyMarkup{type = 'keyboard',resize = true,is_personal = true,
 data = {
 {
-{text = 'مطور السورس メ',type = 'text'},{text = 'メ ⧫ 𝘴ꪮꪊ𝘳ᥴꫀ ✘ ٍٓ𝘬𝓲ꪀᧁ ⧫ メ ',type = 'text'},
+{text = 'مطورين السورس メ',type = 'text'},{text = 'メ ⧫ 𝘴ꪮꪊ𝘳ᥴꫀ ✘ ٍٓ𝘬𝓲ꪀᧁ ⧫ メ ',type = 'text'},
 },
 {
 {text = 'تعيين قناه السورس メ',type = 'text'},{text = 'تعيين مطور السورس メ',type = 'text'},
