@@ -17156,7 +17156,7 @@ local reply_markup = LuaTele.replyMarkup{
 type = 'inline',
 data = {
 {
-{text = 'مطور البوت', url = 't.me/@'..UserSudo..'},{text = 'مطورين السورس メ', url = 't.me/TR_E2S_ON_MY_MOoN'}, 
+{text = 'مطور البوت', url = 't.me/'@'..UserSudo..'}, {text = 'مطورين السورس メ', url = 't.me/TR_E2S_ON_MY_MOoN'}, 
 },
 {
 {text = 'メ ⧫ 𝘴ꪮꪊ𝘳ᥴꫀ ✘ ٍٓ𝘬𝓲ꪀᧁ ⧫ メ ', url = 't.me/VC_NE'}, 
