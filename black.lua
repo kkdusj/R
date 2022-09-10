@@ -17145,7 +17145,7 @@ Redis:sadd(black..'Num:User:Pv',msg.sender.user_id)
 if not msg.Devss then
 local photo = LuaTele.getUserProfilePhotos(black)
 if not Redis:get(black.."Start:Bot") then
-local CmdStart = '*\n ✧ أهلا بك في بوت '..(Redis:get(KING.."Name:Bot") or "كينج")..
+local CmdStart = '*\n ✧ أهلا بك في بوت '..(Redis:get(black.."Name:Bot") or "كينج")..
 '\n ✧ اختصاص البوت حماية المجموعات'..
 '\n ✧ لتفعيل البوت عليك اتباع مايلي'..
 '\n ✧ اضف البوت الى مجموعتك'..
