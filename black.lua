@@ -20359,6 +20359,13 @@ Redis:del(black.."Status:Link"..ChatId)
 local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = '- رجوع', data =UserId..'/'.. 'listallAddorrem'},},}}
 edit(ChatId,Msg_id,Reply_Status(IdUser,"メ تم تعطيل امر الرابط").unLock, 'md', true, false, reply_markup)
 end
+elseif Text and Text:match('(%d+)/unmute_kicknum') then
+local UserId = Text:match('(%d+)/unmute_kicknum')
+if tonumber(IdUser) == tonumber(UserId) then
+Redis:set(black.."Status:Reply"..ChatId,true) 
+local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = '- رجوع', data =UserId..'/'.. 'listallAddorrem'},},}}
+edit(ChatId,Msg_id,Reply_Status(IdUser,"メ تم تعطيل امر منع التصفيه").unLock, 'md', true, false, reply_markup)
+end
 elseif Text and Text:match('(%d+)/unmute_welcome') then
 local UserId = Text:match('(%d+)/unmute_welcome')
 if tonumber(IdUser) == tonumber(UserId) then
@@ -20485,6 +20492,13 @@ if tonumber(IdUser) == tonumber(UserId) then
 Redis:set(black.."Status:SetId"..ChatId,true) 
 local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = '- رجوع', data =UserId..'/'.. 'listallAddorrem'},},}}
 edit(ChatId,Msg_id,Reply_Status(IdUser,"メ تم تفعيل امر الرفع").unLock, 'md', true, false, reply_markup)
+end
+elseif Text and Text:match('(%d+)/mute_kicknum') then
+local UserId = Text:match('(%d+)/mute_kicknum')
+if tonumber(IdUser) == tonumber(UserId) then
+Redis:set(black.."Status:Reply"..ChatId,true) 
+local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = '- رجوع', data =UserId..'/'.. 'listallAddorrem'},},}}
+edit(ChatId,Msg_id,Reply_Status(IdUser,"メ تم تفعيل  امر منع التصفيه").unLock, 'md', true, false, reply_markup)
 end
 elseif Text and Text:match('(%d+)/mute_kickmembars') then
 local UserId = Text:match('(%d+)/mute_kickmembars')
