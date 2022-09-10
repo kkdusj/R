@@ -17156,7 +17156,7 @@ local reply_markup = LuaTele.replyMarkup{
 type = 'inline',
 data = {
 {
-{text = 'العاب السورس ™️', type = 'text'}, {text = 'العاب متطورة 🎳', type = 'text''}, 
+{text = 'العاب السورس ™️', type = 'text'},{text = 'العاب متطورة 🎳', type = 'text'}, 
 },
 {
 {text = 'مطورين السورس メ',type = 'text'},
@@ -18529,7 +18529,7 @@ if NumMahibes == 1 then
 Mahibes1 = '🤚' else Mahibes1 = '👊'
 end
 if NumMahibes == 2 then
-Mahibes2 = '🤚' else Mahibes2 = '👊'
+Mahibes2 = '??' else Mahibes2 = '👊'
 end
 if NumMahibes == 3 then
 Mahibes3 = '🤚' else Mahibes3 = '👊' 
