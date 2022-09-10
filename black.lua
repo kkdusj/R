@@ -17156,13 +17156,7 @@ local reply_markup = LuaTele.replyMarkup{
 type = 'inline',
 data = {
 {
-{text = 'العاب السورس ™️', type = 'text'},{text = 'العاب متطورة 🎳', type = 'text'}, 
-},
-{
-{text = 'مطورين السورس メ',type = 'text'},
-},
-{ 
-{text = 'القائمه الرئيسيه', type = 'text'},
+{text = 'مطور البوت', url = 't.me/@'..UserSudo..'},{text = 'مطورين السورس メ', url = 't.me/TR_E2S_ON_MY_MOoN'}, 
 },
 {
 {text = 'メ ⧫ 𝘴ꪮꪊ𝘳ᥴꫀ ✘ ٍٓ𝘬𝓲ꪀᧁ ⧫ メ ', url = 't.me/VC_NE'}, 
@@ -18529,7 +18523,7 @@ if NumMahibes == 1 then
 Mahibes1 = '🤚' else Mahibes1 = '👊'
 end
 if NumMahibes == 2 then
-Mahibes2 = '??' else Mahibes2 = '👊'
+Mahibes2 = '🤚' else Mahibes2 = '👊'
 end
 if NumMahibes == 3 then
 Mahibes3 = '🤚' else Mahibes3 = '👊' 
