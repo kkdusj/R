@@ -9347,7 +9347,7 @@ data = {
 {text = 'اتعطيل الايدي', data = msg.sender.user_id..'/'.. 'unmute_Id'},{text = 'اتفعيل الايدي', data = msg.sender.user_id..'/'.. 'mute_Id'},
 },
 {
-{text = 'تعطيل منع التصفيه', data = msg.sender_id.user_id..'/'.. 'unmute_kicknum'},{text = 'تفعيل منع التصفيه', data = msg.sender_id.user_id..'/'.. 'mute_kicknum'},
+{text = 'تعطيل منع التصفيه', data = msg.sender.user_id..'/'.. 'unmute_kicknum'},{text = 'تفعيل منع التصفيه', data = msg.sender.user_id..'/'.. 'mute_kicknum'},
 },
 { 
 {text = 'تعطيل الايدي بالصوره', data = msg.sender.user_id..'/'.. 'unmute_IdPhoto'},{text = 'تفعيل الايدي بالصوره', data = msg.sender.user_id..'/'.. 'mute_IdPhoto'},
