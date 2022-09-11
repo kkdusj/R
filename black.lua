@@ -16165,7 +16165,7 @@ Redis:set(black.."Game:Smile"..msg.chat_id,SM)
 return send(msg_chat_id,msg_id,"メاسرع واحد يدز هاذا السمايل ? ~ {`"..SM.."`}","md",true)  
 end
 end
-if text == "تويت" or text == "كت " then
+if text == "تويت" or text == "كت" then
 if Redis:get(black.."Status:Games"..msg.chat_id) then
 local texting = {"اخر افلام شاهدتها", 
 "اخر افلام شاهدتها", 
