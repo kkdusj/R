@@ -17779,7 +17779,7 @@ if Redis:get(black.."Lock:tagservr"..data.message.chat_id) then
 LuaTele.deleteMessages(data.message.chat_id,{[1]= data.message.id})
 end
 end 
-if tonumber(data.message.sender_id.user_id) == tonumber(black) then
+if tonumber(data.message.sender_id) == tonumber(black) then
 return false
 end
 if data.message.content.luatele == "messageChatJoinByLink" and Redis:get(black..'Status:joinet'..data.message.chat_id) == 'true' then
@@ -19133,7 +19133,7 @@ data = {
 {text = 'القائمه الرئيسيه', data = IdUser..'/helpall'},
 },
 {
-{text = '𖥔 𝑺𝒐𝑼𝒓𝑪𝒆 𝑲𝒊𝒏𝑮 𖥔️', url = 't.me/'..chsource..''}, 
+{text = '𖥔 𝑺𝒐𝑼𝒓𝑪𝒆 𝑲𝒊𝒏𝑮 ??️', url = 't.me/'..chsource..''}, 
 },
 }
 }
