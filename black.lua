@@ -16983,17 +16983,17 @@ if text == "تفعيل سمسمي" then
 if not msg.Manger then
 return send(msg_chat_id,msg_id,'\n*۞ هذا الامر يخص  '..Controller_Num(6)..' * ',"md",true)  
 end
-Redis:del(black.."smsme"..msg.chat_id)
+Redis:del(black.."blacke"..msg.chat_id)
 send(msg.chat_id,msg.id,"۞ تم تفعيل سمسمي")
 end
 if text == "تعطيل سمسمي" then
 if not msg.Manger then
 return send(msg_chat_id,msg_id,'\n*۞ هذا الامر يخص  '..Controller_Num(6)..' * ',"md",true)  
 end
-Redis:set(black.."smsme"..msg.chat_id,true)
+Redis:set(black.."blacke"..msg.chat_id,true)
 send(msg.chat_id,msg.id,"۞ تم تعطيل سمسمي")
 end
-if not Redis:get(black.."smsme"..msg.chat_id) then
+if not Redis:get(black.."blacke"..msg.chat_id) then
 if text and msg.reply_to_message_id ~= 0 then
 local Message_Reply = LuaTele.getMessage(msg.chat_id, msg.reply_to_message_id)
 if Message_Reply and Message_Reply.sender and tonumber(Message_Reply.sender.user_id) == tonumber(black) then
@@ -17142,7 +17142,7 @@ Redis:sadd(black..'Num:User:Pv',msg.sender.user_id)
 if not msg.Devss then
 local photo = LuaTele.getUserProfilePhotos(black)
 if not Redis:get(black.."Start:Bot") then
-local CmdStart = '*\n🔰ــــــــــــــــــــــــــــــــــــــــــــــــــــــ🔰\n🎤╖ اهلا بك عزيزي انا بوت '..(Redis:get(Smsm.."Name:Bot") or "كينج")..
+local CmdStart = '*\n🔰ــــــــــــــــــــــــــــــــــــــــــــــــــــــ🔰\n🎤╖ اهلا بك عزيزي انا بوت '..(Redis:get(black.."Name:Bot") or "كينج")..
 '\n⚙️╢ وظيفتي حماية المجموعات'..
 '\n✅╢ لتفعيل البوت عليك اتباع مايلي ...'..
 '\n🔘╢ أضِف البوت إلى مجموعتك'..
