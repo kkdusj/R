@@ -16640,17 +16640,17 @@ if text == "تفعيل سمسمي" then
 if not msg.Manger then
 return send(msg_chat_id,msg_id,'\n*𖥔 هذا الامر يخص  '..Controller_Num(6)..' * ',"md",true)  
 end
-Redis:del(black.."blacke"..msg.chat_id)
+Redis:del(black.."smsme"..msg.chat_id)
 send(msg.chat_id,msg.id,"𖥔 تم تفعيل سمسمي")
 end
 if text == "تعطيل سمسمي" then
 if not msg.Manger then
 return send(msg_chat_id,msg_id,'\n*𖥔 هذا الامر يخص  '..Controller_Num(6)..' * ',"md",true)  
 end
-Redis:set(black.."blacke"..msg.chat_id,true)
+Redis:set(black.."smsme"..msg.chat_id,true)
 send(msg.chat_id,msg.id,"𖥔 تم تعطيل سمسمي")
 end
-if not Redis:get(black.."blacke"..msg.chat_id) then
+if not Redis:get(black.."smsme"..msg.chat_id) then
 if text and msg.reply_to_message_id ~= 0 then
 local Message_Reply = LuaTele.getMessage(msg.chat_id, msg.reply_to_message_id)
 if Message_Reply and Message_Reply.sender and tonumber(Message_Reply.sender_id.user_id) == tonumber(black) then
@@ -16795,47 +16795,41 @@ end
 return false 
 end
 if text == '/start' then
+Redis:sadd(black..'Num:User:Pv',msg.sender_id.user_id)  
+if not msg.Thanway then
 local photo = LuaTele.getUserProfilePhotos(black)
-local ban = LuaTele.getUser(black)
-local bb = LuaTele.getUser(Sudo_Id) 
-local bain = LuaTele.getUser(msg.sender.user_id)
-Redis:sadd(black..'Num:User:Pv',msg.sender.user_id)  
-if not msg.ControllerBot then
 if not Redis:get(black.."Start:Bot") then
-if bain.username then
-banusername = '[@'..bain.username..']'
-else
-banusername = 'لا يوجد'
-end
-if bain.first_name then
-baniusername = '*'..bain.first_name..'*'
-else
-baniusername = 'لا يوجد'
-end
-local CmdStart = '*\n🔰ــــــــــــــــــــــــــــــــــــــــــــــــــــــ🔰\n🎤╖ اهلا بك عزيزي انا بوت '..(Redis:get(black.."Name:Bot") or "كينج")..
+local CmdStart = '*\n🔰ــــــــــــــــــــــــــــــــــــــــــــــــــــــ🔰\n🎤╖ اهلا بك عزيزي انا بوت '..(Redis:get(Smsm.."Name:Bot") or "كينج")..
 '\n⚙️╢ وظيفتي حماية المجموعات'..
 '\n✅╢ لتفعيل البوت عليك اتباع مايلي ...'..
 '\n🔘╢ أضِف البوت إلى مجموعتك'..
 '\n⚡️╢ ارفعهُ » مشرف'..
 '\n⬆️╜ سيتم ترقيتك مالك في البوت '..
 '\n🔰ــــــــــــــــــــــــــــــــــــــــــــــــــــــ🔰 \n*'
-if photo.total_count > 0 then
-keyboard = {} 
-keyboard.inline_keyboard = {
-{
-{text = '❨ 𝑺𝑶𝑼𝑹𝑪𝑬 𝑲𝑰𝑵𝑮 ❩', url = 't.me/VC_NE'}, 
-},
-{
-{text = '❨ 𝑫𝑬𝑽 𝑺𝑶𝑼𝑹𝑪𝑬 ❩', url = 't.me/TR_E2S_ON_MY_MOoN'}, 
-},
-{ 
-{text = 'مـطـور الـبـوت♻️', url = "https://t.me/"..bb.username..""},
-},
+local reply_markup = LuaTele.replyMarkup{
+type = 'inline',
+data = {
 {
 {text = '➕ اضفني لمجموعتك', url = 't.me/'..UserBot..'?startgroup=new'}, 
 },
+{
+{text = '𖥔 𝑺𝒐𝑼𝒓𝑪𝒆 𝑲𝒊𝒏𝑮 𖥔️', url = 't.me/'..chsource..''}, 
+},
 }
-} 
+}
+LuaTele.sendPhoto(msg.chat_id, msg.id, photo.photos[1].sizes[#photo.photos[1].sizes].photo.remote.id,CmdStart,"md", true, nil, nil, nil, nil, nil, nil, nil, nil, reply_markup )
+else
+local reply_markup = LuaTele.replyMarkup{
+type = 'inline',
+data = {
+{
+{text = '➕ اضفني لمجموعتك', url = 't.me/'..UserBot..'?startgroup=new'}, 
+},
+{
+{text = '𖥔 𝑺𝒐𝑼𝒓𝑪𝒆 𝑲𝒊𝒏𝑮 𖥔️', url = 't.me/'..chsource..''}, 
+},
+}
+}
 LuaTele.sendPhoto(msg.chat_id, msg.id, photo.photos[1].sizes[#photo.photos[1].sizes].photo.remote.id,Redis:get(black.."Start:Bot"),"md", true, nil, nil, nil, nil, nil, nil, nil, nil, reply_markup )
 end
 else
