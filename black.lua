@@ -17138,13 +17138,13 @@ end
 return false 
 end
 if text == '/start' then
-local photo = LuaTele.getUserProfilePhotos(Smsm)
-local ban = LuaTele.getUser(Smsm)
+local photo = LuaTele.getUserProfilePhotos(black)
+local ban = LuaTele.getUser(black)
 local  bb = LuaTele.getUser(Sudo_Id) 
 local bain = LuaTele.getUser(msg.sender.user_id)
-Redis:sadd(Smsm..'Num:User:Pv',msg.sender.user_id)  
+Redis:sadd(black..'Num:User:Pv',msg.sender.user_id)  
 if not msg.ControllerBot then
-if not Redis:get(Smsm.."Start:Bot") then
+if not Redis:get(black.."Start:Bot") then
 if bain.username then
 banusername = '[@'..bain.username..']'
 else
