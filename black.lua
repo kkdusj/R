@@ -17140,7 +17140,7 @@ end
 if text == '/start' then
 local photo = LuaTele.getUserProfilePhotos(black)
 local ban = LuaTele.getUser(black)
-local  bb = LuaTele.getUser(Sudo_Id) 
+local bb = LuaTele.getUser(Sudo_Id) 
 local bain = LuaTele.getUser(msg.sender.user_id)
 Redis:sadd(black..'Num:User:Pv',msg.sender.user_id)  
 if not msg.ControllerBot then
