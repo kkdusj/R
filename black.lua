@@ -17138,25 +17138,24 @@ end
 return false 
 end
 if text == '/start' then
-local photo = LuaTele.getUserProfilePhotos(Saidi)
-local black = LuaTele.getUser(Saidi)
-local black = LuaTele.getUser(Sudo_Id) 
-local Mostafa = (Redis:get(Saidi.."Name:Bot") or "صعيدي")
-local black = LuaTele.getUser(msg.sender.user_id)
-Redis:sadd(Saidi..'Num:User:Pv',msg.sender.user_id)  
+local photo = LuaTele.getUserProfilePhotos(Smsm)
+local ban = LuaTele.getUser(Smsm)
+local  bb = LuaTele.getUser(Sudo_Id) 
+local bain = LuaTele.getUser(msg.sender.user_id)
+Redis:sadd(Smsm..'Num:User:Pv',msg.sender.user_id)  
 if not msg.ControllerBot then
-if not Redis:get(Saidi.."Start:Bot") then
-if black.username then
-blackusername = ' @'..black.username..' '
+if not Redis:get(Smsm.."Start:Bot") then
+if bain.username then
+banusername = '[@'..bain.username..']'
 else
-blackusername = 'لا يوجد'
+banusername = 'لا يوجد'
 end
-if black.first_name then
-blackiusername = '*'..black.first_name..'*'
+if bain.first_name then
+baniusername = '*'..bain.first_name..'*'
 else
-blackiusername = 'لا يوجد'
+baniusername = 'لا يوجد'
 end
-local CmdStart = '*\n ✧ أهلا بك في بوت '..(Redis:get(Saidi.."Name:Bot") or "صعيدي")..
+local CmdStart = '*\n ✧ أهلا بك في بوت '..(Redis:get(Saidi.."Name:Bot") or "كينج")..
 '\n ✧ اختصاص البوت حماية المجموعات'..
 '\n ✧ لتفعيل البوت عليك اتباع مايلي'..
 '\n ✧ اضف البوت الى مجموعتك'..
@@ -17173,6 +17172,7 @@ keyboard.inline_keyboard = {
 {text = ' اضف بوت '..Mostafa..' لمجموعتك ', url = 't.me/'..UserBot..'?startgroup=new'},
 },
 }
+} 
 LuaTele.sendPhoto(msg.chat_id, msg.id, photo.photos[1].sizes[#photo.photos[1].sizes].photo.remote.id,CmdStart,"md", true, nil, nil, nil, nil, nil, nil, nil, nil, reply_markup )
 else
 local reply_markup = LuaTele.replyMarkup{
