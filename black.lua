@@ -17155,10 +17155,10 @@ local reply_markup = LuaTele.replyMarkup{
 type = 'inline',
 data = {
 {
-{text = '❨ 𝑺𝒐𝑼𝒓𝑪𝒆 𝑲𝒊𝒏𝑮 ❩', url = 't.me/VC_NE'},{text = '❨ 𝑫𝒆𝑽 𝑺𝒐𝑼𝒓𝑪𝒆 ❩', url = 't.me/TR_E2S_ON_MY_MOoN'}, 
+{text = '❨ 𝑺𝒐𝑼𝒓𝑪𝒆 𝑲𝒊𝒏𝑮 ❩', url = 't.me/VC_NE'},{text = '❨ 𝑫𝒆𝑽 𝑺𝒐𝑼𝒓𝑪𝒆 ❩', url = 't.me/TR_E2S_ON_MY_MOoN'}
 },
 {
-{text = 'مـطـور الـبـوت♻️', url = "https://t.me/"..black.username.."},{text = '➕ اضفني لمجموعتك', url = 't.me/'..UserBot..'?startgroup=new'}, 
+{text = 'مـطـور الـبـوت♻️', url = "https://t.me/"..black.username.."},{text = '➕ اضفني لمجموعتك', url = 't.me/'..UserBot..'?startgroup=new'}
 },
 }
 }
