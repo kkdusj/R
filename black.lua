@@ -17161,9 +17161,6 @@ data = {
 {text = '❨ 𝑫𝒆𝑽 𝑺𝒐𝑼𝒓𝑪𝒆 ❩', url = 't.me/TR_E2S_ON_MY_MOoN'}, 
 },
 { 
-{text = 'مـطـور الـبـوت♻️', url = "https://t.me/"..black.username.."},
-},
-{
 {text = '➕ اضفني لمجموعتك', url = 't.me/'..UserBot..'?startgroup=new'}, 
 },
 }
