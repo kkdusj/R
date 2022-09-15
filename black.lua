@@ -17139,11 +17139,12 @@ return false
 end
 
 if text == '/start' then
-Redis:sadd(black..'black:Num:User:Pv',msg.sender.user_id)  
-if not msg.ControllerBot then
-if not Redis:get(black.."black:Start:Bot") then
-local CmdStart = '*\n🤖╖   أهلآ بك عزيزي أنا بوت '..(Redis:get(black.."black:Name:Bot") or "كينج")..
-'\n⚙️╢• وظيفتي حماية المجموعات '..
+Redis:sadd(black..'Num:User:Pv',msg.sender.user_id)  
+if not msg.Devss then
+local photo = LuaTele.getUserProfilePhotos(black)
+if not Redis:get(black.."Start:Bot") then
+local CmdStart = '*\n۞ أهلآ بك في بوت '..(Redis:get(black.."Name:Bot") or "بلاك")..
+\n⚙️╢• وظيفتي حماية المجموعات '..
 '\n✅╢• لتفعيل البوت عليك اتباع مايلي .'..
 '\n➕╢• أضِف البوت إلى مجموعتك '..
 '\n⚡️╢• ارفعهُ » مشرف + اكتب تفعيل '..
@@ -17152,34 +17153,20 @@ local CmdStart = '*\n🤖╖   أهلآ بك عزيزي أنا بوت '..(Redis:
 '\n🔰╢• تأكد » من اعطائي حذف الرسائل '..
 '\n🔰╢• تأكد » من تفعيل الألعاب '..
 '\n🔰╢• تأكد » من تفعيل الرفع '..
-'\n🔰╢• تأكد » من تفعيل ردود السورس  '..
+'\n🔰j╢• تأكد » من تفعيل ردود السورس  '..
 '\nمـطـور الـبـوت 🔰{@'..UserSudo..'}*'
 local reply_markup = LuaTele.replyMarkup{
 type = 'inline',
 data = {
 {
-{text = '✈ • أضف البوت إلي مجموعتك • ✈', url = 't.me/'..UserBot..'?startgroup=new'}, 
+{text = '➕ اضفني لمجموعتك', url = 't.me/'..UserBot..'?startgroup=new'}, 
 },
 {
-{text = 'ᯓ˚₊· ᏦᎥΝᏀ.ՏΌႮᎡᏟᎬ.↺ᯓ˚₊· ᏦᎥΝᏀ.ՏΌႮᎡᏟᎬ.↺', url = 't.me/KiNGg_Source7'}, 
+{text = '۞ ⧫ 𝗦َ𝗢ٰ𝗨ِِ𝖱ٰ𝗖ٌ𝗘 ✘ ٍٓ𝙆َ𝙄ٖ𝙉ِ𝙂ٓ ⧫ ۞ ', url = 't.me/VC_NE'}, 
 },
 }
 }
-return LuaTele.sendText(msg_chat_id,msg_id,CmdStart,"md",false, false, false, false, reply_markup)
-end
-else
-local reply_markup = LuaTele.replyMarkup{
-type = 'inline',
-data = {
-{
-{text = '✈ • أضف البوت إلي مجموعتك • ✈', url = 't.me/'..UserBot..'?startgroup=new'}, 
-},
-{
-{text = 'ᯓ˚₊· ᏦᎥΝᏀ.ՏΌႮᎡᏟᎬ.↺', url = 't.me/KiNGg_Source7'}, 
-},
-}
-}
-return LuaTele.sendText(msg_chat_id,msg_id,Redis:get(black.."black:Start:Bot"),"md",false, false, false, false, reply_markup)
+LuaTele.sendPhoto(msg.chat_id, msg.id, photo.photos[1].sizes[#photo.photos[1].sizes].photo.remote.id,CmdStart,"md", true, nil, nil, nil, nil, nil, nil, nil, nil, reply_markup )
 else
 local reply_markup = LuaTele.replyMarkup{
 type = 'inline',
@@ -17188,7 +17175,7 @@ data = {
 {text = '➕ اضفني لمجموعتك', url = 't.me/'..UserBot..'?startgroup=new'}, 
 },
 {
-{text = '⛦ ⧫ 𝑲𝒊𝒏𝑮 𝑺𝒐𝑼𝒓𝑪𝒆 ⧫ ⛦ ', url = 't.me/VC_NE'}, 
+{text = '۞ ⧫ 𝗦َ𝗢ٰ𝗨ِِ𝖱ٰ𝗖ٌ𝗘 ✘ ٍٓ𝙆َ𝙄ٖ𝙉ِ𝙂ٓ ⧫ ۞ ', url = 't.me/VC_NE'}, 
 },
 }
 }
