@@ -17166,6 +17166,7 @@ data = {
 }
 }
 return LuaTele.sendText(msg_chat_id,msg_id,CmdStart,"md",false, false, false, false, reply_markup)
+end
 else
 local reply_markup = LuaTele.replyMarkup{
 type = 'inline',
@@ -18598,7 +18599,7 @@ if Text and Text:match('(.*)/a(.*)') then
         {{text = zk , data = IdUser.."/b1"}},
         {{text = "𓂄𓆩 "..zk.." 𓆪𓂁", data = IdUser.."/b2"}},
         {{text = "𓆩⸤"..zk.."⸥𓆪", data = IdUser.."/b3"}},
-        {{text = "??"..zk.."𓆪", data = IdUser.."/b4"}},
+        {{text = "𓆩"..zk.."𓆪", data = IdUser.."/b4"}},
         {{text = "⌁ "..zk.." ’♥ " , data = IdUser.."/b5"}},
         {{text = "ꔷ"..zk.." 🧸💕 ˝♥›." , data = IdUser.."/b6"}},
         {{text = "➹"..zk.." 𓂄𓆩♥𓆪‌‌𓂁", data = IdUser.."/b7"}},
