@@ -17144,7 +17144,7 @@ if not msg.Devss then
 local photo = LuaTele.getUserProfilePhotos(black)
 if not Redis:get(black.."Start:Bot") then
 local CmdStart = '*\n۞ أهلآ بك في بوت '..(Redis:get(black.."Name:Bot") or "بلاك")..
-\n⚙️╢• وظيفتي حماية المجموعات '..
+'\n⚙️╢• وظيفتي حماية المجموعات '..
 '\n✅╢• لتفعيل البوت عليك اتباع مايلي .'..
 '\n➕╢• أضِف البوت إلى مجموعتك '..
 '\n⚡️╢• ارفعهُ » مشرف + اكتب تفعيل '..
