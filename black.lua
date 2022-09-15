@@ -17137,43 +17137,49 @@ send(msg_chat_id,msg_id,"⛦ حدث خطأ ربما بسبب كثره المحا
 end
 return false 
 end
+
 if text == '/start' then
-local photo = LuaTele.getUserProfilePhotos(black)
-local ban = LuaTele.getUser(black)
-local bb = LuaTele.getUser(Sudo_Id) 
-local bain = LuaTele.getUser(msg.sender.user_id)
-Redis:sadd(black..'Num:User:Pv',msg.sender.user_id)  
+Redis:sadd(black..'black:Num:User:Pv',msg.sender.user_id)  
 if not msg.ControllerBot then
-if not Redis:get(black.."Start:Bot") then
-if bain.username then
-banusername = '[@'..bain.username..']'
-else
-banusername = 'لا يوجد'
-end
-if bain.first_name then
-baniusername = '*'..bain.first_name..'*'
-else
-baniusername = 'لا يوجد'
-end
-local CmdStart = '*\n ✧ أهلا بك في بوت '..(Redis:get(Saidi.."Name:Bot") or "كينج")..
-'\n ✧ اختصاص البوت حماية المجموعات'..
-'\n ✧ لتفعيل البوت عليك اتباع مايلي'..
-'\n ✧ اضف البوت الى مجموعتك'..
-'\n ✧ ارفعه ادمن مشرف'..
-'\n ✧ ارسل كلمة تفعيل ليتم تفعيل المجموعه'..
-'\n ✧ مطور البوت -›〘 @'..UserSudo..' 〙*'
-if photo.total_count > 0 then
-keyboard = {} 
-keyboard.inline_keyboard = {
+if not Redis:get(black.."black:Start:Bot") then
+local CmdStart = '*\n🤖╖   أهلآ بك عزيزي أنا بوت '..(Redis:get(black.."black:Name:Bot") or "كينج")..
+'\n⚙️╢• وظيفتي حماية المجموعات '..
+'\n✅╢• لتفعيل البوت عليك اتباع مايلي .'..
+'\n➕╢• أضِف البوت إلى مجموعتك '..
+'\n⚡️╢• ارفعهُ » مشرف + اكتب تفعيل '..
+'\n⬆️╢• سيتم ترقيتك مالك في البوت '..
+'\n☑️╢• لكي أعمل معك بشكل صحيح '.. 
+'\n🔰╢• تأكد » من اعطائي حذف الرسائل '..
+'\n🔰╢• تأكد » من تفعيل الألعاب '..
+'\n🔰╢• تأكد » من تفعيل الرفع '..
+'\n🔰╢• تأكد » من تفعيل ردود السورس  '..
+'\nمـطـور الـبـوت 🔰{@'..UserSudo..'}*'
+local reply_markup = LuaTele.replyMarkup{
+type = 'inline',
+data = {
 {
-{text = '𓄼• مـطـور الـبـوت •𓄹', url = "https://t.me/"..black.username..""},
+{text = '✈ • أضف البوت إلي مجموعتك • ✈', url = 't.me/'..UserBot..'?startgroup=new'}, 
 },
 {
-{text = ' اضف بوت '..Mostafa..' لمجموعتك ', url = 't.me/'..UserBot..'?startgroup=new'},
+{text = 'ᯓ˚₊· ᏦᎥΝᏀ.ՏΌႮᎡᏟᎬ.↺ᯓ˚₊· ᏦᎥΝᏀ.ՏΌႮᎡᏟᎬ.↺', url = 't.me/KiNGg_Source7'}, 
 },
 }
-} 
-LuaTele.sendPhoto(msg.chat_id, msg.id, photo.photos[1].sizes[#photo.photos[1].sizes].photo.remote.id,CmdStart,"md", true, nil, nil, nil, nil, nil, nil, nil, nil, reply_markup )
+}
+return LuaTele.sendText(msg_chat_id,msg_id,CmdStart,"md",false, false, false, false, reply_markup)
+else
+local reply_markup = LuaTele.replyMarkup{
+type = 'inline',
+data = {
+{
+{text = '✈ • أضف البوت إلي مجموعتك • ✈', url = 't.me/'..UserBot..'?startgroup=new'}, 
+},
+{
+{text = 'ᯓ˚₊· ᏦᎥΝᏀ.ՏΌႮᎡᏟᎬ.↺', url = 't.me/KiNGg_Source7'}, 
+},
+}
+}
+return LuaTele.sendText(msg_chat_id,msg_id,Redis:get(black.."black:Start:Bot"),"md",false, false, false, false, reply_markup)
+end
 else
 local reply_markup = LuaTele.replyMarkup{
 type = 'inline',
