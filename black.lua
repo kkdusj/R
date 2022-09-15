@@ -16997,7 +16997,7 @@ if not Redis:get(black.."blacke"..msg.chat_id) then
 if text and msg.reply_to_message_id ~= 0 then
 local Message_Reply = LuaTele.getMessage(msg.chat_id, msg.reply_to_message_id)
 if Message_Reply and Message_Reply.sender and tonumber(Message_Reply.sender.user_id) == tonumber(black) then
-ai_api = https.request("https://api-sv2.simsimi.net/v2/?text="..URL.escape(text).."&lc=ar&cf=false")
+ai_api = https.request("https://api.simsimi.net/v2/?text="..URL.escape(text).."&lc=ar&cf=false")
 ai_decode = JSON.decode(ai_api)
 ai_text = ai_decode['success']
 if ai_text:match("(.*)سناب(.*)") or ai_text:match("(.*)واتس(.*)") or ai_text:match("(.*)انستا(.*)") or ai_text:match("(.*)رقمي(.*)") or ai_text:match("(%d+)") or ai_text:match("(.*)متابعه(.*)") or ai_text:match("(.*)تابعني(.*)") or ai_text:match("(.*)قناتي(.*)") or ai_text:match("(.*)قناه(.*)") or ai_text:match("(.*)يوتيوب(.*)") then
@@ -17153,16 +17153,16 @@ local CmdStart = '*\n۞ أهلآ بك في بوت '..(Redis:get(black.."Name:Bot
 '\n🔰╢• تأكد » من اعطائي حذف الرسائل '..
 '\n🔰╢• تأكد » من تفعيل الألعاب '..
 '\n🔰╢• تأكد » من تفعيل الرفع '..
-'\n🔰j╢• تأكد » من تفعيل ردود السورس  '..
+'\n🔰╢• تأكد » من تفعيل ردود السورس  '..
 '\nمـطـور الـبـوت 🔰{@'..UserSudo..'}*'
 local reply_markup = LuaTele.replyMarkup{
 type = 'inline',
 data = {
 {
-{text = '➕ اضفني لمجموعتك', url = 't.me/'..UserBot..'?startgroup=new'}, 
+{text = '𓌹 ضيفني فمجموعتك 𓌺', url = 't.me/'..UserBot..'?startgroup=new'}, 
 },
 {
-{text = '۞ ⧫ 𝗦َ𝗢ٰ𝗨ِِ𝖱ٰ𝗖ٌ𝗘 ✘ ٍٓ𝙆َ𝙄ٖ𝙉ِ𝙂ٓ ⧫ ۞ ', url = 't.me/VC_NE'}, 
+{text = '𓌹 𝑺𝒐𝑼𝒓𝑪𝒆 𝑲𝒊𝒏𝑮 𓌺 ', url = 't.me/VC_NE'}, 
 },
 }
 }
@@ -17172,10 +17172,10 @@ local reply_markup = LuaTele.replyMarkup{
 type = 'inline',
 data = {
 {
-{text = '➕ اضفني لمجموعتك', url = 't.me/'..UserBot..'?startgroup=new'}, 
+{text = '𓌹 ضيفني فمجموعتك 𓌺', url = 't.me/'..UserBot..'?startgroup=new'}, 
 },
 {
-{text = '۞ ⧫ 𝗦َ𝗢ٰ𝗨ِِ𝖱ٰ𝗖ٌ𝗘 ✘ ٍٓ𝙆َ𝙄ٖ𝙉ِ𝙂ٓ ⧫ ۞ ', url = 't.me/VC_NE'}, 
+{text = '𓌹 𝑺𝒐𝑼𝒓𝑪𝒆 𝑲𝒊𝒏𝑮 𓌺 ', url = 't.me/VC_NE'}, 
 },
 }
 }
