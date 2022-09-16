@@ -3997,7 +3997,7 @@ Abs = math.random(2,140);
 local Text ='*✅╎تم اختيار الميمز لك ي برو •*'
 keyboard = {} 
 keyboard.inline_keyboard = {
-{{text = '⧫ ⛦ ⧫ 𝑲𝒊𝒏𝑮 𝑺𝒐𝑼𝒓𝑪𝒆 ⧫ ⛦ ️ ⧫',url="t.me/VC_NE"}},
+{{text = '⧫𝑲𝒊𝒏𝑮 • 𝑺𝒐𝑼𝒓𝑪𝒆 ⧫',url="t.me/VC_NE"}},
 }
 local msg_id = msg.id/2097152/0.5
 https.request("https://api.telegram.org/bot"..Token..'/sendVoice?chat_id=' .. msg.chat_id .. '&voice=https://t.me/remixsource/'..Abs..'&caption=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard)) 
@@ -4008,7 +4008,7 @@ local Text ='*✅╎تم اختيار الفلم لك يباشا •*'
 keyboardd = {} 
 keyboardd.inline_keyboard = {
 {
-{text = '⧫ ⛦ ⧫ 𝑲𝒊𝒏𝑮 𝑺𝒐𝑼𝒓𝑪𝒆 ⧫ ⛦ ️ ⧫', url = "https://t.me/VC_NE"}
+{text = '⧫𝑲𝒊𝒏𝑮 • 𝑺𝒐𝑼𝒓𝑪𝒆 ⧫', url = "https://t.me/VC_NE"}
 },
 }
 local msg_id = msg.id/2097152/0.5
@@ -4020,7 +4020,7 @@ local Text ='*✅╎تم اختيار انمي لك ي قلبي •*'
 keyboardd = {} 
 keyboardd.inline_keyboard = {
 {
-{text = '⧫ ⛦ ⧫ 𝑲𝒊𝒏𝑮 𝑺𝒐𝑼𝒓𝑪𝒆 ⧫ ⛦ ️ ⧫', url = "https://t.me/VC_NE"}
+{text = '⧫𝑲𝒊𝒏𝑮 • 𝑺𝒐𝑼𝒓𝑪𝒆 ⧫', url = "https://t.me/VC_NE"}
 },
 }
 local msg_id = msg.id/2097152/0.5
@@ -4032,7 +4032,7 @@ local Text ='*✅╎تم اختيار صور لك يرحقلبي •*'
 keyboardd = {} 
 keyboardd.inline_keyboard = {
 {
-{text = '⧫ ⛦ ⧫ 𝑲𝒊𝒏𝑮 𝑺𝒐𝑼𝒓𝑪𝒆 ⧫ ⛦ ️ ⧫', url = "https://t.me/VC_NE"}
+{text = '⧫𝑲𝒊𝒏𝑮 • 𝑺𝒐𝑼𝒓𝑪𝒆 ⧫', url = "https://t.me/VC_NE"}
 },
 }
 local msg_id = msg.id/2097152/0.5
@@ -4043,7 +4043,7 @@ Abs = math.random(2,140);
 local Text ='*✅╎تم اختيار متحركه لك ي غالي •*'
 keyboard = {} 
 keyboard.inline_keyboard = {
-{{text = '⧫ ⛦ ⧫ 𝑲𝒊𝒏𝑮 𝑺𝒐𝑼𝒓𝑪𝒆 ⧫ ⛦ ️ ⧫',url="t.me/VC_NE"}},
+{{text = '⧫𝑲𝒊𝒏𝑮 • 𝑺𝒐𝑼𝒓𝑪𝒆 ⧫',url="t.me/VC_NE"}},
 }
 local msg_id = msg.id/2097152/0.5
 https.request("https://api.telegram.org/bot"..Token..'/sendanimation?chat_id=' .. msg.chat_id .. '&animation=https://t.me/GifDavid/'..Abs..'&caption=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard)) 
@@ -4054,13 +4054,64 @@ local Text ='*✅╎تم اختيار ريمكس لك ي زميلي •*'
 keyboardd = {} 
 keyboardd.inline_keyboard = {
 {
-{text = '⧫ ⛦ ⧫ 𝑲𝒊𝒏𝑮 𝑺𝒐𝑼𝒓𝑪𝒆 ⧫ ⛦ ️ ⧫', url = "https://t.me/VC_NE"}
+{text = '⧫𝑲𝒊𝒏𝑮 • 𝑺𝒐𝑼𝒓𝑪𝒆 ⧫', url = "https://t.me/VC_NE"}
 },
 }
 local msg_id = msg.id/2097152/0.5
 https.request("https://api.telegram.org/bot"..Token..'/sendVoice?chat_id=' .. msg.chat_id .. '&voice=https://t.me/remixsource/'..Abs..'&caption=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard)) 
 end
-
+if text == "ميمز" or text == "ميمزز" then 
+Abs = math.random(2,140); 
+local Text ='*᥀︙تم اختيار الميمز لك*'
+local MsgId = msg.id/2097152/0.5
+local MSGID = string.gsub(MsgId,'.0','')
+https.request("https://api.telegram.org/bot"..Token..'/sendVoice?chat_id=' .. msg.chat_id .. '&voice=https://t.me/MemzDavid/'..Abs..'&caption=' .. URL.escape(Text).."&reply_to_message_id="..MsgId.."&parse_mode=markdown") 
+end
+if text == "فلم" or text == "افلام" then 
+Abs = math.random(2,140); 
+local Text ='*᥀︙تم اختيار الفلم لك*'
+local MsgId = msg.id/2097152/0.5
+local MSGID = string.gsub(MsgId,'.0','')
+https.request("https://api.telegram.org/bot"..Token..'/sendphoto?chat_id=' .. msg.chat_id .. '&photo=https://t.me/MoviesDavid/'..Abs..'&caption=' .. URL.escape(Text).."&reply_to_message_id="..MsgId.."&parse_mode=markdown") 
+end
+if text == "انمي" or text == "انمى" then 
+Abs = math.random(2,140); 
+local Text ='*᥀︙تم اختيار انمي لك*'
+local MsgId = msg.id/2097152/0.5
+local MSGID = string.gsub(MsgId,'.0','')
+https.request("https://api.telegram.org/bot"..Token..'/sendphoto?chat_id=' .. msg.chat_id .. '&photo=https://t.me/AnimeDavid/'..Abs..'&caption=' .. URL.escape(Text).."&reply_to_message_id="..MsgId.."&parse_mode=markdown") 
+end
+if text == "صوره" or text == "صورة" then 
+Abs = math.random(2,140); 
+local Text ='*᥀︙تم اختيار صوره لك*'
+local MsgId = msg.id/2097152/0.5
+local MSGID = string.gsub(MsgId,'.0','')
+https.request("https://api.telegram.org/bot"..Token..'/sendphoto?chat_id=' .. msg.chat_id .. '&photo=https://t.me/PhotosDavid/'..Abs..'&caption=' .. URL.escape(Text).."&reply_to_message_id="..MsgId.."&parse_mode=markdown") 
+end
+if text == "متحركه" or text == "متحركة" then 
+Abs = math.random(2,140); 
+local Text ='*᥀︙تم اختيار متحركه لك*'
+local MsgId = msg.id/2097152/0.5
+local MSGID = string.gsub(MsgId,'.0','')
+https.request("https://api.telegram.org/bot"..Token..'/sendanimation?chat_id=' .. msg.chat_id .. '&animation=https://t.me/GifDavid/'..Abs..'&caption=' .. URL.escape(Text).."&reply_to_message_id="..MsgId.."&parse_mode=markdown") 
+end
+if text == "ريمكس" or text == "ريماكس" then 
+Abs = math.random(2,140); 
+local Text ='*᥀︙تم اختيار ريمكس لك*'
+local MsgId = msg.id/2097152/0.5
+local MSGID = string.gsub(MsgId,'.0','')
+https.request("https://api.telegram.org/bot"..Token..'/sendVoice?chat_id=' .. msg.chat_id .. '&voice=https://t.me/RemixDavid/'..Abs..'&caption=' .. URL.escape(Text).."&reply_to_message_id="..MsgId.."&parse_mode=markdown") 
+end
+if text == "شعر" then
+Abs = math.random(2,140); 
+local Text ='*✘︙تم اختيار الشعر لك فقط*'
+keyboard = {} 
+keyboard.inline_keyboard = {
+{{text = '⧫ ⛦ ⧫ 𝑲𝒊𝒏𝑮 𝑺𝒐𝑼𝒓𝑪𝒆 ⧫ ⛦ ️ ⧫',url="t.me/VC_NE"}},
+}
+local msg_id = msg.id/2097152/0.5
+https.request("https://api.telegram.org/bot"..Token..'/sendVoice?chat_id=' .. msg.chat_id .. '&voice=https://t.me/QQNNSX/'..Abs..'&caption=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard)) 
+end
 if text and text:match("^تنزيل (.*)$") and msg.reply_to_message_id ~= 0 then
 local TextMsg = text:match("^تنزيل (.*)$")
 local Message_Reply = LuaTele.getMessage(msg.chat_id, msg.reply_to_message_id)
