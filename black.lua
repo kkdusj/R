@@ -3930,7 +3930,7 @@ keyboardd.inline_keyboard = {
 local msg_id = msg.id/2097152/0.5
 https.request("https://api.telegram.org/bot"..Token..'/sendphoto?chat_id=' .. msg.chat_id .. '&photo=https://t.me/LoreBots8/'..Abs..'&caption=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard)) 
 end
-if text == "عباره" or text == "عبارات" then 
+if text == "انمي" or text == "انمى" then 
 Abs = math.random(2,140); 
 local Text ='• تم اختيار عباره'
 keyboardd = {} 
@@ -3954,7 +3954,7 @@ keyboardd.inline_keyboard = {
 local msg_id = msg.id/2097152/0.5
 https.request("https://api.telegram.org/bot"..Token..'/sendphoto?chat_id=' .. msg.chat_id .. '&photo=https://t.me/djdndnddc/'..Abs..'&caption=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard)) 
 end
-if text == "صور انمتي" or text == "افتارات انمي" then 
+if text == "عبارات" or text == "عباره" then 
 Abs = math.random(2,140); 
 local Text ='• تم اختيار افتار انمي'
 keyboardd = {} 
@@ -3966,7 +3966,7 @@ keyboardd.inline_keyboard = {
 local msg_id = msg.id/2097152/0.5
 https.request("https://api.telegram.org/bot"..Token..'/sendphoto?chat_id=' .. msg.chat_id .. '&photo=https://t.me/LoreBots9/'..Abs..'&caption=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard)) 
 end
-if text == "صور فنانين" or text == "افتارات مغنين" then 
+if text == "صور مغنين" or text == "افتارات مغنين" then 
 Abs = math.random(2,140); 
 local Text ='• تم اختيار افتار فنانين'
 keyboardd = {} 
@@ -15908,7 +15908,7 @@ data = {
 {text = ' قائمه الاوامر ', data = msg.sender.user_id..'/helpall'},
 },
 {
-{text = '⛦ ⧫ 𝑲𝒊𝒏𝑮 𝑺𝒐𝑼𝒓𝑪𝒆 ⧫ ⛦ ', url = 't.me/VC_NE'}, 
+{text = '⛦ ⧫ 𝑲𝒊𝒏𝑮 𝑺𝒐𝑼𝒓??𝒆 ⧫ ⛦ ', url = 't.me/VC_NE'}, 
 },
 }
 }
