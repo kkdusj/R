@@ -7040,25 +7040,103 @@ end
 send(msg_chat_id,msg_id,'\n*⛦ تم ترقيه - ('..y..') ادمنيه *',"md",true)  
 end
 
-if text == 'المالك' then
+if text == 'المطور' or text == 'مطور البوت' then   
+local  ban = LuaTele.getUser(Sudo_Id) 
+local  bain = LuaTele.getUserFullInfo(Sudo_Id)
+local Get_Chat = LuaTele.getChat(msg_chat_id)
+local Info_Chats = LuaTele.getSupergroupFullInfo(msg_chat_id)
+local bains = LuaTele.getUser(msg.sender.user_id)
+if  bain.bio then
+Bio =  bain.bio
+else
+Bio = 'لا يوجد'
+end
+if bains.first_name then
+klajq = '*['..bains.first_name..'](tg://user?id='..bains.id..')*'
+else
+klajq = 'لا يوجد'
+end
+if bains.username then
+basgk = ' '..bains.username..' '
+else
+basgk = 'لا يوجد'
+end
+if ban.username then
+Creator = "* "..ban.first_name.."*\n"
+else
+Creator = "* ["..ban.first_name.."](tg://user?id="..ban.id..")*\n"
+end
+if ban.first_name then
+Creat = " "..ban.first_name.." "
+else
+Creat = " Developers Bot \n"
+end
+local photo = LuaTele.getUserProfilePhotos(Sudo_Id)
+if photo.total_count > 0 then
+local TestText = "  ❲ 𝒅𝒆𝒗𝒆𝒍𝒐𝒑𝒆𝒓𝒔 𝒃𝒐𝒕 ❳\n— — — — — — — — —\n ✵*𝚍𝚎𝚟 𝚗𝚊𝚖𝚎* :  [".. ban.first_name.."](tg://user?id="..Sudo_Id..")\n✵ *𝚍𝚎𝚟 𝚞𝚜𝚎𝚛* : [❲@"..ban.username.."❳]\n✵ *𝚍𝚎𝚟 𝚒𝚍* : [❲"..Sudo_Id.."❳]\n✵ *𝚋𝚒𝚘 ⚘* : [❲ "..Bio.." ❳]"
+keyboardd = {} 
+keyboardd.inline_keyboard = {
+{
+{text = Creat, url = "https://t.me/"..ban.username..""},
+},
+}
+local msg_id = msg.id/2097152/0.5 
+ https.request("https://api.telegram.org/bot"..Token..'/sendPhoto?chat_id='..msg.chat_id..'&caption='..URL.escape(TestText)..'&photo='..photo.photos[1].sizes[#photo.photos[1].sizes].photo.remote.id..'&reply_to_message_id='..msg_id..'&parse_mode=markdown&disable_web_page_preview=true&reply_markup='..JSON.encode(keyboardd))
+else
+local TestText = "  ❲ 𝒅𝒆𝒗𝒆𝒍𝒐𝒑𝒆𝒓𝒔 𝒃𝒐𝒕 ❳\n— — — — — — — — —\n ✵*𝚍𝚎𝚟 𝚗𝚊𝚖𝚎* :  [".. ban.first_name.."](tg://user?id="..Sudo_Id..")\n✵ *𝚍𝚎𝚟 𝚞𝚜𝚎𝚛* : [❲@"..ban.username.."❳]\n✵ *𝚍𝚎𝚟 𝚒𝚍* : [❲"..Sudo_Id.."❳]\n✵ *𝚋𝚒𝚘 ⚘* : [❲ "..Bio.." ❳]"
+local msg_id = msg.id/2097152/0.5 
+ https.request("https://api.telegram.org/bot"..Token..'/sendMessage?chat_id=' .. msg.chat_id .. '&text=' .. URL.escape(TestText).."&reply_to_message_id="..msg_id.."&parse_mode=markdown")
+end
+end
+if text == 'المالك' or text == 'المنشئ' then
 if msg.can_be_deleted_for_all_users == false then
-return send(msg_chat_id,msg_id,"\n*⛦ عذرآ البوت ليس ادمن في الجروب يرجى ترقيته وتفعيل الصلاحيات له *","md",true)  
+return LuaTele.sendText(msg_chat_id,msg_id,"\n*✵  عذرآ البوت ليس ادمن في  الجروب يرجى ترقيته وتفعيل الصلاحيات له *","md",true)  
+end
+if ChannelJoin(msg) == false then
+local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = 'اضغط للاشتراك', url = 't.me/'..Redis:get(black ..'Channel:Join')}, },}}
+return LuaTele.sendText(msg.chat_id,msg.id,'*\n✵  عليك الاشتراك في قناة البوت لاستخذام الاوامر*',"md",false, false, false, false, reply_markup)
 end
 local Info_Members = LuaTele.getSupergroupMembers(msg_chat_id, "Administrators", "*", 0, 200)
 local List_Members = Info_Members.members
 for k, v in pairs(List_Members) do
 if Info_Members.members[k].status.luatele == "chatMemberStatusCreator" then
-local UserInfo = LuaTele.getUser(v.member_id.user_id)
-if UserInfo.first_name == "" then
-send(msg_chat_id,msg_id,"*𖥔اوبس , المالك حسابه محذوف *","md",true)  
+local  ban = LuaTele.getUser(v.member_id.user_id)
+if  ban.first_name == "" then
+LuaTele.sendText(msg_chat_id,msg_id,"*✵  اوبس , المالك حسابه محذوف *","md",true)  
 return false
-end
-if UserInfo.username then
-Creator = "*𖥔مالك الجروب : @"..UserInfo.username.."*\n"
+end 
+local photo = LuaTele.getUserProfilePhotos( ban.id)
+local  bain = LuaTele.getUserFullInfo(Sudo_Id)
+if  bain.bio then
+Bio =  bain.bio
 else
-Creator = "𖥔مالك الجروب : *["..UserInfo.first_name.."](tg://user?id="..UserInfo.id..")\n"
+Bio = 'لا يوجد'
 end
-return send(msg_chat_id,msg_id,Creator,"md",true)  
+if ban.username then
+Creator = "* "..ban.first_name.."*\n"
+else
+Creator = "* ["..ban.first_name.."](tg://user?id="..ban.id..")*\n"
+end
+if ban.first_name then
+Creat = " "..ban.first_name.." "
+else
+Creat = " Developers Bot \n"
+end
+if photo.total_count > 0 then
+local TestText = "  ❲ Owner Groups ❳\n— — — — — — — — —\n ✵ *Owner Name* :  [".. ban.first_name.."](tg://user?id=".. ban.id..")\n✵  *Owner Bio* : [❲ "..Bio.." ❳]"
+keyboardd = {} 
+keyboardd.inline_keyboard = {
+{
+{text = Creat, url = "https://t.me/"..ban.username..""},
+},
+}
+local msg_id = msg.id/2097152/0.5 
+return https.request("https://api.telegram.org/bot"..Token..'/sendPhoto?chat_id='..msg.chat_id..'&caption='..URL.escape(TestText)..'&photo='..photo.photos[1].sizes[#photo.photos[1].sizes].photo.remote.id..'&reply_to_message_id='..msg_id..'&parse_mode=markdown&disable_web_page_preview=true&reply_markup='..JSON.encode(keyboardd))
+else
+local TestText = "- معلومات المالك : \n\n- [".. ban.first_name.."](tg://user?id=".. ban.id..")\n \n ["..Bio.."]"
+local msg_id = msg.id/2097152/0.5 
+return https.request("https://api.telegram.org/bot"..Token..'/sendMessage?chat_id=' .. msg.chat_id .. '&text=' .. URL.escape(TestText).."&reply_to_message_id="..msg_id.."&parse_mode=markdown")
+end
 end
 end
 end
@@ -12114,24 +12192,7 @@ end
 Redis:del(black..'Texting:Devblack')
 return send(msg_chat_id,msg_id,'⛦ تم حذف كليشه المطور')
 end
-if text == 'المطور' or text == 'مطور' then
-local TextingDevblack = Redis:get(black..'Texting:Devblack')
-if TextingDevblack then 
-return send(msg_chat_id,msg_id,TextingDevblack,"md",true)  
-else
-local photo = LuaTele.getUserProfilePhotos(Sudo_Id)
-local UserInfo = LuaTele.getUser(Sudo_Id)
-Name_User = UserInfo.first_name
-if photo then
-return LuaTele.sendPhoto(msg.chat_id, msg.id, photo.photos[1].sizes[#photo.photos[1].sizes].photo.remote.id,
-'*⛦ مطور البوت : *['..Name_User..'](tg://user?id='..UserInfo.id..')**', "md",true)
-else
-return send(msg_chat_id,msg_id,
-'*⛦ مطور البوت : {*['..UserInfo.first_name..'](tg://user?id='..UserInfo.id..')*}*',"md",true) 
-end
---return send(msg_chat_id,msg_id,'\n*⛦ مطور البوت : {*['..UserInfo.first_name..'](tg://user?id='..UserInfo.id..')*}*',"md",true)  
-end
-end
+
 ---زخرفة ----
 if text == "زخرفه" then
   local reply_markup = LuaTele.replyMarkup{
