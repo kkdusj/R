@@ -12219,76 +12219,6 @@ keyboard.inline_keyboard = {
 local msgg = msg_id/2097152/0.5
 return https.request("https://api.telegram.org/bot"..Token.."/sendvideo?chat_id=" .. msg_chat_id .. "&video=https://t.me/DEV_JABWA/199&caption=".. URL.escape(baniusername).."&reply_to_message_id="..msgg.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
 end
-if text == 'المبرمج كينج' or text == 'مبرمج السورس' or text == 'كينج' then  
-local UserId_Info = LuaTele.searchPublicChat("")
-if UserId_Info.id then
-local UserInfo = LuaTele.getUser(UserId_Info.id)
-local InfoUser = LuaTele.getUserFullInfo(UserId_Info.id)
-if InfoUser.bio then
-Bio = InfoUser.bio
-else
-Bio = ''
-end
-local photo = LuaTele.getUserProfilePhotos(UserId_Info.id)
-if photo.total_count > 0 then
-local TestText = "⛦𝙳𝙴𝚅 𝙺𝙸𝙽𝙶⛦\n— — — — — — — — —\n 公*َdev name⛥* : 〘"..UserInfo.first_name.."≯(tg://user?id="..UserId_Info.id..")\n公*َbio* :〘❲ "..Bio.." ❳≯"
-keyboardd = {} 
-keyboardd.inline_keyboard = {
-{
-{text = '⛦𝙳𝙴𝚅 𝙺𝙸𝙽𝙶⛦', url = "https://t.me/dev_kingo0o"}
-},
-}
-local msg_id = msg.id/2097152/0.5 
-return https.request("https://api.telegram.org/bot"..Token..'/sendPhoto?chat_id='..msg.chat_id..'&caption='..URL.escape(TestText)..'&photo='..photo.photos≮1≯.sizes≮#photo.photos≮1≯.sizes≯.photo.remote.id..'&reply_to_message_id='..msg_id..'&parse_mode=markdown&disable_web_page_preview=true&reply_markup='..JSON.encode(keyboardd))
-else
-local TestText = "- معلومات مبرمج السورس : \\nn: name Dev .〘"..UserInfo.first_name.."≯(tg://user?id="..UserId_Info.id..")\n\n〘"..Bio.."≯"
-keyboardd = {} 
-keyboardd.inline_keyboard = {
-{
-{text = '⛦𝙳𝙴𝚅 𝙺𝙸𝙽𝙶⛦', url = "https://t.me/dev_kingo0o"}
-},
-{
-{text = 〘َٰ𝙎ُِ𝙊ِّ𝙐ٓ𝙍ٍّ𝘾ٍ𝙀 ً𝙆𝙄ٍَ𝙉ٍ𝙂〙, url = "https://t.me/VC_NE"},
-},
-}
-local msg_id = msg.id/2097152/0.5 
-return https.request("https://api.telegram.org/bot"..Token..'/sendMessage?chat_id=' .. msg.chat_id .. '&text=' .. URL.escape(TestText).."&reply_to_message_id="..msg_id..'&parse_mode=markdown&disable_web_page_preview=true&reply_markup='..JSON.encode(keyboardd))
-end
-if text == 'المطور صاصا' or text == 'مطور السورس' or text == 'صاصا' then  
-local UserId_Info = LuaTele.searchPublicChat("")
-if UserId_Info.id then
-local UserInfo = LuaTele.getUser(UserId_Info.id)
-local InfoUser = LuaTele.getUserFullInfo(UserId_Info.id)
-if InfoUser.bio then
-Bio = InfoUser.bio
-else
-Bio = ''
-end
-local photo = LuaTele.getUserProfilePhotos(UserId_Info.id)
-if photo.total_count > 0 then
-local TestText = "⛦𝙳𝙴𝚅 𝚂𝙰𝚂𝙰⛦\n— — — — — — — — —\n 公*َdev name⛥* : 〘"..UserInfo.first_name.."≯(tg://user?id="..UserId_Info.id..")\n公*َbio* :〘❲ "..Bio.." ❳≯"
-keyboardd = {} 
-keyboardd.inline_keyboard = {
-{
-{text = '⛦𝙳𝙴𝚅 𝚂𝙰𝚂𝙰⛦', url = "https://t.me/DEV_SASA"}
-},
-}
-local msg_id = msg.id/2097152/0.5 
-return https.request("https://api.telegram.org/bot"..Token..'/sendPhoto?chat_id='..msg.chat_id..'&caption='..URL.escape(TestText)..'&photo='..photo.photos≮1≯.sizes≮#photo.photos≮1≯.sizes≯.photo.remote.id..'&reply_to_message_id='..msg_id..'&parse_mode=markdown&disable_web_page_preview=true&reply_markup='..JSON.encode(keyboardd))
-else
-local TestText = "- معلومات مطور السورس : \\nn: name Dev .〘"..UserInfo.first_name.."≯(tg://user?id="..UserId_Info.id..")\n\n〘"..Bio.."≯"
-keyboardd = {} 
-keyboardd.inline_keyboard = {
-{
-{text = '⛦𝙳𝙴𝚅 𝚂𝙰𝚂𝙰⛦', url = "https://t.me/DEV_SASA"}
-},
-{
-{text = 〘َٰ𝙎ُِ𝙊ِّ𝙐ٓ𝙍ٍّ𝘾ٍ𝙀 ً𝙆𝙄ٍَ𝙉ٍ𝙂〙, url = "https://t.me/VC_NE"},
-},
-}
-local msg_id = msg.id/2097152/0.5 
-return https.request("https://api.telegram.org/bot"..Token..'/sendMessage?chat_id=' .. msg.chat_id .. '&text=' .. URL.escape(TestText).."&reply_to_message_id="..msg_id..'&parse_mode=markdown&disable_web_page_preview=true&reply_markup='..JSON.encode(keyboardd))
-end
 if text == 'مطور البوت' or text == 'المطور' or text == 'مطوري السورس 𖥔' then
 local UserId_Info = bot.searchPublicChat(""..UserSudo.."")
 if UserId_Info.id then
@@ -26082,7 +26012,7 @@ send(msg_chat_id,msg_id,[[*
 ━━━───⊶⛧•𝙆𝙄ٍَ𝙉ٍ𝙂•⛧⊷───━━━
 , ليتم نشرها للجروبات ،
 , للخروج ارسل ( الغاء ) ،
-━━━───⊶⛧•𝙆𝙄ٍَ𝙉ٍ𝙂•⛧⊷───━━━
+━━━───⊶⛧•??𝙄ٍَ𝙉ٍ𝙂•⛧⊷───━━━
 *]],"md",true)  
 return false
 end
@@ -33409,7 +33339,7 @@ local txxt = [[*
 
 𖥔 ratib -> yuetik ratib kuli 10 daqayiq
 
-?? bikhashish -> yuetik bikhashish kula 10 daqayiq
+𖥔 bikhashish -> yuetik bikhashish kula 10 daqayiq
 
 𖥔 zarf -> tazraf fulus ashkhas kula 10 daqayiq
 
