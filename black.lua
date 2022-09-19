@@ -11570,62 +11570,56 @@ local reply_markup = bot.replyMarkup{type = 'inline',data = {
 }
 }
 if photo.total_count > 0 then
-local NamesBot = (Redis:get(black.."Name:Bot") or "كينج")
+local NamesBot = (Redis:get(black.."Name:Bot") or "فالورانت")
 local BotName = {
-    'انطم',
-    'وقح',
-    'هلا',
-   'شتبي',
-    'عندي اسم ترا',
-    'مو بوته!',
-    'توكل',
-    'اخرس',
-    'هطف انت ؟',
-    'اذا ناديتني ب اسمي راح ارد',
-     'مو فله ترا'
-    '!!!!',
-    'اسمي '..NamesBot..' ياخي',
+    'اسمي '..NamesBot..' يا قلبي 😍💜',
+    'اسمي '..NamesBot..' يا روحي 🙈❤️',
+    'اسمي '..NamesBot..' يا عمري 🥰🤍',
+   'اسمي '..NamesBot..' يا قمر 🖤🌿',
+    'اسمي بوت '..NamesBot..' 😻❤️',
+    'اسمي '..NamesBot..' يا مزه 😘🍒',
+    'اسمي '..NamesBot..' يعم 😒',
+    'مقولت اسمي '..NamesBot..' في اي 🙄',
+    'اسمي '..NamesBot..' الكيوت ??💙',
+    'اسمي '..NamesBot..' يا حياتي 🌚❤️',
+    'اسمي '..NamesBot..' يوتكه 🙈💔',
 }
 return bot.sendPhoto(msg.chat_id, msg.id, photo.photos[1].sizes[#photo.photos[1].sizes].photo.remote.id,BotName[math.random(#BotName)], "md", true, nil, nil, nil, nil, nil, nil, nil, nil, reply_markup )
 else
-local NamesBot = (Redis:get(black.."Name:Bot") or "كينج")
+local NamesBot = (Redis:get(black.."Name:Bot") or "فالورانت")
 local BotName = {
-  'انطم',
-  'وقح',
-  'هلا',
- 'شتبي',
-  'عندي اسم ترا',
-  'مو بوته!',
-  'توكل',
-  'اخرس',
-  'هطف انت ؟',
-  'اذا ناديتني ب اسمي راح ارد',
-   'مو فله ترا'
-  '!!!!',
-  'اسمي '..NamesBot..' ياخي',
+    'اسمي '..NamesBot..' يا قلبي 😍💜',
+    'اسمي '..NamesBot..' يا روحي 🙈❤️',
+    'اسمي '..NamesBot..' يا عمري 🥰🤍',
+   'اسمي '..NamesBot..' يا قمر 🖤🌿',
+    'اسمي بوت '..NamesBot..' 😻❤️',
+    'اسمي '..NamesBot..' يا مزه 😘🍒',
+    'اسمي '..NamesBot..' يعم 😒',
+    'مقولت اسمي '..NamesBot..' في اي 🙄',
+    'اسمي '..NamesBot..' الكيوت 🌝💙',
+    'اسمي '..NamesBot..' يا حياتي 🌚❤️',
+    'اسمي '..NamesBot..' يوتكه 🙈💔',
 }
 return send(msg_chat_id,msg_id,BotName[math.random(#BotName)],"md") 
 end 
 end
-local NamesBot = (Redis:get(black.."Name:Bot") or "كينج")
+local NamesBot = (Redis:get(black.."Name:Bot") or "فالورانت")
 local BotName = {
-  'انطم',
-  'وقح',
-  'هلا',
- 'شتبي',
-  'عندي اسم ترا',
-  'مو بوته!',
-  'توكل',
-  'اخرس',
-  'هطف انت ؟',
-  'اذا ناديتني ب اسمي راح ارد',
-   'مو فله ترا'
-  '!!!!',
-  'اسمي '..NamesBot..' ياخي',
+    'اسمي '..NamesBot..' يا قلبي 😍💜',
+    'اسمي '..NamesBot..' يا روحي 🙈❤️',
+    'اسمي '..NamesBot..' يا عمري 🥰🤍',
+   'اسمي '..NamesBot..' يا قمر 🖤🌿',
+    'اسمي بوت '..NamesBot..' 😻❤️',
+    'اسمي '..NamesBot..' يا مزه ??🍒',
+    'اسمي '..NamesBot..' يعم 😒',
+    'مقولت اسمي '..NamesBot..' في اي 🙄',
+    'اسمي '..NamesBot..' الكيوت 🌝💙',
+    'اسمي '..NamesBot..' يا حياتي 🌚❤️',
+    'اسمي '..NamesBot..' يوتكه 🙈💔',
 }
 return send(msg_chat_id,msg_id,BotName[math.random(#BotName)],"md") 
 end
-if text == (Redis:get(black.."Name:Bot") or "كينج") then
+if text == (Redis:get(black.."Name:Bot") or "فالورانت") then
 if Redis:get(black.."Reply:Bot:Picture"..msg_chat_id) == "off" then
 return bot.sendText(msg_chat_id,msg_id,' ',"md",true)  
 end
@@ -11637,20 +11631,22 @@ for Name_User in string.gmatch(Jabwa.first_name, "[^%s]+" ) do
 Jabwa.first_name = Name_User
 break
 end 
-local NamesBot = (Redis:get(black.."Name:Bot") or "كينج")
+local NamesBot = (Redis:get(black.."Name:Bot") or "فالورانت")
 local BotName = {
-'خلاص يا بابا',
-'زعلانه',
-'لا تناديني',
-'مالي خلقك,
-'؟',
-'عيوني ياعيوني',
-'سم',
-'عيوني',
-'لبيه',
-'مو فاضي',
-'شتبي',
-'نعم ',
+'نعم يروحي 🌝💙',
+'نعم يا قلب '..NamesBot..'',
+'عوز اي مني '..NamesBot..'',
+'موجود '..NamesBot..'',
+'بتشقط وجي ويت 🤪',
+'ايوا جاي 😹',
+'يعم هتسحر واجي 😾',
+'طب متصلي على النبي كدا 🙂💜',
+'تع اشرب شاي 🌝💙',
+'اي قمر انت 🌝💙',
+'اي قلبي 🤍😻',
+'ياض خش نام 😂',
+'انا '..NamesBot..' احسن البوتات 🌝💙',
+'نعم 🍒🤍'
 }
 NamesBots = BotName[math.random(#BotName)]
 local first_n = Jabwa.first_name
@@ -33413,7 +33409,7 @@ local txxt = [[*
 
 𖥔 ratib -> yuetik ratib kuli 10 daqayiq
 
-𖥔 bikhashish -> yuetik bikhashish kula 10 daqayiq
+?? bikhashish -> yuetik bikhashish kula 10 daqayiq
 
 𖥔 zarf -> tazraf fulus ashkhas kula 10 daqayiq
 
