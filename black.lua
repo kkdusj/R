@@ -14713,7 +14713,7 @@ bot.sendText(msg.chat_id,msg.id,[[
 ]],"md",true)  
 return false
 end
-if Redis:get(black.."trans" .. msg.chat_id_ .. "" .. msg.sender_user_id) then
+if Redis:get(black.."trans" .. msg.chat_id .. "" .. msg.sender_id.user_id) then
 cccc = Redis:get(black.."boobb"..msg.sender_id.user_id)
 uuuu = Redis:get(black.."bbobb"..msg.sender_id.user_id)
 if text ~= text:match('^(%d+)$') then
