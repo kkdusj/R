@@ -11583,7 +11583,6 @@ local BotName = {
     'هطف انت ؟',
     'اذا ناديتني ب اسمي راح ارد',
      'مو فله ترا'
-    'اسمي '..NamesBot..' ياخي',
 }
 return bot.sendPhoto(msg.chat_id, msg.id, photo.photos[1].sizes[#photo.photos[1].sizes].photo.remote.id,BotName[math.random(#BotName)], "md", true, nil, nil, nil, nil, nil, nil, nil, nil, reply_markup )
 else
@@ -11600,7 +11599,6 @@ local BotName = {
   'هطف انت ؟',
   'اذا ناديتني ب اسمي راح ارد',
    'مو فله ترا'
-  'اسمي '..NamesBot..' ياخي',
 }
 return send(msg_chat_id,msg_id,BotName[math.random(#BotName)],"md") 
 end 
@@ -11618,7 +11616,6 @@ local BotName = {
   'هطف انت ؟',
   'اذا ناديتني ب اسمي راح ارد',
    'مو فله ترا'
-  'اسمي '..NamesBot..' ياخي',
 }
 return send(msg_chat_id,msg_id,BotName[math.random(#BotName)],"md") 
 end
@@ -37052,7 +37049,7 @@ local TextHelp = [[*
  𖥔 صلاحياته -> {بالرد ، بالمعرف}
  𖥔 الرتبه -> {بالرد ، بالمعرف}
  𖥔 التفاعل -> {بالرد ، بالمعرف}
- ?? كشف -> {بالرد ، بالمعرف}
+ 𖥔 كشف -> {بالرد ، بالمعرف}
 *]]
 edit(ChatId,Msg_id,TextHelp, 'md', true, false, reply_markup)
 end
