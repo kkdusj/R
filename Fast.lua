@@ -11917,76 +11917,6 @@ keyboard.inline_keyboard = {
 local msgg = msg_id/2097152/0.5
 https.request("https://api.telegram.org/bot"..Token.."/sendphoto?chat_id=" .. msg_chat_id .. "&photo="..photo.."&caption=".. URL.escape(Name).."&reply_to_message_id="..msgg.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
 end
-if text == 'المبرمج كينج' or text == 'مبرمج السورس' or text == 'كينج' then  
-local UserId_Info = LuaTele.searchPublicChat("")
-if UserId_Info.id then
-local UserInfo = LuaTele.getUser(UserId_Info.id)
-local InfoUser = LuaTele.getUserFullInfo(UserId_Info.id)
-if InfoUser.bio then
-Bio = InfoUser.bio
-else
-Bio = ''
-end
-local photo = LuaTele.getUserProfilePhotos(UserId_Info.id)
-if photo.total_count > 0 then
-local TestText = "⛦𝙳𝙴𝚅 𝙺𝙸𝙽𝙶⛦\n— — — — — — — — —\n 公*َdev name⛥* : 〘"..UserInfo.first_name.."≯(tg://user?id="..UserId_Info.id..")\n公*َbio* :〘❲ "..Bio.." ❳≯"
-keyboardd = {} 
-keyboardd.inline_keyboard = {
-{
-{text = '⛦𝙳𝙴𝚅 𝙺𝙸𝙽𝙶⛦', url = "https://t.me/dev_kingo0o"}
-},
-}
-local msg_id = msg.id/2097152/0.5 
-return https.request("https://api.telegram.org/bot"..Token..'/sendPhoto?chat_id='..msg.chat_id..'&caption='..URL.escape(TestText)..'&photo='..photo.photos≮1≯.sizes≮#photo.photos≮1≯.sizes≯.photo.remote.id..'&reply_to_message_id='..msg_id..'&parse_mode=markdown&disable_web_page_preview=true&reply_markup='..JSON.encode(keyboardd))
-else
-local TestText = "- معلومات مبرمج السورس : \\nn: name Dev .〘"..UserInfo.first_name.."≯(tg://user?id="..UserId_Info.id..")\n\n〘"..Bio.."≯"
-keyboardd = {} 
-keyboardd.inline_keyboard = {
-{
-{text = '⛦𝙳𝙴𝚅 𝙺𝙸𝙽𝙶⛦', url = "https://t.me/dev_kingo0o"}
-},
-{
-{text = 〘َٰ𝙎ُِ𝙊ِّ𝙐ٓ𝙍ٍّ𝘾ٍ𝙀 ً𝙆𝙄ٍَ𝙉ٍ𝙂〙, url = "https://t.me/VC_NE"},
-},
-}
-local msg_id = msg.id/2097152/0.5 
-return https.request("https://api.telegram.org/bot"..Token..'/sendMessage?chat_id=' .. msg.chat_id .. '&text=' .. URL.escape(TestText).."&reply_to_message_id="..msg_id..'&parse_mode=markdown&disable_web_page_preview=true&reply_markup='..JSON.encode(keyboardd))
-end
-if text == 'المطور صاصا' or text == 'مطور السورس' or text == 'صاصا' then  
-local UserId_Info = LuaTele.searchPublicChat("")
-if UserId_Info.id then
-local UserInfo = LuaTele.getUser(UserId_Info.id)
-local InfoUser = LuaTele.getUserFullInfo(UserId_Info.id)
-if InfoUser.bio then
-Bio = InfoUser.bio
-else
-Bio = ''
-end
-local photo = LuaTele.getUserProfilePhotos(UserId_Info.id)
-if photo.total_count > 0 then
-local TestText = "⛦𝙳𝙴𝚅 𝚂𝙰𝚂𝙰⛦\n— — — — — — — — —\n 公*َdev name⛥* : 〘"..UserInfo.first_name.."≯(tg://user?id="..UserId_Info.id..")\n公*َbio* :〘❲ "..Bio.." ❳≯"
-keyboardd = {} 
-keyboardd.inline_keyboard = {
-{
-{text = '⛦𝙳𝙴𝚅 𝚂𝙰𝚂𝙰⛦', url = "https://t.me/DEV_SASA"}
-},
-}
-local msg_id = msg.id/2097152/0.5 
-return https.request("https://api.telegram.org/bot"..Token..'/sendPhoto?chat_id='..msg.chat_id..'&caption='..URL.escape(TestText)..'&photo='..photo.photos≮1≯.sizes≮#photo.photos≮1≯.sizes≯.photo.remote.id..'&reply_to_message_id='..msg_id..'&parse_mode=markdown&disable_web_page_preview=true&reply_markup='..JSON.encode(keyboardd))
-else
-local TestText = "- معلومات مطور السورس : \\nn: name Dev .〘"..UserInfo.first_name.."≯(tg://user?id="..UserId_Info.id..")\n\n〘"..Bio.."≯"
-keyboardd = {} 
-keyboardd.inline_keyboard = {
-{
-{text = '⛦𝙳𝙴𝚅 𝚂𝙰𝚂𝙰⛦', url = "https://t.me/DEV_SASA"}
-},
-{
-{text = 〘َٰ𝙎ُِ𝙊ِّ𝙐ٓ𝙍ٍّ𝘾ٍ𝙀 ً𝙆𝙄ٍَ𝙉ٍ𝙂〙, url = "https://t.me/VC_NE"},
-},
-}
-local msg_id = msg.id/2097152/0.5 
-return https.request("https://api.telegram.org/bot"..Token..'/sendMessage?chat_id=' .. msg.chat_id .. '&text=' .. URL.escape(TestText).."&reply_to_message_id="..msg_id..'&parse_mode=markdown&disable_web_page_preview=true&reply_markup='..JSON.encode(keyboardd))
-end
 
 if text == "تفعيل تاك للكل" or text == "تعطيل تاك للكل" or text == "تفعيل تاك" or text == "تعطيل تاك" then    
 if not msg.Admin then
@@ -30697,7 +30627,7 @@ name = string.gsub(name,"✨","💫💫💫💫💫✨💫💫💫💫")
 name = string.gsub(name,"⛈","🌨🌨🌨??🌨⛈🌨🌨🌨🌨")
 name = string.gsub(name,"🌥","⛅️⛅️⛅️⛅️⛅️⛅️🌥⛅️⛅️⛅️⛅️")
 name = string.gsub(name,"⛄️","☃☃☃☃☃☃⛄️☃☃☃☃")
-name = string.gsub(name,"👨‍🔬","👩‍🔬👩‍🔬👩‍🔬👩‍🔬👩‍🔬👩‍🔬👩‍🔬👩‍🔬👨‍🔬👩‍🔬👩‍🔬👩‍🔬")
+name = string.gsub(name,"👨‍🔬","👩‍🔬👩‍🔬👩‍🔬👩‍🔬👩‍🔬👩‍🔬👩‍🔬👩‍🔬👨‍🔬👩‍??👩‍🔬👩‍🔬")
 name = string.gsub(name,"👨‍💻","👩‍💻👩‍??👩‍‍💻👩‍‍??👩‍‍💻👨‍💻??‍💻👩‍💻??‍💻")
 name = string.gsub(name,"👨‍🔧","👩‍🔧👩‍🔧??‍🔧👩‍🔧👩‍??👩‍🔧👨‍🔧👩‍🔧")
 name = string.gsub(name,"👩‍??","👨‍🍳👨‍🍳👨‍🍳👨‍🍳👨‍🍳👩‍🍳👨‍🍳👨‍🍳??‍🍳")
